@@ -16,22 +16,24 @@
     "preview": "svelte-kit preview"
   },
   "devDependencies": {
-    "@iconify/svelte": "^2.1.2",
+    "@iconify/svelte": "^2.2.1",
     "@sveltejs/adapter-auto": "next",
     "@sveltejs/kit": "next",
-    "@typescript-eslint/eslint-plugin": "^5.12.1",
-    "@typescript-eslint/parser": "^5.12.1",
-    "@unocss/reset": "^0.26.3",
-    "eslint": "^8.10.0",
-    "eslint-config-prettier": "^8.4.0",
+    "@typescript-eslint/eslint-plugin": "^5.19.0",
+    "@typescript-eslint/parser": "^5.19.0",
+    "daisyui": "^2.13.6",
+    "eslint": "^8.13.0",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-svelte3": "^3.4.1",
-    "prettier": "~2.5.1",
-    "prettier-plugin-svelte": "^2.6.0",
-    "svelte": "^3.46.4",
-    "svelte-check": "^2.4.5",
-    "svelte-preprocess": "^4.10.4",
+    "prettier": "~2.6.2",
+    "prettier-plugin-svelte": "^2.7.0",
+    "svelte": "^3.47.0",
+    "svelte-check": "^2.7.0",
+    "svelte-preprocess": "^4.10.6",
     "tslib": "^2.3.1",
-    "typescript": "^4.5.5",
-    "unocss": "^0.26.3"
+    "vite": "^2.9.4",
+    "vite-plugin-windicss": "^1.8.4",
+    "windicss": "^3.5.1",
+    "typescript": "^4.6.3"
   }
 }
