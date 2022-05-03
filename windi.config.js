@@ -1,4 +1,4 @@
-import { defineConfig, transform } from 'windicss/helpers'
+import { defineConfig } from 'windicss/helpers'
 
 export default defineConfig({
   extract: {
@@ -8,7 +8,7 @@ export default defineConfig({
   darkMode: 'class',
   attributify: true,
   safelist: ['/data-theme$/'],
-  plugins: [transform('daisyui')],
+  plugins: [require('daisyui')],
   daisyui: {
     styled: true,
     themes: [
