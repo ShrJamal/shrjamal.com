@@ -1,20 +1,15 @@
 import adapter from '@sveltejs/adapter-auto'
 import preprocess from 'svelte-preprocess'
-import Unocss from 'unocss/vite'
-import { presetUno } from 'unocss'
+import WindiCSS from 'vite-plugin-windicss'
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
   preprocess: [preprocess()],
   kit: {
     adapter: adapter(),
-    vite: {
-      plugins: [
-        Unocss({
-          presets: [presetUno()],
-        }),
-      ],
-    },
+    vite: () => ({
+      plugins: [WindiCSS()],
+    }),
   },
 }
 
