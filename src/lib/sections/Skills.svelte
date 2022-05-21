@@ -3,7 +3,7 @@
 </script>
 
 <section id="skills" class="mt-10 w-screen flex flex-col items-center">
-  <h2 class="text-primary text-xl">
+  <h2 class="text-primary text-2xl font-bold">
     Some Technologies I have experience with:
   </h2>
 

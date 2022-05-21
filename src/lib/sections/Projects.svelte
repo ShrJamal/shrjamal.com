@@ -7,9 +7,7 @@
 </script>
 
 <section class="my-8 flex flex-col items-center" id="projects">
-  <span class="text-3xl text-center text-primary font-bold"
-    >Featured Projects
-  </span>
+  <span class="text-2xl text-primary font-bold">Featured Projects </span>
   <h2 class="text-sm text-secondary">Some Things I've built</h2>
 
   <div class="flex justify-center items-center mt-4 mb-8">
@@ -48,16 +46,3 @@
     {/each}
   </div>
 </section>
-
-<style>
-  .work__icon {
-    font-size: 1rem;
-    transition: 0.4s;
-  }
-
-  /* Active item work*/
-  .active-work {
-    background-color: var(--first-color);
-    color: var(--body-color);
-  }
-</style>
