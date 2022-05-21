@@ -8,14 +8,14 @@
   </h2>
 
   <div
-    class="pt-4 px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center "
+    class="pt-4 px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-center "
   >
     {#each skills as s}
       <div class="py-6 px-4 rounded-[1.25rem] w-[20rem] bg-base-300">
         <h3 class="mb-6 font-bold text-center text-xl">
           {s.name}
         </h3>
-        <div class="grid grid-cols-2">
+        <div class="grid grid-cols-2 ">
           {#each s.techs as tech}
             <div class="flex">
               <i class="bx bxs-badge-check  text-primary" />

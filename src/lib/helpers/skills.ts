@@ -80,6 +80,31 @@ export const skills = [
   },
 
   {
+    name: 'Web3 / Blockchain',
+    techs: [
+      {
+        name: 'Solidity',
+        level: 'Intermediate',
+      },
+      {
+        name: 'Hardhat',
+        level: 'Intermediate',
+      },
+      {
+        name: 'Ether.js',
+        level: 'Intermediate',
+      },
+      {
+        name: 'Moralis',
+        level: 'Intermediate',
+      },
+      {
+        name: 'Rust',
+        level: 'Intermediate',
+      },
+    ],
+  },
+  {
     name: 'Mobile Development',
     techs: [
       {
