@@ -1,5 +1,5 @@
 <section class="text-center" id="contact">
-  <h2 class="text-2xl text-primary mb-2">Get in Touch</h2>
+  <h2 class="text-2xl font-bold text-primary mb-2">Get in Touch</h2>
 
   <div class="flex justify-center items-center space-x-2">
     <a

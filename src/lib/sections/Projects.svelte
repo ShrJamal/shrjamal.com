@@ -6,15 +6,17 @@
   $: items = allProjects.find((v) => v.type === category)?.projects || []
 </script>
 
-<section class="work section" id="work">
-  <span class="section__subtitle">Featured Projects </span>
-  <h2 class="section__title">Some Things I've built</h2>
+<section class="my-8 flex flex-col items-center" id="projects">
+  <span class="text-3xl text-center text-primary font-bold"
+    >Featured Projects
+  </span>
+  <h2 class="text-sm text-secondary">Some Things I've built</h2>
 
-  <div class="flex justify-center items-center  mb-8">
+  <div class="flex justify-center items-center mt-4 mb-8">
     {#each categories as c}
       <span
         class="cursor-pointer py-1 px-3 rounded-lg"
-        class:active-work={c === category}
+        class:bg-accent={c === category}
         data-filter={c}
         on:click={() => (category = c)}
       >
@@ -23,12 +25,11 @@
     {/each}
   </div>
 
-  <div class="pt-4 container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+  <div
+    class="pt-4 container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"
+  >
     {#each items as p}
-      <div
-        class="p-4 rounded-2xl "
-        style="background-color: var(--container-color)"
-      >
+      <div class="p-4 rounded-2xl bg-base-300">
         <div class="mb-3 mx-auto h-[15rem]">
           <img class="rounded w-full h-full" src={p.img} alt={p.name} />
         </div>
