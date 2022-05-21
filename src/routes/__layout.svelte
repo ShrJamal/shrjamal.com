@@ -1,6 +1,5 @@
 <script>
-  import 'uno.css'
-  import '@unocss/reset/tailwind.css'
+  import 'virtual:windi.css'
 </script>
 
 <slot />

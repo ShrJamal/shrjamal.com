@@ -1,33 +1,16 @@
-<script>
-  import SocialButtons from '$lib/components/SocialButtons.svelte'
-</script>
-
-<section class="home section" id="home">
-  <div class="flex flex-col justify-center pt-8 container">
-    <div class="text-center">
+<section class="mt-10" id="home">
+  <div class="flex flex-col justify-center ">
+    <div class="text-center flex flex-col items-center">
       <span>Hello, I am </span>
-      <h1 class="text-6xl my-2">Jamal Shr</h1>
-      <h3 class="text-lg font-thin">
-        Full Stack and Experienced Mobile Developer
-      </h3>
+      <h1 class="text-6xl my-2 w-80 text-center ">Jamal</h1>
+      <h3 class="text-lg font-thin">Web3 and Full Stack Developer</h3>
     </div>
-    <!-- Profile Image -->
-    <div
-      class="mx-auto my-10 w-[190px] h-[293px] flex items-end justify-center overflow-hidden rounded-t-full rounded-b-2xl "
-      style="background: linear-gradient(
-        180deg,
-        hsla(var(--first-hue), var(--sat), var(--lig), 1),
-        hsla(var(--first-hue), var(--sat), var(--lig), 0.2)
-      )"
-    >
-      <img
-        class="w-[160px]"
-        src="/assets/img/perfil.png"
-        target="_blank"
-        alt=""
-      />
+    <div class="flex my-10 justify-center">
+      <div
+        class="w-52 h-82 mx-2 flex items-end rounded-t-full rounded-b-2xl from-primary to-primary-content bg-gradient-to-b"
+      >
+        <img src="/profile.png" target="_blank" alt="" />
+      </div>
     </div>
-
-    <SocialButtons />
   </div>
 </section>
