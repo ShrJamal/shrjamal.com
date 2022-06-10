@@ -3,7 +3,7 @@
     <div class="text-center flex flex-col items-center">
       <span>Hello, I am </span>
       <h1 class="text-6xl my-2 w-80 text-center ">Jamal</h1>
-      <h3 class="text-lg font-thin">Web3 and Full Stack Developer</h3>
+      <h3 class="text-lg font-thin">Full Stack Developer</h3>
     </div>
     <div class="flex my-10 justify-center">
       <div
