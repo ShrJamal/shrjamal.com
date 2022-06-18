@@ -17,7 +17,7 @@ export const allProjects = [
       {
         name: 'Covider Tracker',
         link: 'https://github.com/SHRJamal/covid-tracker',
-        demo: 'covid-tracker.shrjamal.com',
+        demo: 'https://covid-tracker.shrjamal.com',
         img: '/covid-tracker.png',
       },
     ],
