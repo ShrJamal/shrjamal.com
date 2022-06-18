@@ -20,7 +20,7 @@
   ]
 </script>
 
-<section id="experience" class="flex flex-col">
+<section id="experience" class="flex flex-col px-4">
   <h2 class="text-2xl font-bold text-primary text-center">Experience</h2>
 
   <div class="flex flex-col">
