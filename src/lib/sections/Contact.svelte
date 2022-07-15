@@ -62,7 +62,7 @@
       </a>
       <a
         class="btn btn-circle bg-base-100  "
-        href="tel:+923001234567"
+        href="https://wa.me/2120700862543"
         type="tel"
         target="_blank"
       >
