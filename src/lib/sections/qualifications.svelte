@@ -6,7 +6,7 @@
       company: 'Upwork',
       img: '/upwork.png',
       alt: 'Shrjamal Upwork Profile',
-      link: 'https://www.upwork.com/freelancers/~shrjamal',
+      link: 'https://www.upwork.com/freelancers/shrjamal',
       date: 'since 2022',
     },
     {
@@ -31,7 +31,11 @@
           <h3 class="flex-1 ">{item.description}</h3>
           <div class="flex justify-between items-center">
             <p class="text-2xs">{item.date}</p>
-            <a class="link link-primary text-right" href={item.link}>
+            <a
+              class="link link-primary text-right"
+              href={item.link}
+              target="_blank"
+            >
               Hire Me
             </a>
           </div>
