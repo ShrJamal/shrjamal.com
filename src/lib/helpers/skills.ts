@@ -35,11 +35,7 @@ export const skills = [
         level: 'Intermediate',
       },
       {
-        name: 'TailwindCSS',
-        level: 'Intermediate',
-      },
-      {
-        name: 'Bootstrap',
+        name: 'Mobile (Flutter)',
         level: 'Intermediate',
       },
     ],
@@ -76,6 +72,14 @@ export const skills = [
         name: 'PostgresSQL',
         level: 'Intermediate',
       },
+      {
+        name: 'Redis',
+        level: 'Intermediate',
+      },
+      {
+        name: 'Elasticsearch',
+        level: 'Intermediate',
+      },
     ],
   },
 
@@ -95,29 +99,20 @@ export const skills = [
         level: 'Intermediate',
       },
       {
+        name: 'Solana (Rust)',
+        level: 'Intermediate',
+      },
+      {
+        name: 'ThirdWeb',
+        level: 'Intermediate',
+      },
+      {
         name: 'Moralis',
         level: 'Intermediate',
       },
       {
-        name: 'Rust',
+        name: 'Chai, Mocha',
         level: 'Intermediate',
-      },
-    ],
-  },
-  {
-    name: 'Mobile Development',
-    techs: [
-      {
-        name: 'Flutter & Dart',
-        level: 'Advanced',
-      },
-      {
-        name: 'Android (Kotlin, Java)',
-        level: 'Basics',
-      },
-      {
-        name: 'iOS (Swift)',
-        level: 'Basics',
       },
     ],
   },
