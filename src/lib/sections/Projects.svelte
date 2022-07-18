@@ -11,7 +11,11 @@
     class="pt-4 container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
   >
     {#each allProjects as p}
-      <div class="card rounded-xl bg-base-300 flex flex-col max-h-[25rem]">
+      <a
+        class="card rounded-xl bg-base-300 flex flex-col max-h-[25rem] cursor-pointer"
+        href={p.link}
+        target="_blank"
+      >
         <img
           class="p-2 rounded-2xl h-[20rem] max-w-[25rem]"
           loading="lazy"
@@ -32,7 +36,7 @@
             />
           </a>
         </div>
-      </div>
+      </a>
     {/each}
   </div>
 </section>
