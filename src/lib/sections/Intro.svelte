@@ -3,7 +3,7 @@
     <div class="text-center flex flex-col items-center">
       <span>Hello, I am </span>
       <h1 class="text-6xl my-2 w-80 text-center ">
-        Jamal <span class="text-lg">Asahraoui</span>
+        Jamal <span class="text-5xl">Shr</span>
       </h1>
       <h3 class="text-lg font-thin">
         Self-taught Full Stack Javascript Developer

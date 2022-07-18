@@ -2,10 +2,11 @@
   import { browser } from '$app/env'
   import GitHubCalendar from 'github-calendar'
   import 'github-calendar/dist/github-calendar.css'
-  browser &&
+  if (browser) {
     GitHubCalendar('.calendar', 'shrjamal', {
       responsive: true,
     })
+  }
 </script>
 
 <section id="github-activity" class="mt-6 mx-2 flex flex-col items-center">
