@@ -1,5 +1,6 @@
 <script>
   import { allProjects } from '$lib/helpers/projects'
+  import Icon from '@iconify/svelte'
 </script>
 
 <section class="my-8 flex flex-col items-center" id="projects">
@@ -24,8 +25,10 @@
             href={p.demo}
             target="_blank"
           >
-            Demo <i
-              class="bx bx-right-arrow-alt text-lg transition-transform duration-1000 translate-x-20"
+            Demo
+            <Icon
+              class=" text-lg transition-transform duration-1000 translate-x-20"
+              icon="bxs-right-arrow-alt"
             />
           </a>
         </div>

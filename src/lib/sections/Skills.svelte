@@ -1,5 +1,6 @@
 <script>
   import { skills } from '$lib/helpers/skills'
+  import Icon from '@iconify/svelte'
 </script>
 
 <section id="skills" class="mt-10 w-screen flex flex-col items-center">
@@ -18,7 +19,7 @@
         <div class="grid grid-cols-2 ">
           {#each s.techs as tech}
             <div class="flex">
-              <i class="bx bxs-badge-check  text-primary" />
+              <Icon class="text-primary" icon="bxs-badge-check" />
               <div class="ml-2">
                 <h3 class="leading-4">{tech.name}</h3>
                 <!-- <span class="text-2xs">{tech.level}</span> -->
