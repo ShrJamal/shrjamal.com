@@ -1,5 +1,5 @@
 <script>
-  import { browser } from '$app/env'
+  import { browser } from '$app/environment'
   import GitHubCalendar from 'github-calendar'
   import 'github-calendar/dist/github-calendar.css'
   if (browser) {
