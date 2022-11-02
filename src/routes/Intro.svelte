@@ -13,7 +13,7 @@
       <div
         class="w-52 h-82 mx-2 flex items-end rounded-t-full rounded-b-2xl from-primary to-primary-content bg-gradient-to-b"
       >
-        <img src="/profile.webp" alt="ShrJamal Profile" target="_blank" />
+        <img src="/profile.webp" alt="ShrJamal Profile" loading="laz" />
       </div>
     </div>
   </div>
