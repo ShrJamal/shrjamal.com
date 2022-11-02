@@ -15,6 +15,8 @@
         class="card rounded-xl bg-base-300 flex flex-col max-h-[25rem] cursor-pointer"
         href={p.link}
         target="_blank"
+        rel="noreferrer"
+
       >
         <img
           class="p-2 rounded-2xl h-[20rem] max-w-[25rem]"
@@ -28,6 +30,7 @@
             class="w-max flex items-center gap-x-1 text-primary"
             href={p.demo}
             target="_blank"
+            rel="noreferrer"
           >
             Demo
             <Icon

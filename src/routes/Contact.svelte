@@ -13,6 +13,7 @@
         class="btn btn-circle bg-base-100  "
         href="https://www.linkedin.com/in/shrjamal"
         target="_blank"
+        rel="noreferrer"
       >
         <Icon class="text-blue-300 text-xl" icon="bxl-linkedin-square" />
       </a>
@@ -20,6 +21,7 @@
         class="btn btn-circle bg-base-100"
         href="https://twitter.com/shrjamal"
         target="_blank"
+        rel="noreferrer"
       >
         <Icon class="text-blue-500 text-xl" icon="bxl-twitter" />
       </a>
@@ -28,6 +30,7 @@
         class="btn btn-circle bg-base-100"
         href="https://github.com/shrjamal"
         target="_blank"
+        rel="noreferrer"
       >
         <Icon class="text-white text-xl" icon="bxl-github" />
       </a>
@@ -44,6 +47,7 @@
           class="underline text-primary"
           href="mailto:me@shrjamal.com"
           target="_blank"
+          rel="noreferrer"
         >
           Write me <i class="bx bx-right-arrow-alt  underline" />
         </a>
@@ -55,6 +59,7 @@
         class="btn btn-circle bg-base-100"
         href="https://t.me/jamalshr"
         target="_blank"
+        rel="noreferrer"
       >
         <Icon class="text-blue-400 text-xl" icon="bxl-telegram" />
       </a>
@@ -62,6 +67,7 @@
         class="btn btn-circle bg-base-100"
         href="https://join.skype.com/invite/bOsjSN8qhcQh"
         target="_blank"
+        rel="noreferrer"
       >
         <Icon class="text-blue-400 text-xl" icon="bxl-skype" />
       </a>
@@ -70,6 +76,7 @@
         href="https://wa.me/2120700862543"
         type="tel"
         target="_blank"
+        rel="noreferrer"
       >
         <Icon class="text-green-400 text-xl" icon="bxl-whatsapp" />
       </a>

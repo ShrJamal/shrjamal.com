@@ -17,6 +17,7 @@
               class="link link-primary text-right"
               href={item.link}
               target="_blank"
+              rel="noreferrer"
             >
               Hire Me
             </a>
