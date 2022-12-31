@@ -11,9 +11,9 @@
     </div>
     <div class="flex my-10 justify-center">
       <div
-        class="w-52 h-82 mx-2 flex items-end rounded-t-full rounded-b-2xl from-primary to-primary-content bg-gradient-to-b"
+        class="w-52 h-82 mx-2 flex items-end rounded-t-full rounded-b-2xl from-primary to-primary-focus bg-gradient-to-b"
       >
-        <img src="/profile.webp" alt="ShrJamal Profile" loading="laz" />
+        <img src="/profile.webp" alt="ShrJamal Profile" loading="lazy" />
       </div>
     </div>
   </div>

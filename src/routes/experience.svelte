@@ -8,7 +8,7 @@
   <div class="flex flex-col">
     {#each experiences as item}
       <div class="card flex flex-row mt-4 bg-base-300 max-h-[20rem] w-full">
-        <img class="w-40 w-48 mr-4" src={item.img} alt={item.alt} loading="laz"/>
+        <img class="w-40 mr-4" src={item.img} alt={item.alt} loading="lazy" />
         <div class="flex flex-col pr-4 py-4 w-full">
           <h3 class="flex-1 ">{item.description}</h3>
           <div class="flex justify-between items-center">
