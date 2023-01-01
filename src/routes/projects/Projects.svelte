@@ -1,6 +1,6 @@
 <script>
-  import { allProjects } from '$lib/helpers/projects'
   import Icon from '@iconify/svelte'
+  import { allProjects } from './data'
 </script>
 
 <section class="my-8 flex flex-col items-center" id="projects">

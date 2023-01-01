@@ -1,6 +1,6 @@
 <script>
   import GithubActivity from './GithubActivity.svelte'
-  import Intro from './Intro.svelte'
+  import Intro from './Intro/Intro.svelte'
   import Skills from './skills/Skills.svelte'
   import Work from './projects/Projects.svelte'
   import Contact from './contact/Contact.svelte'

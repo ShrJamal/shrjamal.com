@@ -1,6 +1,6 @@
 <script>
-  import { skills } from '$lib/helpers/skills'
   import Icon from '@iconify/svelte'
+  import { skills } from './data'
 </script>
 
 <section id="skills" class="mt-10 w-screen flex flex-col items-center">

@@ -1,5 +1,5 @@
 <script>
-  import { experiences } from '$lib/helpers/experiences'
+  import { experiences } from './data'
 </script>
 
 <section id="experience" class="flex flex-col px-4">
