@@ -14,7 +14,7 @@
         class="w-52 h-80 mx-2 flex items-end rounded-t-full rounded-b-2xl from-primary to-primary-focus bg-gradient-to-b"
       >
         <img
-          class="aspect-square"
+          class="aspect-[2/3]"
           src="/profile.webp"
           alt="ShrJamal Profile"
           loading="lazy"

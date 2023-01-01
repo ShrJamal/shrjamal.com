@@ -19,7 +19,7 @@
       >
         <div class="h-[20rem] max-w-[25rem] bg-base-200">
           <img
-            class="p-2 rounded-2xl h-full w-full object-fill"
+            class="p-2 rounded-2xl h-full w-full object-cover aspect-square"
             loading="lazy"
             width="400"
             height="320"
