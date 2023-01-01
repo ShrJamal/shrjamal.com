@@ -5,10 +5,6 @@
   import Work from './projects/Projects.svelte'
   import Contact from './contact/Contact.svelte'
   import Qualifications from './experience/Experience.svelte'
-
-  export const ssr = false
-  export const csr = false
-  export const prerender = true
 </script>
 
 <Intro />
