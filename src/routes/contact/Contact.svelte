@@ -16,6 +16,7 @@
           href={item.url}
           target="_blank"
           rel="noreferrer"
+          title={item.name}
         >
           <Icon class="text-blue-300 text-xl" icon={item.icon} />
         </a>
@@ -35,6 +36,7 @@
           href={`mailto:${emailInfo.url}`}
           target="_blank"
           rel="noreferrer"
+          title={emailInfo.name}
         >
           Write me <i class=" bx-right-arrow-alt  underline" />
         </a>
@@ -48,6 +50,7 @@
           href={item.url}
           target="_blank"
           rel="noreferrer"
+          title={item.name}
         >
           <Icon class="text-blue-300 text-xl" icon={item.icon} />
         </a>
