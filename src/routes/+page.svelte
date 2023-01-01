@@ -4,7 +4,7 @@
   import Skills from './Skills.svelte'
   import Work from './Projects.svelte'
   import Contact from './Contact.svelte'
-  import Qualifications from './experience.svelte'
+  import Qualifications from './Experience.svelte'
 </script>
 
 <Intro />

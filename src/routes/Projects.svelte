@@ -16,14 +16,17 @@
         href={p.link}
         target="_blank"
         rel="noreferrer"
-
       >
-        <img
-          class="p-2 rounded-2xl h-[20rem] max-w-[25rem]"
-          loading="lazy"
-          src={p.img}
-          alt={p.name}
-        />
+        <div class="h-[20rem] max-w-[25rem] bg-base-200">
+          <img
+            class="p-2 rounded-2xl h-full w-full object-fill"
+            loading="lazy"
+            width="400"
+            height="320"
+            src={p.img}
+            alt={p.name}
+          />
+        </div>
         <div class="p-4">
           <h3 class="mb-1">{p.name}</h3>
           <a
