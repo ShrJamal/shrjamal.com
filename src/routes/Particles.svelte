@@ -7,91 +7,61 @@
 <Particles
   particlesInit={async (eng) => {
     await loadFull(eng)
-
-    console.log('Particles Initialized')
-  }}
-  on:particlesLoaded={() => {
-    console.log('Particles Loaded')
   }}
   options={{
-    fpsLimit: 60,
-    emitters: {
-      direction: 'top',
-      size: {
-        width: 100,
-        height: 0,
-      },
-      position: {
-        x: 50,
-        y: 100,
-      },
-      rate: {
-        delay: 0.1,
-        quantity: 2,
-      },
-    },
     particles: {
       number: {
-        value: 0,
+        value: 200,
         density: {
           enable: true,
-          value_area: 800,
+          area: 800,
         },
       },
       color: {
-        value: '#ffffff',
+        value: ['#BD10E0', '#B8E986', '#50E3C2', '#FFD300', '#E86363'],
       },
       shape: {
         type: 'circle',
         stroke: {
           width: 0,
-          color: '#000000',
-        },
-        polygon: {
-          nb_sides: 5,
-        },
-        image: {
-          src: 'https://cdn.matteobruni.it/images/particles/github.svg',
-          width: 100,
-          height: 100,
+          color: '#b6b2b2',
         },
       },
       opacity: {
-        value: 1,
+        value: 0.9,
         random: false,
-        anim: {
-          enable: false,
-          speed: 3,
-          opacity_min: 0.1,
+        animation: {
+          enable: true,
+          speed: 1,
+          minimumValue: 0.1,
           sync: false,
         },
       },
       size: {
         value: 20,
-        random: false,
-        anim: {
+        random: true,
+        animation: {
           enable: true,
-          speed: 5,
-          size_min: 0.1,
-          sync: true,
-          startValue: 'min',
-          destroy: 'max',
+          speed: 12.181158184520175,
+          minimumValue: 0.1,
+          sync: false,
         },
       },
-      line_linked: {
-        enable: false,
+      lineLinked: {
+        enable: true,
         distance: 150,
-        color: '#ffffff',
+        color: '#c8c8c8',
         opacity: 0.4,
         width: 1,
       },
       move: {
         enable: true,
-        speed: 5,
+        speed: 1,
         direction: 'none',
         random: false,
         straight: false,
-        out_mode: 'destroy',
+        outMode: 'bounce',
+        bounce: false,
         attract: {
           enable: false,
           rotateX: 600,
@@ -100,34 +70,41 @@
       },
     },
     interactivity: {
-      detect_on: 'canvas',
+      detectOn: 'canvas',
       events: {
-        onhover: {
-          enable: false,
-          mode: 'repulse',
+        onHover: {
+          enable: true,
+          mode: 'grab',
+          parallax: {
+            enable: true,
+            force: 1000,
+            smooth: 10,
+          },
         },
-        onclick: {
-          enable: false,
-          mode: 'push',
+        onClick: {
+          enable: true,
+          mode: 'remove',
         },
         resize: true,
       },
       modes: {
         grab: {
           distance: 400,
-          line_linked: {
-            opacity: 1,
+          lineLinked: {
+            opacity: 0.5,
           },
         },
         bubble: {
-          distance: 400,
-          size: 40,
+          distance: 100,
+          size: 80,
           duration: 2,
-          opacity: 0.8,
+          opacity: 8,
           speed: 3,
         },
+        connect: {},
         repulse: {
-          distance: 200,
+          distance: 10,
+          duration: 0.1,
         },
         push: {
           particles_nb: 4,
@@ -137,7 +114,7 @@
         },
       },
     },
-    retina_detect: true,
+    detectRetina: true,
   }}
 />
 
