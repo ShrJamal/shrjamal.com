@@ -2,7 +2,7 @@
   import Icon from '@iconify/svelte'
   const projects = [
     {
-      name: 'Flutter Social',
+      name: 'FlutterFire Social',
       link: 'https://codecanyon.net/item/flutterfire-social-messenger/25605604',
       demo: 'https://codecanyon.net/item/flutterfire-social-messenger/25605604',
       img: '/flutter-social.webp',
@@ -63,9 +63,9 @@
           src={p.img}
           alt={p.name}
         />
-        <h3 class="mt-2 mb-1">{p.name}</h3>
+        <h3 class="mt-2 mb-1 text-xl">{p.name}</h3>
         <a
-          class="flex items-center text-primary"
+          class="flex items-center text-accent"
           href={p.demo}
           target="_blank"
           rel="noreferrer"
@@ -73,7 +73,7 @@
           <p>Demo</p>
           <Icon
             class="text-xl transition-transform duration-1000 translate-x-2"
-            icon="bxs-chevron-right"
+            icon="bxs-right-arrow-alt"
           />
         </a>
       </a>
