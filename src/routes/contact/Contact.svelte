@@ -39,41 +39,40 @@
   ]
 </script>
 
-<section class="mt-4 text-center " id="contact">
-  <div
-    class="flex flex-row flexa-col justify-center  items-center space-y-2 space-x-2"
-  >
-    {#each contactInfo as item (item.name)}
-      {#if item.name === 'Email'}
-        <div
-          class="rounded-xl p-2 flex flex-col items-center outline outline-[1px] outline-base-content"
-        >
-          <h3 class="text-lg flex items-center">
-            <Icon class="mr-1 text-2xl" icon={item.icon} />
-            Email
-          </h3>
-          <span>{item.url}</span>
-          <a
-            class="underline text-primary text-sm"
-            href={`mailto:${item.url}`}
-            target="_blank"
-            rel="noreferrer"
-            title={item.name}
-          >
-            Write me <i class=" bx-right-arrow-alt  underline" />
-          </a>
-        </div>
-      {:else}
+<section
+  class="mt-4 grid sm:grid-cols-9 grid-color-3  gap-2 justify-center items-center"
+  id="contact"
+>
+  {#each contactInfo as item (item.name)}
+    {#if item.name === 'Email'}
+      <div
+        class="bg-glass rounded-xl col-span-3 p-2 flex flex-col items-center outline outline-[1px] outline-base-content"
+      >
+        <h3 class="text-lg flex items-center">
+          <Icon class="mr-1 text-2xl" icon={item.icon} />
+          Email
+        </h3>
+        <span>{item.url}</span>
         <a
-          class="btn btn-circle btn-outline "
-          href={item.url}
+          class="underline text-primary text-sm"
+          href={`mailto:${item.url}`}
           target="_blank"
           rel="noreferrer"
           title={item.name}
         >
-          <Icon class="text-3xl " icon={item.icon} />
+          Write me <i class=" bx-right-arrow-alt  underline" />
         </a>
-      {/if}
-    {/each}
-  </div>
+      </div>
+    {:else}
+      <a
+        class="bg-glass btn btn-circle btn-outline "
+        href={item.url}
+        target="_blank"
+        rel="noreferrer"
+        title={item.name}
+      >
+        <Icon class="text-3xl " icon={item.icon} />
+      </a>
+    {/if}
+  {/each}
 </section>
