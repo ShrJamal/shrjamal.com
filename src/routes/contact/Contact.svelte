@@ -1,60 +1,79 @@
 <script>
   import Icon from '@iconify/svelte'
-  import { contactInfo, emailInfo, socialInfo } from './data'
+  const contactInfo = [
+    {
+      name: 'Github',
+      url: 'https://github.com/shrjamal',
+      icon: 'bxl-github',
+    },
+    {
+      name: 'Twitter',
+      url: 'https://twitter.com/shrjamal',
+      icon: 'bxl-twitter',
+    },
+    {
+      name: 'Linkdin',
+      url: 'https://www.linkedin.com/in/shrjamal',
+      icon: 'bxl-linkedin-square',
+    },
+    {
+      name: 'Email',
+      url: 'me@shrjamal.com',
+      icon: 'bx-mail-send',
+    },
+    {
+      name: 'Telegram',
+      url: 'https://t.me/jamalshr',
+      icon: 'bxl-telegram',
+    },
+    {
+      name: 'Skype',
+      url: 'https://join.skype.com/invite/bOsjSN8qhcQh',
+      icon: 'bxl-skype',
+    },
+    {
+      name: 'Whatsapp',
+      url: 'https://wa.me/2120700862543',
+      icon: 'bxl-whatsapp',
+    },
+  ]
 </script>
 
-<section class="text-center" id="contact">
-  <h2 class="text-2xl font-bold text-primary mb-2">Get in Touch</h2>
-
+<section class="mt-4 text-center " id="contact">
   <div
-    class="flex sm:flex-row flex-col justify-center  items-center space-y-2 space-x-2"
+    class="flex flex-row flexa-col justify-center  items-center space-y-2 space-x-2"
   >
-    <div class="flex space-x-2">
-      {#each socialInfo as item (item.name)}
+    {#each contactInfo as item (item.name)}
+      {#if item.name === 'Email'}
+        <div
+          class="rounded-xl p-2 flex flex-col items-center outline outline-[1px] outline-base-content"
+        >
+          <h3 class="text-lg flex items-center">
+            <Icon class="mr-1 text-2xl" icon={item.icon} />
+            Email
+          </h3>
+          <span>{item.url}</span>
+          <a
+            class="underline text-primary text-sm"
+            href={`mailto:${item.url}`}
+            target="_blank"
+            rel="noreferrer"
+            title={item.name}
+          >
+            Write me <i class=" bx-right-arrow-alt  underline" />
+          </a>
+        </div>
+      {:else}
         <a
-          class="btn btn-circle bg-base-100  "
+          class="btn btn-circle btn-outline "
           href={item.url}
           target="_blank"
           rel="noreferrer"
           title={item.name}
         >
-          <Icon class="text-blue-300 text-xl" icon={item.icon} />
+          <Icon class="text-3xl " icon={item.icon} />
         </a>
-      {/each}
-    </div>
-
-    <!-- Email -->
-    <div class="bg-base-200 rounded-xl p-4">
-      <div class="flex flex-col items-center">
-        <h3 class="text-lg flex items-center">
-          <Icon class="mr-1 text-2xl" icon={emailInfo.icon} />
-          Email
-        </h3>
-        <span>{emailInfo.url}</span>
-        <a
-          class="underline text-primary"
-          href={`mailto:${emailInfo.url}`}
-          target="_blank"
-          rel="noreferrer"
-          title={emailInfo.name}
-        >
-          Write me <i class=" bx-right-arrow-alt  underline" />
-        </a>
-      </div>
-    </div>
-    <!-- Contact me -->
-    <div class="flex space-x-2">
-      {#each contactInfo as item (item.name)}
-        <a
-          class="btn btn-circle bg-base-100  "
-          href={item.url}
-          target="_blank"
-          rel="noreferrer"
-          title={item.name}
-        >
-          <Icon class="text-blue-300 text-xl" icon={item.icon} />
-        </a>
-      {/each}
-    </div>
+      {/if}
+    {/each}
   </div>
 </section>
