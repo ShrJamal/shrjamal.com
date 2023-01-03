@@ -1,29 +1,63 @@
 <script>
   import Icon from '@iconify/svelte'
-  import { skills } from './data'
+  export const skills = [
+    {
+      name: 'Frontend',
+      techs: [
+        'HTML5',
+        'CSS3',
+        'Javascript',
+        'Typescript',
+        'Reactjs',
+        'Nextjs',
+        'Flutter',
+        'Svelte',
+      ],
+    },
+    {
+      name: 'Backend',
+      techs: [
+        'Nodejs',
+        'Nestjs',
+        'MongoDB',
+        'SQL',
+        'Redis',
+        'Graphql API',
+        'Firebase',
+      ],
+    },
+    // {
+    //   name: 'Web3 / Blockchain',
+    //   techs: [
+    //     'Solidity',
+    //     'Hardhat',
+    //     'Ether.js',
+    //     'Solana (Rust)',
+    //     'ThirdWeb',
+    //     'Moralis',
+    //     'Chai, Mocha',
+    //   ],
+    // },
+    // {
+    //   name: 'DevOps',
+    //   techs: ['Docker', 'AWS', 'Google Cloud', 'Digital Ocean'],
+    // },
+  ]
 </script>
 
-<section id="skills" class="mt-10 w-screen flex flex-col items-center">
-  <h2 class="text-primary text-2xl font-bold text-center">
-    Some Technologies I have experience with:
-  </h2>
-
-  <div
-    class="pt-4 px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-center "
-  >
+<section id="skills" class="mt-10 flex flex-col items-center">
+  <h2 class="gradient-text text-4xl">Skills</h2>
+  <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 ">
     {#each skills as s}
-      <div class="py-6 px-4 rounded-[1.25rem] w-[20rem] bg-base-300">
-        <h3 class="mb-6 font-bold text-center text-xl">
+      <div class="bg-glass px-4 rounded-xl w-[20rem] text-primary-content">
+        <h3 class="mt-2 mb-4 font-bold text-center text-xl">
           {s.name}
         </h3>
-        <div class="grid grid-cols-2 ">
+        <div class="mb-4 grid grid-cols-2 gap-2">
           {#each s.techs as tech}
-            <div class="flex">
+            <div class="flex ">
               <Icon class="text-primary" icon="bxs-badge-check" />
-              <div class="ml-2">
-                <h3 class="leading-4">{tech.name}</h3>
-                <!-- <span class="text-2xs">{tech.level}</span> -->
-              </div>
+              <h3 class="ml-2 leading-4">{tech}</h3>
             </div>
           {/each}
         </div>

@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bg-glass {
+  @apply shadow-lg border-[1px] border-solid border-gray-400;
+  @apply backdrop-brightness-105 backdrop-blur-xl;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+}
+
+.gradient-text {
+  @apply font-extrabold bg-clip-text text-transparent bg-gradient-to-tl from-primary to-primary-focus;
+}
