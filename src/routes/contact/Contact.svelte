@@ -40,13 +40,13 @@
 </script>
 
 <section
-  class="mt-4 grid sm:grid-cols-9 grid-color-3  gap-2 justify-center items-center"
+  class="mt-4 grid sm:grid-cols-9 grid-color-3 gap-2 justify-center items-center"
   id="contact"
 >
   {#each contactInfo as item (item.name)}
     {#if item.name === 'Email'}
       <div
-        class="bg-glass rounded-xl col-span-3 p-2 flex flex-col items-center outline outline-[1px] outline-base-content"
+        class="bg-glass rounded-xl col-span-3 p-2 flex flex-col items-center"
       >
         <h3 class="text-lg flex items-center">
           <Icon class="mr-1 text-2xl" icon={item.icon} />
