@@ -4,7 +4,7 @@
 
 .bg-glass {
   @apply shadow-lg border-[1px] border-solid border-gray-400;
-  @apply backdrop-brightness-105 backdrop-blur-xl;
+  @apply backdrop-brightness-105 backdrop-blur-sm;
   background: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.3) 0%,
@@ -14,5 +14,14 @@
 }
 
 .gradient-text {
-  @apply font-extrabold bg-clip-text text-transparent bg-gradient-to-tl from-primary to-primary-focus;
+  @apply font-extrabold bg-clip-text text-transparent bg-gradient-to-tl from-accent to-primary;
+}
+
+body {
+  background: radial-gradient(
+    circle at top left,
+    #0d47a1 0%,
+    rgba(4, 56, 102, 0.2) 50%,
+    rgba(42, 101, 238, 0.1) 100%
+  );
 }
