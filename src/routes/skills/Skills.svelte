@@ -56,7 +56,7 @@
         <div class="mb-4 grid grid-cols-2 gap-2">
           {#each s.techs as tech}
             <div class="flex ">
-              <Icon class="text-primary" icon="bxs-badge-check" />
+              <Icon class="text-accent" icon="bxs-badge-check" />
               <h3 class="ml-2 leading-4">{tech}</h3>
             </div>
           {/each}

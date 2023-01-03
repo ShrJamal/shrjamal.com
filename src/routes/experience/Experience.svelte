@@ -20,7 +20,7 @@
   ]
 </script>
 
-<section id="experience" class="mt-8 flex flex-col items-center px-4">
+<section id="experience" class="mt-8 flex flex-col items-center">
   <h2 class="gradient-text text-4xl ">Experience</h2>
   <div class="mt-4 grid sm:grid-cols-2 grid-cols-1 gap-4 ">
     {#each experiences as item}
