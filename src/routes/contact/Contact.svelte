@@ -40,7 +40,7 @@
 </script>
 
 <section
-  class="mt-4 grid sm:grid-cols-9 grid-color-3 gap-2 justify-center items-center"
+  class="max-w-[30rem] mx-auto mt-4 grid sm:grid-cols-9 grid-color-3 gap-2 justify-center items-center"
   id="contact"
 >
   {#each contactInfo as item (item.name)}

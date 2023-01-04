@@ -9,54 +9,90 @@
     await loadFull(eng)
   }}
   options={{
+    style: {
+      position: 'absolute',
+      width: '100%',
+      height: '100%',
+    },
     particles: {
       number: {
-        value: 200,
+        value: 10,
         density: {
           enable: true,
           area: 800,
+          factor: 1000,
         },
       },
       color: {
-        value: ['#BD10E0', '#B8E986', '#50E3C2', '#FFD300', '#E86363'],
+        value: [
+          '#3998D0',
+          '#2EB6AF',
+          '#A9BD33',
+          '#FEC73B',
+          '#F89930',
+          '#F45623',
+          '#D62E32',
+          '#EB586E',
+          '#9952CF',
+        ],
       },
       shape: {
         type: 'circle',
         stroke: {
-          width: 0,
-          color: '#b6b2b2',
+          width: 1,
+          color: '#c8c8c8',
         },
       },
-      opacity: {
-        value: 0.9,
+      size: {
+        value: 150,
         random: false,
         animation: {
           enable: true,
+          speed: 1,
+          minimumValue: 10,
+          sync: false,
+        },
+      },
+      opacity: {
+        value: 0.8,
+        random: false,
+        animation: {
+          enable: false,
           speed: 1,
           minimumValue: 0.1,
           sync: false,
         },
       },
-      size: {
-        value: 20,
-        random: true,
-        animation: {
-          enable: true,
-          speed: 12.181158184520175,
-          minimumValue: 0.1,
-          sync: false,
-        },
-      },
       lineLinked: {
-        enable: true,
+        enable: false,
         distance: 150,
         color: '#c8c8c8',
         opacity: 0.4,
         width: 1,
       },
+      collisions: {
+        enable: true,
+        mode: 'bounce',
+        bounce: {
+          horizontal: {
+            value: 10,
+            random: {
+              enable: false,
+              minimumValue: 0.1,
+            },
+          },
+          vertical: {
+            value: 10,
+            random: {
+              enable: false,
+              minimumValue: 0.1,
+            },
+          },
+        },
+      },
       move: {
         enable: true,
-        speed: 1,
+        speed: 0.2,
         direction: 'none',
         random: false,
         straight: false,
@@ -74,15 +110,15 @@
       events: {
         onHover: {
           enable: true,
-          mode: 'grab',
+          mode: 'push',
           parallax: {
             enable: true,
             force: 1000,
-            smooth: 10,
+            smooth: 100,
           },
         },
         onClick: {
-          enable: true,
+          enable: false,
           mode: 'remove',
         },
         resize: true,
@@ -124,9 +160,11 @@
     padding: 0;
     position: fixed;
     width: 100%;
-    height: 100%;
+    flex: 1;
+    height: 100rem;
     top: 0;
     left: 0;
+    bottom: 0;
     z-index: -1;
   }
 </style>
