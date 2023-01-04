@@ -6,7 +6,6 @@
     class="mt-10 bg-glass w-72 aspect-square rounded-full"
     src="/profile.webp"
     alt="ShrJamal Profile"
-    loading="lazy"
     width="288"
     height="288"
   />
