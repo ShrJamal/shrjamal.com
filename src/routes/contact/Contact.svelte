@@ -54,24 +54,24 @@
         </h3>
         <span>{item.url}</span>
         <a
-          class="underline text-primary text-sm"
+          class="underline text-slate-300 text-sm flex items-center"
           href={`mailto:${item.url}`}
           target="_blank"
           rel="noreferrer"
           title={item.name}
         >
-          Write me <i class=" bx-right-arrow-alt  underline" />
+          Write me <Icon icon="bx-right-arrow-alt" />
         </a>
       </div>
     {:else}
       <a
-        class="bg-glass btn btn-circle btn-outline "
+        class="bg-glass btn btn-circle btn-outline hover:bg-black"
         href={item.url}
         target="_blank"
         rel="noreferrer"
         title={item.name}
       >
-        <Icon class="text-3xl " icon={item.icon} />
+        <Icon class="text-3xl text-white" icon={item.icon} />
       </a>
     {/if}
   {/each}
