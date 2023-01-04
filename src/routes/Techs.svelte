@@ -2,16 +2,18 @@
   import Icon from '@iconify/svelte'
   export const skills = [
     {
+      name: 'Languages',
+      techs: ['HTML5', 'CSS3', 'Javascript', 'Typescript', 'Dart', 'Python'],
+    },
+    {
       name: 'Frontend',
       techs: [
-        'HTML5',
-        'CSS3',
-        'Javascript',
-        'Typescript',
-        'Reactjs',
+        'React',
         'Nextjs',
+        'TailwindCSS',
         'Flutter',
         'Svelte',
+        'SvelteKit',
       ],
     },
     {
@@ -46,7 +48,7 @@
 </script>
 
 <section id="skills" class="mt-10 flex flex-col items-center">
-  <h2 class="gradient-text text-4xl">Skills</h2>
+  <h2 class="gradient-text text-4xl">Techs</h2>
   <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 ">
     {#each skills as s}
       <div class="bg-glass px-4 rounded-xl w-[20rem] text-primary-content">
