@@ -4,6 +4,10 @@ import Intro from '~/components/Intro'
 import Projects from '~/components/Projects'
 import Techs from '~/components/Techs'
 
+export const config = {
+  runtime: 'edge',
+}
+
 export default function Page() {
   return (
     <main>
