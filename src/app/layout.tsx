@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import { Analytics } from '@vercel/analytics/react'
 import clsx from 'lib/clsx'
 
 import '~/global.css'
@@ -12,6 +13,7 @@ export default function RootLayout({ children }: Props) {
       <head></head>
       <body className={clsx('h-screen flex text-primary-content')}>
         {children}
+        <Analytics />
       </body>
     </html>
   )
