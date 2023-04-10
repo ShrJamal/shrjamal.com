@@ -1,26 +1,57 @@
+# Editor
 .DS_Store
 node_modules/
-.pnp/
-.pnp.js/
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.pnp
+.pnp.js
 *.pem
+.vscode/launch.json
+.fleet
 
-# build
+# Build
 build/
 package/
 dist/
 dist-ssr/
-.svelte-kit/
+.next/
+out/
+lib-types
+
+# Cache
+.cache
+.mf
+.rollup.cache
+tsconfig.tsbuildinfo
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Yarn
+.yarn/*
+!.yarn/releases
 
 # debug
 npm-debug.log*
+package-lock.json
 yarn-debug.log*
 yarn-error.log*
 yarn.lock
 pnpm-lock.yaml
-.pnpm-debug.log*
+pnpm-debug.log*
 
 # local env files
-.env
+# .env
 .env.local
 .env.development.local
 .env.test.local
@@ -30,7 +61,17 @@ pnpm-lock.yaml
 # vercel
 .vercel
 
-# prisma
-prisma/dev.db
-prisma/dev.db-journal
-prisma/migrations
+# PWA files
+**/public/sw.js
+**/public/workbox-*.js
+**/public/worker-*.js
+**/public/sw.js.map
+**/public/workbox-*.js.map
+**/public/worker-*.js.map
+
+# Prisma
+# prisma/dev.*
+# prisma/migrations
+
+# ContentLayer
+.contentlayer
