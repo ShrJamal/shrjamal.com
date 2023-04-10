@@ -1,8 +1,8 @@
-import Contact from './Contact'
-import Experience from './Experience'
-import Intro from './Intro'
-import Projects from './Projects'
-import Techs from './Techs'
+import Contact from '~/components/Contact'
+import Experience from '~/components/Experience'
+import Intro from '~/components/Intro'
+import Projects from '~/components/Projects'
+import Techs from '~/components/Techs'
 
 export default function Page() {
   return (
