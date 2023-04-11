@@ -28,6 +28,7 @@ export default function RootLayout({ children }: Props) {
 export const metadata: Metadata = {
   title: 'ShrJamal',
   description: 'Jamal Asahraoui Personal portfolio',
+  metadataBase: new URL('https://shrjamal.com'),
   openGraph: {
     title: 'ShrJamal',
     description: 'Jamal Asahraoui Personal portfolio',
