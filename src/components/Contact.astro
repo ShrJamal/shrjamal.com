@@ -1,0 +1,79 @@
+---
+import { Icon } from 'astro-icon'
+
+const contactInfo = [
+  {
+    name: 'Github',
+    url: 'https://github.com/shrjamal',
+    icon: 'mdi:github',
+  },
+  {
+    name: 'Twitter',
+    url: 'https://twitter.com/shrjamal',
+    icon: 'mdi:twitter',
+  },
+  {
+    name: 'Linkdin',
+    url: 'https://www.linkedin.com/in/shrjamal',
+    icon: 'mdi:linkedin',
+  },
+  {
+    name: 'Email',
+    url: 'me@shrjamal.com',
+    icon: 'mdi:envelope-outline',
+  },
+  {
+    name: 'Telegram',
+    url: 'https://t.me/jamalshr',
+    icon: 'mdi:telegram',
+  },
+  {
+    name: 'Skype',
+    url: 'https://join.skype.com/invite/bOsjSN8qhcQh',
+    icon: 'mdi:skype',
+  },
+  {
+    name: 'Whatsapp',
+    url: 'https://wa.me/2120700862543',
+    icon: 'mdi:whatsapp',
+  },
+]
+---
+
+<section
+  class="max-w-[30rem] mx-auto mt-4 grid sm:grid-cols-9 grid-color-3 gap-2 justify-center items-center"
+  id="contact"
+>
+  {
+    contactInfo.map((it) =>
+      it.name === 'Email' ? (
+        <div class="bg-glass rounded-xl col-span-3 p-2 flex flex-col items-center">
+          <h3 class="text-lg flex items-center">
+            <Icon class="mr-1 text-2xl" name={it.icon} size="20" />
+            Email
+          </h3>
+          <span>{it.url}</span>
+          <a
+            class="underline text-accent text-sm flex items-center"
+            href={`mailto:${it.url}`}
+            target="_blank"
+            rel="noreferrer"
+            title={it.name}
+          >
+            Write me <Icon name="mdi:arrow-right" size="20" />
+          </a>
+        </div>
+      ) : (
+        <a
+          class="bg-glass btn btn-circle btn-outline hover:bg-black"
+          href={it.url}
+          target="_blank"
+          rel="noreferrer"
+          title={it.name}
+        >
+          <Icon name={it.icon} class="text-3xl text-white" size="20" />{' '}
+        </a>
+      ),
+    )
+  }
+</section>

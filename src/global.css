@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 .bg-glass {
   @apply shadow-lg border-[1px] border-solid border-gray-400;
   @apply backdrop-brightness-105 backdrop-blur-sm;

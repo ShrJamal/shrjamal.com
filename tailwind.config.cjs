@@ -1,12 +1,18 @@
+const { fontFamily } = require('tailwindcss/defaultTheme')
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx,svelte}'],
+  darkMode: ['class', '[data-theme="dark"]'],
+  content: ['./src/**/*.{html,js,jsx,ts,tsx,astro,vue,svelte}'],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['var(--font-inter)', ...fontFamily.sans],
+      },
+    },
   },
   plugins: [require('daisyui')],
   daisyui: {
-    styled: true,
     themes: [
       {
         dark: {
@@ -17,9 +23,5 @@ module.exports = {
         },
       },
     ],
-    base: true,
-    utils: true,
-    logs: true,
-    rtl: false,
   },
 }

@@ -1,77 +1,25 @@
-# Editor
-.DS_Store
-node_modules/
-.idea
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-.pnp
-.pnp.js
-*.pem
-.vscode/launch.json
-.fleet
-
-# Build
-build/
-package/
+# build output
 dist/
-dist-ssr/
-.next/
-out/
-lib-types
+.output/
 
-# Cache
-.cache
-.mf
-.rollup.cache
-tsconfig.tsbuildinfo
+# dependencies
+node_modules/
 
-# Logs
-logs
-*.log
+# logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
-lerna-debug.log*
 
-# Yarn
-.yarn/*
-!.yarn/releases
 
-# debug
-npm-debug.log*
-package-lock.json
-yarn-debug.log*
-yarn-error.log*
-yarn.lock
-pnpm-lock.yaml
-pnpm-debug.log*
-
-# local env files
+# environment variables
 # .env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-*.local
+.env.production
 
-# vercel
-.vercel
+# macOS-specific files
+.DS_Store
 
-# PWA files
-**/public/sw.js
-**/public/workbox-*.js
-**/public/worker-*.js
-**/public/sw.js.map
-**/public/workbox-*.js.map
-**/public/worker-*.js.map
+package-lock.json
+pnpm-lock.yaml
 
-# Prisma
-# prisma/dev.*
-# prisma/migrations
-
-# ContentLayer
-.contentlayer
+.astro
