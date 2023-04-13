@@ -28,6 +28,7 @@
     "@typescript-eslint/parser": "^5.58.0",
     "astro": "^2.2.3",
     "astro-icon": "^0.8.0",
+    "astro-seo": "^0.7.2",
     "daisyui": "^2.51.5",
     "eslint": "^8.38.0",
     "eslint-plugin-astro": "^0.26.1",
