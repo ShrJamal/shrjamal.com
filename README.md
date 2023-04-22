@@ -1,3 +1,3 @@
-# Astro Playground
+# shrjamal.com
 
-This is astr playground for me to learn and play with the [Astro](https://astro.build/) framework.
+My Personal website built with Astro and Tailwind CSS.
