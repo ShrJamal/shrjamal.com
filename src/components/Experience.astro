@@ -1,10 +1,13 @@
 ---
+import UpworkImg from 'assets/images/upwork.webp'
+import FiverrImg from 'assets/images/fiverr.webp'
+import { Image } from 'astro:assets'
 const experiences = [
   {
     description:
       'Top Rated freelancer on Upwork, worked with more 30+ clients. I have 100% positive reviews on Upwork.',
     company: 'Upwork',
-    img: '/images/upwork.webp',
+    img: UpworkImg,
     alt: 'Shrjamal Upwork Profile',
     link: 'https://www.upwork.com/freelancers/shrjamal',
     date: 'since 2022',
@@ -12,7 +15,7 @@ const experiences = [
   {
     description: 'Level 1 Seller in Fiverr with 100% positive reviews.',
     company: 'Fiverr',
-    img: '/images/fiverr.webp',
+    img: FiverrImg,
     alt: 'Shrjamal Fiverr Profile',
     link: 'https://www.fiverr.com/jamalshr',
     date: 'since 2018',
@@ -31,7 +34,7 @@ const experiences = [
           target="_blank"
           rel="noreferrer"
         >
-          <img
+          <Image
             class="bg-white w-80 h-48 object-contain rounded-t-xl"
             width="160"
             height="120"

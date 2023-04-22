@@ -6,4 +6,7 @@ import tailwind from '@astrojs/tailwind'
 export default defineConfig({
   site: 'https://shrjamal.com',
   integrations: [sitemap(), tailwind()],
+  experimental: {
+    assets: true,
+  },
 })

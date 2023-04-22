@@ -1,43 +1,50 @@
 ---
 import { Icon } from 'astro-icon'
+import { Image } from 'astro:assets'
+import FluterFireImg from 'assets/images/flutter-social.webp'
+import ProshopImg from 'assets/images/proshop.webp'
+import LinkdapImg from 'assets/images/linkdap.webp'
+import CovidTrackerImg from 'assets/images/covid-tracker.webp'
+import WeWeb3Img from 'assets/images/weweb3.webp'
+import NFTTemplateImg from 'assets/images/nft-marketplace.webp'
 
 const projects = [
   {
     name: 'FlutterFire Social',
     link: 'https://codecanyon.net/item/flutterfire-social-messenger/25605604',
     demo: 'https://codecanyon.net/item/flutterfire-social-messenger/25605604',
-    img: '/images/flutter-social.webp',
+    img: FluterFireImg,
   },
   {
     name: 'Proshop',
     link: 'https://github.com/SHRJamal/proshop',
     demo: 'https://github.com/SHRJamal/proshop',
     // demo: 'https://shr-proshop.herokuapp.com/',
-    img: '/images/proshop.webp',
+    img: ProshopImg,
   },
   {
     name: 'Linkdap',
     link: 'https://linkdap.fly.dev',
     demo: 'https://linkdap.fly.dev',
-    img: '/images/linkdap.webp',
+    img: LinkdapImg,
   },
   {
     name: 'Covider Tracker',
     link: 'https://github.com/SHRJamal/covid-tracker',
     demo: 'https://covid-tracker.shrjamal.com',
-    img: '/images/covid-tracker.webp',
+    img: CovidTrackerImg,
   },
   {
     name: 'Web3 Template',
     link: 'https://github.com/weweb3/web3_template',
     demo: 'https://github.com/weweb3/web3_template',
-    img: '/images/weweb3.webp',
+    img: WeWeb3Img,
   },
   {
     name: 'NFT Marketplace',
     link: 'https://github.com/weweb3/nft-marketplace',
     demo: 'https://github.com/weweb3/nft-marketplace',
-    img: '/images/nft-marketplace.webp',
+    img: NFTTemplateImg,
   },
 ]
 ---
@@ -53,7 +60,7 @@ const projects = [
       projects.map((p) => (
         <div class="p-2 bg-glass rounded-xl flex flex-col ">
           <a href={p.link} target="_blank" rel="noreferrer">
-            <img
+            <Image
               class="w-[25rem] h-[20rem] rounded-xl object-cover overflow-clip"
               loading="lazy"
               width={320}
