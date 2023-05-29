@@ -1,0 +1,59 @@
+---
+import { SEO } from 'astro-seo'
+import { AppConfig } from '~/lib/config'
+import '~/assets/global.css'
+
+export interface LayoutProps {
+  title?: string
+  description?: string
+}
+
+const title = `${Astro.props.title} | ${AppConfig.site_name}`
+const description = Astro.props.description || AppConfig.description
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.png" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content={AppConfig.author} />
+    <SEO
+      title={`${title} | ${AppConfig.site_name}`}
+      description={description}
+      canonical={Astro.url.pathname}
+      titleDefault={title}
+      openGraph={{
+        image: {
+          url: AppConfig.favicon,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+        basic: {
+          title,
+          type: 'website',
+          image: AppConfig.favicon,
+          url: AppConfig.site,
+        },
+      }}
+      twitter={{
+        creator: '@shrjamal',
+        site: AppConfig.site,
+        title,
+        description,
+        image: AppConfig.favicon,
+        imageAlt: title,
+      }}
+    />
+    <script
+      async
+      defer
+      data-website-id="b59b48d7-8a5e-44ce-9fc5-d3966fb0dbff"
+      src="https://analytics.shrjamal.com/umami.js"></script>
+  </head>
+  <body class="h-screen flex flex-col text-primary-content">
+    <slot />
+  </body>
+</html>
