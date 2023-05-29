@@ -59,7 +59,12 @@ const projects = [
     {
       projects.map((p) => (
         <div class="p-2 bg-glass rounded-xl flex flex-col ">
-          <a href={p.link} target="_blank" rel="noreferrer">
+          <a
+            href={p.link}
+            title={p.name + ' source code'}
+            target="_blank"
+            rel="alternate"
+          >
             <Image
               class="w-[25rem] h-[20rem] rounded-xl object-cover overflow-clip"
               loading="lazy"
@@ -74,8 +79,9 @@ const projects = [
           <a
             class="flex items-center text-accent"
             href={p.demo}
+            title={p.name + ' demo'}
             target="_blank"
-            rel="noreferrer"
+            rel="alternate"
           >
             <p>Demo</p>
             <Icon

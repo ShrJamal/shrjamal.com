@@ -46,9 +46,9 @@ const contactInfo = [
           <a
             class="underline text-accent text-sm flex items-center"
             href={`mailto:${it.url}`}
+            title={it.name}
             target="_blank"
             rel="noreferrer"
-            title={it.name}
           >
             Write me <Icon name="mdi:arrow-right" size="20" />
           </a>
@@ -57,9 +57,9 @@ const contactInfo = [
         <a
           class="bg-glass btn btn-circle btn-outline hover:bg-black"
           href={it.url}
+          title={it.name}
           target="_blank"
           rel="noreferrer"
-          title={it.name}
         >
           <Icon name={it.icon} class="text-3xl text-white" size="20" />{' '}
         </a>
