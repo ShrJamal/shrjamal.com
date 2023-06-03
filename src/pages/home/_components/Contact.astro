@@ -13,11 +13,6 @@ const contactInfo = [
     icon: 'mdi:twitter',
   },
   {
-    name: 'Email',
-    url: 'me@shrjamal.com',
-    icon: 'mdi:envelope-outline',
-  },
-  {
     name: 'Linkdin',
     url: 'https://www.linkedin.com/in/shrjamal',
     icon: 'mdi:linkedin',
@@ -31,39 +26,20 @@ const contactInfo = [
 ---
 
 <section
-  class="mx-auto mt-4 flex space-x-2 justify-center items-center"
   id="contact"
+  class="mx-auto mt-4 flex space-x-2 justify-center items-center"
 >
   {
-    contactInfo.map((it) =>
-      it.name === 'Email' ? (
-        <div class="bg-glass rounded-xl col-span-3 p-2 flex flex-col items-center">
-          <h3 class="text-lg flex items-center">
-            <Icon class="mr-1 text-2xl" name={it.icon} size="20" />
-            Email
-          </h3>
-          <span>{it.url}</span>
-          <a
-            class="underline text-accent text-sm flex items-center"
-            href={`mailto:${it.url}`}
-            title={it.name}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Write me <Icon name="mdi:arrow-right" size="20" />
-          </a>
-        </div>
-      ) : (
-        <a
-          class="bg-glass btn btn-circle btn-outline hover:bg-black"
-          href={it.url}
-          title={it.name}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <Icon name={it.icon} class="text-3xl text-white" size="20" />{' '}
-        </a>
-      ),
-    )
+    contactInfo.map((it) => (
+      <a
+        class="bg-glass btn btn-circle btn-outline hover:bg-black"
+        href={it.url}
+        title={it.name}
+        target="_blank"
+        rel="noreferrer"
+      >
+        <Icon name={it.icon} class="text-3xl text-white" size="20" />
+      </a>
+    ))
   }
 </section>
