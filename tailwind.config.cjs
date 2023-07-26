@@ -2,8 +2,8 @@ const { fontFamily } = require('tailwindcss/defaultTheme')
 const themes = require('daisyui/src/theming/themes')
 
 module.exports = {
-  content: ['./src/**/*.{html,js,jsx,ts,tsx,astro,vue,svelte}'],
-  darkMode: ['class', '[data-theme="dark"]'],
+  content: ['./src/**/*.{html,jsx,tsx,astro,vue,svelte}'],
+  darkMode: ['class', '[data-theme="main"]'],
   theme: {
     extend: {
       fontFamily: {
@@ -15,13 +15,7 @@ module.exports = {
   daisyui: {
     themes: [
       {
-        light: {
-          ...themes['[data-theme=light]'],
-          primary: '#10aebd',
-          secondary: '#42DEE1',
-          accent: '#6DECB9',
-        },
-        dark: {
+        main: {
           ...themes['[data-theme=dark]'],
           primary: '#10aebd',
           secondary: '#42DEE1',
