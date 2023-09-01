@@ -1,11 +1,11 @@
 ---
-import UpworkImg from '~/assets/images/upwork.webp'
-import FiverrImg from '~/assets/images/fiverr.webp'
+import UpworkImg from '~/assets/images/upwork.png'
+import FiverrImg from '~/assets/images/fiverr.png'
 import { Image } from 'astro:assets'
 const experiences = [
   {
     description:
-      'Top Rated freelancer on Upwork, worked with more 30+ clients. I have 100% positive reviews on Upwork.',
+      'Top Rated Plus freelancer on Upwork, worked with more 30+ clients. I have 100% positive reviews on Upwork.',
     company: 'Upwork',
     img: UpworkImg,
     alt: 'Shrjamal Upwork Profile',
@@ -36,9 +36,7 @@ const experiences = [
           rel="noreferrer"
         >
           <Image
-            class="bg-white w-80 h-48 object-contain rounded-t-xl"
-            width="160"
-            height="120"
+            class="bg-white h-[18rem] object-contain rounded-t-xl"
             src={it.img}
             alt={it.alt}
             loading="lazy"
