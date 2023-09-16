@@ -25,20 +25,17 @@ const contactInfo = [
 ]
 ---
 
-<section
-  id="contact"
-  class="mx-auto mt-4 flex space-x-2 justify-center items-center"
->
+<section id="contact" class="mt-4 flex gap-x-2 justify-center items-center">
   {
     contactInfo.map((it) => (
       <a
-        class="bg-glass btn btn-circle btn-outline hover:bg-black"
+        class="bg-glass btn btn-circle btn-sm btn-outline hover:bg-black"
         href={it.url}
         title={it.name}
         target="_blank"
         rel="noreferrer"
       >
-        <Icon name={it.icon} class="text-3xl text-white" size="20" />
+        <Icon name={it.icon} class="text-white" size="20" />
       </a>
     ))
   }

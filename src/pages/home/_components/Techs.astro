@@ -24,14 +24,14 @@ const skills = [
 ]
 ---
 
-<section id="skills" class="mt-10 flex flex-col items-center">
+<section id="techs" class="flex flex-col items-center gap-3">
   <h2 class="gradient-text text-4xl">Techs</h2>
-  <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+  <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
     {
       skills.map((s) => (
-        <div class="bg-glass px-4 rounded-xl w-[20rem] text-primary-content">
-          <h3 class="mt-2 mb-4 font-bold text-center text-xl">{s.name}</h3>
-          <div class="mb-4 grid grid-cols-2 gap-2">
+        <div class="bg-glass px-4 py-2 rounded-xl h-[11rem] w-[20rem] text-primary-content">
+          <h3 class="font-bold text-center text-xl">{s.name}</h3>
+          <div class="pt-4 grid grid-cols-2 gap-2">
             {s.techs.map((t) => (
               <div class="flex ">
                 <Icon name="mdi:check-decagram" class="text-accent" size="20" />
