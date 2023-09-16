@@ -1,9 +1,8 @@
-# build output
+.DS_Store
+node_modules/
 dist/
 .output/
-
-# dependencies
-node_modules/
+.astro
 
 # logs
 npm-debug.log*
@@ -16,10 +15,7 @@ pnpm-debug.log*
 # .env
 .env.production
 
-# macOS-specific files
-.DS_Store
-
+# Lock files
 package-lock.json
 pnpm-lock.yaml
-
-.astro
+bun.lockb
