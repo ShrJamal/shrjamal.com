@@ -1,14 +1,16 @@
 ---
 import { SEO } from 'astro-seo'
-import { AppConfig } from '~/lib/config'
+import { AppConfig } from '~/app'
 import '~/assets/global.css'
 
-export interface LayoutProps {
+export interface Props {
+  class?: string
   title?: string
   description?: string
 }
 
-const title = `${Astro.props.title} | ${AppConfig.site_name}`
+const className = Astro.props.class
+const title = `${Astro.props.title || 'Home'} | ${AppConfig.site_name}`
 const description = Astro.props.description || AppConfig.description
 ---
 
@@ -16,9 +18,9 @@ const description = Astro.props.description || AppConfig.description
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content={AppConfig.author} />
+    <meta name="generator" content={Astro.generator} />
     <SEO
       title={`${title} | ${AppConfig.site_name}`}
       description={description}
@@ -39,7 +41,7 @@ const description = Astro.props.description || AppConfig.description
         },
       }}
       twitter={{
-        creator: '@shrjamal',
+        creator: AppConfig.twitter,
         site: AppConfig.site,
         title,
         description,
@@ -47,13 +49,17 @@ const description = Astro.props.description || AppConfig.description
         imageAlt: title,
       }}
     />
-    <script
-      async
-      defer
-      data-website-id="b59b48d7-8a5e-44ce-9fc5-d3966fb0dbff"
-      src="https://analytics.shrjamal.com/umami.js"></script>
+    {
+      import.meta.env.PROD && (
+        <script
+          type="text/partytown"
+          data-website-id="b59b48d7-8a5e-44ce-9fc5-d3966fb0dbff"
+          src="https://analytics.shrjamal.com/umami.js"
+        />
+      )
+    }
   </head>
-  <body class="h-screen flex flex-col text-primary-content">
+  <body class:list={['h-screen flex flex-col text-primary-content', className]}>
     <slot />
   </body>
 </html>
