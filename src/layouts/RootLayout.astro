@@ -49,15 +49,6 @@ const description = Astro.props.description || AppConfig.description
         imageAlt: title,
       }}
     />
-    {
-      import.meta.env.PROD && (
-        <script
-          type="text/partytown"
-          data-website-id="b59b48d7-8a5e-44ce-9fc5-d3966fb0dbff"
-          src="https://analytics.shrjamal.com/umami.js"
-        />
-      )
-    }
   </head>
   <body class:list={['h-screen flex flex-col text-primary-content', className]}>
     <slot />
