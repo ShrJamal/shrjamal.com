@@ -29,14 +29,14 @@ const ogImg = `${Astro.url.origin}/logo.webp`
     titleDefault={title}
     openGraph={{
       image: {
-        url: ogImg,
+        url: AppConfig.favicon,
         width: 840,
         height: 710,
         alt: title,
       },
       basic: {
         title,
-        image: ogImg,
+        image: AppConfig.favicon,
         type: 'website',
       },
     }}
