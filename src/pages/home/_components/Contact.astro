@@ -1,26 +1,24 @@
 ---
-import { Icon } from 'astro-icon'
-
 const contactInfo = [
   {
     name: 'Github',
     url: 'https://github.com/shrjamal',
-    icon: 'mdi:github',
+    icon: 'icon-[mdi--github]',
   },
   {
     name: 'Twitter',
     url: 'https://twitter.com/shrjamal',
-    icon: 'mdi:twitter',
+    icon: 'icon-[mdi--twitter]',
   },
   {
     name: 'Linkdin',
     url: 'https://www.linkedin.com/in/shrjamal',
-    icon: 'mdi:linkedin',
+    icon: 'icon-[mdi--linkedin]',
   },
   {
     name: 'Telegram',
     url: 'https://t.me/jamalshr',
-    icon: 'mdi:telegram',
+    icon: 'icon-[mdi--telegram]',
   },
 ]
 ---
@@ -35,7 +33,7 @@ const contactInfo = [
         target="_blank"
         rel="noreferrer"
       >
-        <Icon name={it.icon} class="text-white" size="20" />
+        <span class:list={[it.icon, 'text-white text-xl']} />
       </a>
     ))
   }

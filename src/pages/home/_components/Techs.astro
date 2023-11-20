@@ -1,5 +1,4 @@
 ---
-import { Icon } from 'astro-icon'
 const skills = [
   {
     name: 'Languages',
@@ -30,12 +29,12 @@ const skills = [
   <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
     {
       skills.map((s) => (
-        <div class="bg-glass px-4 py-2 rounded-xl h-[11rem] w-[20rem] text-primary-content">
-          <h3 class="font-bold text-center text-xl">{s.name}</h3>
+        <div class="bg-glass px-4 py-2 rounded-xl h-[11rem] w-[20rem]">
+          <h3 class="font-bold text-center text-2xl">{s.name}</h3>
           <div class="pt-4 grid grid-cols-2 gap-2">
             {s.techs.map((t) => (
               <div class="flex ">
-                <Icon name="mdi:check-decagram" class="text-accent" size="20" />
+                <span class="text-accent icon-[mdi--check-decagram]" />
                 <h3 class="ml-2 leading-4">{t}</h3>
               </div>
             ))}

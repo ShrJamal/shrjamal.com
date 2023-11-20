@@ -1,6 +1,5 @@
 ---
-import { SEO } from 'astro-seo'
-import { AppConfig } from '~/app'
+import BaseHead from '../components/BaseHead.astro'
 import '~/assets/global.css'
 
 export interface Props {
@@ -10,48 +9,11 @@ export interface Props {
 }
 
 const className = Astro.props.class
-const title = `${Astro.props.title || 'Home'} | ${AppConfig.site_name}`
-const description = Astro.props.description || AppConfig.description
 ---
 
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="sitemap" href="/sitemap-index.xml" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content={AppConfig.author} />
-    <meta name="generator" content={Astro.generator} />
-    <SEO
-      title={`${title} | ${AppConfig.site_name}`}
-      description={description}
-      canonical={Astro.url.pathname}
-      titleDefault={title}
-      openGraph={{
-        image: {
-          url: AppConfig.favicon,
-          width: 1200,
-          height: 630,
-          alt: title,
-        },
-        basic: {
-          title,
-          type: 'website',
-          image: AppConfig.favicon,
-          url: AppConfig.site,
-        },
-      }}
-      twitter={{
-        creator: AppConfig.twitter,
-        site: AppConfig.site,
-        title,
-        description,
-        image: AppConfig.favicon,
-        imageAlt: title,
-      }}
-    />
-  </head>
-  <body class:list={['h-screen flex flex-col text-primary-content', className]}>
-    <slot />
+  <BaseHead {...Astro.props} />
+  <body class:list={['flex flex-col min-h-screen items-center', className]}>
+    <slot class="flex-1" />
   </body>
 </html>
