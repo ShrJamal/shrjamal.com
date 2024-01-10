@@ -13,7 +13,7 @@
     "preview": "astro preview",
     "check": "astro check --watch ",
     "format": "prettier -w .",
-    "lint": "eslint . --ext .",
+    "lint": "eslint .",
     "prepare": "npx simple-git-hooks"
   },
   "dependencies": {

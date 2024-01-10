@@ -39,7 +39,7 @@ const ogImg = `${Astro.url.origin}/logo.webp`
     }}
     twitter={{
       creator: AppConfig.twitter,
-      site: AppConfig.site,
+      site: import.meta.env.SITE,
       title,
       description,
       imageAlt: title,
