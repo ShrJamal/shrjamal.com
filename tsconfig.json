@@ -1,5 +1,5 @@
 {
-  "extends": "astro/tsconfigs/strict",
+  "extends": "astro/tsconfigs/strictest",
   "compilerOptions": {
     "strictNullChecks": true,
     "baseUrl": ".",
@@ -7,5 +7,5 @@
       "~/*": ["src/*"]
     }
   },
-  "include": ["src", "astro.config.js"]
+  "include": ["src", "astro.config.ts"]
 }
