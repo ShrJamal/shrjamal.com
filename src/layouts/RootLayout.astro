@@ -13,7 +13,9 @@ const className = Astro.props.class
 
 <html lang="en">
   <BaseHead {...Astro.props} />
-  <body class:list={['flex flex-col min-h-screen items-center', className]}>
+  <body
+    class:list={['w-screen min-h-svh flex flex-col items-center', className]}
+  >
     <slot class="flex-1" />
   </body>
 </html>

@@ -16,10 +16,7 @@ const ogImg = `${Astro.url.origin}/logo.webp`
 <head>
   <meta charset="utf-8" />
   <link rel="icon" type="image/svg" href="/favicon.svg" />
-  <link rel="sitemap" href="/sitemap-index.xml" />
-  <meta name="canonical" content={Astro.url} />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="author" content={AppConfig.author} />
   <meta name="generator" content={Astro.generator} />
   <ViewTransitions />
   <SEO
@@ -29,14 +26,14 @@ const ogImg = `${Astro.url.origin}/logo.webp`
     titleDefault={title}
     openGraph={{
       image: {
-        url: AppConfig.favicon,
+        url: ogImg,
         width: 840,
         height: 710,
         alt: title,
       },
       basic: {
         title,
-        image: AppConfig.favicon,
+        image: ogImg,
         type: 'website',
       },
     }}

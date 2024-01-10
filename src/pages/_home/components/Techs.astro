@@ -29,7 +29,7 @@ const skills = [
   <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
     {
       skills.map((s) => (
-        <div class="bg-glass px-4 py-2 rounded-xl h-[11rem] w-[20rem]">
+        <div class="bg-glass px-4 py-2 rounded-xl h-[11rem] max-w-[20rem] w-full">
           <h3 class="font-bold text-center text-2xl">{s.name}</h3>
           <div class="pt-4 grid grid-cols-2 gap-2">
             {s.techs.map((t) => (
