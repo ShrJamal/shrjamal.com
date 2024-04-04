@@ -1,6 +1,6 @@
 ---
 import RootLayout from '~/layouts/RootLayout.astro'
-import Navbar from '~/components/Navbar.astro'
+import Navbar from '~/components/core/TheNavbar.astro'
 import Contact from './components/Contact.astro'
 import Experience from './components/Experience.astro'
 import Intro from './components/Intro.astro'
@@ -8,11 +8,14 @@ import Projects from './components/Projects.astro'
 import Techs from './components/Techs.astro'
 ---
 
-<RootLayout title="Asahraoui Jamal Personal Portfolio website">
+<RootLayout
+  title="Asahraoui Jamal Personal Portfolio website"
+  class="mx-auto max-w-[70rem] px-2"
+>
   <Navbar>
     <Contact />
   </Navbar>
-  <main class="mx-auto py-10 px-2 sm:p-10 max-w-[70rem]">
+  <main class="py-10 sm:p-10">
     <Intro />
     <Techs />
     <Experience />

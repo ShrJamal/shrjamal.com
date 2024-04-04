@@ -1,6 +1,6 @@
 .bg-glass {
-  @apply shadow-lg border-[1px] border-solid border-gray-400;
-  @apply backdrop-brightness-105 backdrop-blur-sm;
+  @apply border-[1px] border-solid border-gray-400 shadow-lg;
+  @apply backdrop-blur-sm backdrop-brightness-105;
   background: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.3) 0%,
@@ -10,7 +10,7 @@
 }
 
 .gradient-text {
-  @apply font-extrabold bg-clip-text text-transparent bg-gradient-to-tl from-yellow-400 to-white;
+  @apply bg-gradient-to-tl from-yellow-400 to-white bg-clip-text font-extrabold text-transparent;
 }
 
 :root {

@@ -13,10 +13,9 @@ const skills = [
     techs: [
       'Nodejs',
       'Nestjs',
-      'MongoDB',
       'SQL',
       'Redis',
-      'Graphql API',
+      'Graphql',
       'Supabase',
       'Firebase',
     ],
@@ -26,15 +25,15 @@ const skills = [
 
 <section id="techs" class="flex flex-col items-center gap-3">
   <h2 class="gradient-text text-4xl">Techs</h2>
-  <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+  <div class="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
     {
       skills.map((s) => (
-        <div class="bg-glass px-4 py-2 rounded-xl h-[11rem] max-w-[20rem] w-full">
-          <h3 class="font-bold text-center text-2xl">{s.name}</h3>
-          <div class="pt-4 grid grid-cols-2 gap-2">
+        <div class="bg-glass h-[11rem] w-full max-w-[20rem] rounded-xl px-4 py-2">
+          <h3 class="text-center text-2xl font-bold">{s.name}</h3>
+          <div class="grid grid-cols-2 gap-2 pt-4">
             {s.techs.map((t) => (
               <div class="flex ">
-                <span class="text-accent icon-[mdi--check-decagram]" />
+                <span class="icon-[mdi--check-decagram] text-accent" />
                 <h3 class="ml-2 leading-4">{t}</h3>
               </div>
             ))}

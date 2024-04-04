@@ -25,18 +25,18 @@ const experiences = [
 
 <section id="experience" class="mt-8 flex flex-col items-center">
   <h2 class="gradient-text text-4xl">Experience</h2>
-  <div class="mt-4 grid md:grid-cols-2 grid-cols-1 gap-4">
+  <div class="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
     {
       experiences.map((it) => (
         <a
-          class="bg-glass max-w-[20rem] flex flex-col rounded-xl p-2"
+          class="bg-glass flex max-w-[20rem] flex-col rounded-xl p-2"
           href={it.link}
           title={it.alt}
           target="_blank"
           rel="noreferrer"
         >
           <Image
-            class="bg-white h-[18rem] object-contain rounded-t-xl"
+            class="h-[18rem] rounded-t-xl bg-white object-contain"
             src={it.img}
             alt={it.alt}
             loading="lazy"

@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://shrjamal.com/sitemap-index.xml
