@@ -3,9 +3,10 @@
   "description": "My Personal website, https://cjamal.com",
   "author": "Jamal .S | https://cjamal.com",
   "version": "0.0.1",
-  "private": true,
-  "license": "MIT",
   "type": "module",
+  "engines": {
+    "node": ">=18.18"
+  },
   "scripts": {
     "astro": "astro",
     "dev": "astro dev",
