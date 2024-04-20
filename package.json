@@ -1,5 +1,5 @@
 {
-  "name": "shrjamal.com",
+  "name": "cjamal.com",
   "description": "My Personal website, https://cjamal.com",
   "author": "Jamal .S | https://cjamal.com",
   "version": "0.0.1",
@@ -10,43 +10,22 @@
   "scripts": {
     "astro": "astro",
     "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro build",
-    "check": "astro check --watch ",
-    "format": "prettier -w .",
-    "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
+    "build": "astro check && astro build",
+    "preview": "astro check && astro build && astro preview",
+    "format": "biome format --write .",
+    "lint": "biome lint .",
     "prepare": "npx simple-git-hooks"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.5.10",
     "@astrojs/tailwind": "^5.1.0",
-    "@iconify/json": "^2.2.197",
+    "@biomejs/biome": "1.7.0",
+    "@iconify/json": "^2.2.202",
     "@iconify/tailwind": "^0.1.4",
-    "@typescript-eslint/eslint-plugin": "^7.5.0",
-    "@typescript-eslint/parser": "^7.5.0",
-    "astro": "^4.5.15",
+    "astro": "^4.6.3",
     "astro-meta-tags": "^0.2.2",
-    "daisyui": "^4.9.0",
-    "eslint": "^8.57.0",
-    "eslint-plugin-astro": "^0.33.1",
-    "eslint-plugin-jsx-a11y": "^6.8.0",
-    "lint-staged": "^15.2.2",
-    "prettier": "^3.2.5",
-    "prettier-plugin-astro": "^0.13.0",
-    "prettier-plugin-tailwindcss": "^0.5.13",
-    "sharp": "^0.33.3",
-    "simple-git-hooks": "^2.11.1",
+    "daisyui": "^4.10.2",
     "tailwindcss": "^3.4.3",
-    "typescript": "^5.4.3"
-  },
-  "simple-git-hooks": {
-    "pre-commit": "npx lint-staged"
-  },
-  "lint-staged": {
-    "*.{html,js,jsx,cjs,mjs,ts,tsx}": [
-      "eslint --fix"
-    ],
-    "*.{js,jsx,ts,tsx}": [
-      "prettier --write"
-    ]
+    "typescript": "^5.4.5"
   }
 }

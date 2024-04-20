@@ -4,7 +4,9 @@ export const GET: APIRoute = async () => {
   return new Response(
     `<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-      ${['/'].map((path) => getXMLEntry({ path, lastmod: '27 March 2024' })).join('')}
+      ${['/']
+        .map((path) => getXMLEntry({ path, lastmod: '27 March 2024' }))
+        .join('')}
     </urlset>
 	`,
     {
