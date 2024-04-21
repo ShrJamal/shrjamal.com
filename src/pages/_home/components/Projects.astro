@@ -5,84 +5,118 @@ import ProshopImg from '~/assets/imgs/proshop.webp'
 import LinkdapImg from '~/assets/imgs/linkdap.webp'
 import CovidTrackerImg from '~/assets/imgs/covid-tracker.webp'
 import WeWeb3Img from '~/assets/imgs/weweb3.webp'
-import NFTTemplateImg from '~/assets/imgs/nft-marketplace.webp'
+import { capitalize } from '~/lib/utils'
 
 const projects = [
   {
     name: 'FlutterFire Social',
-    link: 'https://codecanyon.net/item/flutterfire-social-messenger/25605604',
-    demo: 'https://codecanyon.net/item/flutterfire-social-messenger/25605604',
+    src: 'https://codecanyon.net/item/flutterfire-social-messenger/25605604',
     img: FluterFireImg,
+    description:
+      'Fully functional social media app, people can post text, images, and like, comment. It has a chat feature, and a notification system. ',
+    techs: ['dart', 'flutter', 'firebase', 'android', 'ios'],
   },
   {
-    name: 'Linkdap',
-    link: 'https://linkdap.fly.dev',
-    demo: 'https://linkdap.fly.dev',
+    name: 'Linkdap.com',
+    src: 'https://linkdap.fly.dev',
     img: LinkdapImg,
+    description: 'Linkdap is a social media platform for sharing links.',
+    techs: ['ts', 'react', 'nextjs', 'tailwindcss', 'supabase'],
   },
   {
     name: 'Proshop',
-    link: 'https://github.com/SHRJamal/proshop',
-    demo: 'https://github.com/SHRJamal/proshop',
-    // demo: 'https://shr-proshop.herokuapp.com/',
+    src: 'https://shr-proshop.herokuapp.com/',
+    sourceCode: 'https://github.com/SHRJamal/proshop',
     img: ProshopImg,
+    description: 'Proshop is an e-commerce platform built with MERN stack.',
+    techs: ['ts', 'react', 'nodejs', 'express', 'mongodb', 'bootstrap'],
   },
   {
     name: 'Covider Tracker',
-    link: 'https://github.com/SHRJamal/covid-tracker',
-    demo: 'https://covid-tracker.shrjamal.com',
+    src: 'https://covid-tracker.shrjamal.com',
+    sourceCode: 'https://github.com/SHRJamal/covid-tracker',
     img: CovidTrackerImg,
+    description: 'Covid Tracker is a web app that tracks covid cases.',
+    techs: ['ts', 'react', 'mui', 'leaflet'],
   },
   {
     name: 'Web3 Template',
-    link: 'https://github.com/weweb3/web3_template',
-    demo: 'https://github.com/weweb3/web3_template',
+    sourceCode: 'https://github.com/weweb3/web3_template',
     img: WeWeb3Img,
-  },
-  {
-    name: 'NFT Marketplace',
-    link: 'https://github.com/weweb3/nft-marketplace',
-    demo: 'https://github.com/weweb3/nft-marketplace',
-    img: NFTTemplateImg,
+    description: 'Web3 Template is a template for web3 projects.',
+    techs: ['ts', 'react', 'nextjs', 'tailwindcss'],
   },
 ]
 ---
 
-<section id="projects" class="my-8 flex flex-col items-center">
-  <span class="gradient-text text-4xl">Featured Projects</span>
-  <h2 class="text-sm text-base-content">Some Things I&apos;ve built</h2>
-
-  <div class="grid grid-cols-1 gap-4 pt-4 md:grid-cols-2 lg:grid-cols-3">
+<section id="projects" class="flex flex-col gap-1">
+  <h2 class="gradient-text text-4xl">Featured Projects</h2>
+  <div class="flex flex-col gap-4">
     {
       projects.map((p) => (
-        <div class="bg-glass flex flex-col rounded-xl p-2 ">
-          <a
-            href={p.link}
-            title={p.name + ' source code'}
-            target="_blank"
-            rel="alternate"
-          >
-            <Image
-              class="h-[20rem] w-[25rem] overflow-clip rounded-xl object-cover"
-              loading="lazy"
-              width={320}
-              height={480}
-              src={p.img}
-              alt={p.name}
-            />
-            <h3 class="mb-1 mt-2 text-xl">{p.name}</h3>
-          </a>
+        <div
+          class:list={[
+            'flex rounded p-2 gap-3 bg-secondary/20',
+            'border-[1px] border-solid border-gray-400 shadow-lg relative',
+            'min-h-[10rem]',
+          ]}
+        >
+          <Image
+            class="min-h-full w-[8rem] md:w-[12rem] rounded object-cover"
+            loading="lazy"
+            width={320}
+            height={480}
+            src={p.img}
+            alt={p.name}
+          />
+          <div class="flex-1 text-base-content min-h-full flex flex-col gap-1 ">
+            <h3 class="text-xl font-bold">{p.name}</h3>
+            <p class="flex-1">{p.description}</p>
 
-          <a
-            class="flex items-center text-accent"
-            href={p.demo}
-            title={p.name + ' demo'}
-            target="_blank"
-            rel="alternate"
-          >
-            <p>Demo</p>
-            <span class="icon-[mdi--arrow-right] translate-x-2 text-xl transition-transform duration-1000" />
-          </a>
+            <div
+              class:list={[
+                'min-w-full flex flex-wrap gap-2 items-center justify-between',
+              ]}
+            >
+              <div class="flex gap-2">
+                {p.techs.map((tech) => (
+                  <img
+                    class="h-5"
+                    src={`/logos/${tech}.svg`}
+                    alt={`${capitalize(tech)} logo`}
+                    title={`${capitalize(tech)}`}
+                  />
+                ))}
+              </div>
+              <div class="min-w-[6rem] flex-1" />
+              <div class="flex gap-2 justify-end flex-1">
+                {p.sourceCode && (
+                  <a
+                    class="btn btn-outline btn-sm rounded gap-1 px-2"
+                    title={`View ${p.name} source code`}
+                    target="_blank"
+                    rel="alternate"
+                    href={p.sourceCode}
+                  >
+                    <span class="icon-[mdi--github] text-xl" />
+                    <p>Code</p>
+                  </a>
+                )}
+                {p.src && (
+                  <a
+                    class="btn btn-sm rounded gap-1 px-2"
+                    title={`Visit ${p.name}`}
+                    href={p.src}
+                    target="_blank"
+                    rel="alternate"
+                  >
+                    <p>Visit</p>
+                    <span class="icon-[mdi--arrow-right] text-xl" />
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
         </div>
       ))
     }

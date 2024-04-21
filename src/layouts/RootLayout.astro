@@ -18,9 +18,16 @@ const className = Astro.props.class
     <BaseHead {...Astro.props} />
     <slot name="head" />
   </head>
-  <body
-    class:list={['flex min-h-svh w-screen flex-col items-center', className]}
-  >
+  <body class:list={['flex min-h-svh flex-col items-center', className]}>
     <slot />
+
+    <div
+      class:list={[
+        'w-full h-full',
+        'fixed z-[-1] -left-[2rem] -bottom-[5rem] blur-3xl',
+        'from-primary bg-gradient-to-tr to-base-200 ',
+      ]}
+    >
+    </div>
   </body>
 </html>

@@ -30,9 +30,9 @@ const config = {
       {
         main: {
           ...require('daisyui/src/theming/themes').dark,
-          primary: '#10aebd',
-          secondary: '#42DEE1',
-          accent: '#6DECB9',
+          primary: '#1a86fa',
+          secondary: '#0d47a1',
+          accent: '#047dfc',
           'base-content': '#ffffff',
         },
       },

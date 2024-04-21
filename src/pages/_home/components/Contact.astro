@@ -1,4 +1,8 @@
 ---
+export interface Props {
+  class?: string
+}
+
 const contactInfo = [
   {
     name: 'Github',
@@ -23,18 +27,22 @@ const contactInfo = [
 ]
 ---
 
-<section id="contact" class="flex items-center justify-center gap-x-2">
-  {
-    contactInfo.map((it) => (
-      <a
-        class="bg-glass btn btn-circle btn-outline btn-sm hover:bg-black"
-        href={it.url}
-        title={it.name}
-        target="_blank"
-        rel="noreferrer"
-      >
-        <span class:list={[it.icon, 'text-xl text-white']} />
-      </a>
-    ))
-  }
+<section id="contact" class:list={[Astro.props.class, 'flex flex-col gap-1']}>
+  <h2 class="text-xl font-bold text-start">Find me on:</h2>
+  <div class="flex items-center gap-2">
+    {
+      contactInfo.map((it) => (
+        <a
+          class="bg-glass btn btn-outline btn-sm hover:bg-black"
+          href={it.url}
+          title={it.name}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <span class:list={[it.icon, 'text-xl text-white']} />
+          <span>{it.name}</span>
+        </a>
+      ))
+    }
+  </div>
 </section>
