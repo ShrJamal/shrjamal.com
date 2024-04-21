@@ -16,28 +16,45 @@ const config = {
         sm: '640px',
         mb: '520px',
         md: '768px',
-        lg: '1024px',
-        xl: '1280px',
-        '2xl': '1536px',
-        '3xl': '1920px',
+      },
+      colors: {
+        border: 'hsl(var(--border) / <alpha-value>)',
+        input: 'hsl(var(--input) / <alpha-value>)',
+        ring: 'hsl(var(--ring) / <alpha-value>)',
+        background: 'hsl(var(--background) / <alpha-value>)',
+        foreground: 'hsl(var(--foreground) / <alpha-value>)',
+        primary: {
+          DEFAULT: 'hsl(var(--primary) / <alpha-value>)',
+          foreground: 'hsl(var(--primary-foreground) / <alpha-value>)',
+        },
+        secondary: {
+          DEFAULT: 'hsl(var(--secondary) / <alpha-value>)',
+          foreground: 'hsl(var(--secondary-foreground) / <alpha-value>)',
+        },
+        destructive: {
+          DEFAULT: 'hsl(var(--destructive) / <alpha-value>)',
+          foreground: 'hsl(var(--destructive-foreground) / <alpha-value>)',
+        },
+        muted: {
+          DEFAULT: 'hsl(var(--muted) / <alpha-value>)',
+          foreground: 'hsl(var(--muted-foreground) / <alpha-value>)',
+        },
+        accent: {
+          DEFAULT: 'hsl(var(--accent) / <alpha-value>)',
+          foreground: 'hsl(var(--accent-foreground) / <alpha-value>)',
+        },
+        popover: {
+          DEFAULT: 'hsl(var(--popover) / <alpha-value>)',
+          foreground: 'hsl(var(--popover-foreground) / <alpha-value>)',
+        },
+        card: {
+          DEFAULT: 'hsl(var(--card) / <alpha-value>)',
+          foreground: 'hsl(var(--card-foreground) / <alpha-value>)',
+        },
       },
     },
   },
-  plugins: [require('daisyui'), addDynamicIconSelectors()],
-  daisyui: {
-    logs: false,
-    themes: [
-      {
-        main: {
-          ...require('daisyui/src/theming/themes').dark,
-          primary: '#1a86fa',
-          secondary: '#0d47a1',
-          accent: '#047dfc',
-          'base-content': '#ffffff',
-        },
-      },
-    ],
-  },
+  plugins: [addDynamicIconSelectors()],
 }
 
 export default config

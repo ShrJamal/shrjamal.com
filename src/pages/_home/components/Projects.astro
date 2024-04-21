@@ -63,7 +63,6 @@ const projects = [
         >
           <Image
             class="min-h-full w-[8rem] md:w-[12rem] rounded object-cover"
-            loading="lazy"
             width={320}
             height={480}
             src={p.img}
@@ -92,7 +91,7 @@ const projects = [
               <div class="flex gap-2 justify-end flex-1">
                 {p.sourceCode && (
                   <a
-                    class="btn btn-outline btn-sm rounded gap-1 px-2"
+                    class="btn border-2 btn-outline rounded gap-1 px-2"
                     title={`View ${p.name} source code`}
                     target="_blank"
                     rel="alternate"
@@ -104,7 +103,7 @@ const projects = [
                 )}
                 {p.src && (
                   <a
-                    class="btn btn-sm rounded gap-1 px-2"
+                    class="btn bg-glass gap-1 px-2"
                     title={`Visit ${p.name}`}
                     href={p.src}
                     target="_blank"
