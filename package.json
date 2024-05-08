@@ -13,8 +13,7 @@
     "build": "astro check && astro build",
     "preview": "astro check && astro build && astro preview",
     "format": "biome format --write .",
-    "lint": "biome lint .",
-    "prepare": "npx simple-git-hooks"
+    "lint": "biome lint ."
   },
   "devDependencies": {
     "@astrojs/check": "^0.6.0",
