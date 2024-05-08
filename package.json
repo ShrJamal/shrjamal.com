@@ -17,13 +17,13 @@
     "prepare": "npx simple-git-hooks"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.5.10",
+    "@astrojs/check": "^0.6.0",
     "@astrojs/tailwind": "^5.1.0",
-    "@biomejs/biome": "1.7.0",
-    "@iconify/json": "^2.2.202",
-    "@iconify/tailwind": "^0.1.4",
-    "astro": "^4.6.3",
-    "astro-meta-tags": "^0.2.2",
+    "@biomejs/biome": "1.7.3",
+    "@iconify/json": "^2.2.207",
+    "@iconify/tailwind": "^1.0.1",
+    "astro": "^4.7.1",
+    "astro-meta-tags": "^0.3.0",
     "tailwindcss": "^3.4.3",
     "typescript": "^5.4.5"
   }
