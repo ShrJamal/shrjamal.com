@@ -1,20 +1,14 @@
-import type { APIRoute } from 'astro'
+export const prerender = true
 
-const SITE = import.meta.env.SITE
-
-export const GET: APIRoute = async () => {
-  return new Response(
-    `
-	User-agent: *
-	Allow: /
-
-	Sitemap: ${SITE}/sitemap.xml
-	`,
-    {
-      headers: {
-        'content-type': 'text/plain',
-        'Cache-Control': 'public, max-age=604800', // 1 week cache
-      },
+export const GET = () => {
+  const rules = [
+    'User-agent: *',
+    'Allow: /',
+    `Sitemap: ${import.meta.env.SITE}/sitemap.xml`,
+  ]
+  return new Response(rules.join('\n'), {
+    headers: {
+      'content-type': 'text/plain',
     },
-  )
+  })
 }
