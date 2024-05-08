@@ -5,5 +5,10 @@ import metaTags from 'astro-meta-tags'
 // https://astro.build/config
 export default defineConfig({
   site: 'https://cjamal.com',
-  integrations: [tailwind(), metaTags()],
+  integrations: [
+    metaTags(),
+    tailwind({
+      applyBaseStyles: false,
+    }),
+  ],
 })

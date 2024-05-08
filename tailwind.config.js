@@ -3,8 +3,10 @@ import { addDynamicIconSelectors } from '@iconify/tailwind'
 
 /** @type {import('tailwindcss').Config} */
 const config = {
-  darkMode: ['class'],
   content: ['./src/**/*.{html,js,jsx,ts,tsx,astro,vue,svelte,mdx}'],
+  darkMode: ['class'],
+  safelist: ['dark'],
+  plugins: [addDynamicIconSelectors()],
   theme: {
     extend: {
       fontFamily: {
@@ -13,9 +15,6 @@ const config = {
       screens: {
         '2xs': '375px',
         xs: '475px',
-        sm: '640px',
-        mb: '520px',
-        md: '768px',
       },
       colors: {
         border: 'hsl(var(--border) / <alpha-value>)',
@@ -54,7 +53,6 @@ const config = {
       },
     },
   },
-  plugins: [addDynamicIconSelectors()],
 }
 
 export default config
