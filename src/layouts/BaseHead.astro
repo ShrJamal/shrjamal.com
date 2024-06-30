@@ -13,19 +13,18 @@ const description = Astro.props.description || AppConfig.description
 const ogImg = Astro.props.ogImg || '/logo.webp'
 ---
 
-<!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 <meta name="generator" content={Astro.generator} />
-
-<!-- Canonical URL -->
 <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
+
+<!-- Icons -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
@@ -45,7 +44,19 @@ const ogImg = Astro.props.ogImg || '/logo.webp'
 <meta property="twitter:image" content={new URL(ogImg, Astro.url)} />
 <meta property="twitter:image:alt" content={title} />
 
-<!-- Icons -->
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<!-- Scripts -->
+{
+  import.meta.env.PROD ? (
+    <>
+      <script
+        is:inline
+        defer
+        async
+        src="https://um.shrjamal.com/script.js"
+        data-website-id="bab83f14-841c-4947-9c68-e53a73016f3a"
+      />
+    </>
+  ) : (
+    <script is:inline>window['umami']=undefined</script>
+  )
+}
