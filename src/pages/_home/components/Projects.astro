@@ -5,7 +5,6 @@ import ProshopImg from '~/assets/imgs/proshop.webp'
 import LinkdapImg from '~/assets/imgs/linkdap.webp'
 import CovidTrackerImg from '~/assets/imgs/covid-tracker.webp'
 import WeWeb3Img from '~/assets/imgs/weweb3.webp'
-import { capitalize } from '~/lib/utils'
 
 const projects = [
   {
@@ -14,14 +13,26 @@ const projects = [
     img: FluterFireImg,
     description:
       'Fully functional social media app, people can post text, images, and like, comment. It has a chat feature, and a notification system. ',
-    techs: ['dart', 'flutter', 'firebase', 'android', 'ios'],
+    techs: [
+      'icon-[logos--dart]',
+      'icon-[logos--flutter]',
+      'icon-[logos--firebase]',
+      'icon-[logos--android-icon]',
+      'icon-[logos--ios]',
+    ],
   },
   {
     name: 'Linkdap.com',
     src: 'https://linkdap.fly.dev',
     img: LinkdapImg,
     description: 'Linkdap is a social media platform for sharing links.',
-    techs: ['ts', 'react', 'nextjs', 'tailwindcss', 'supabase'],
+    techs: [
+      'icon-[logos--typescript-icon]',
+      'icon-[logos--react]',
+      'icon-[logos--nextjs]',
+      'icon-[logos--tailwindcss-icon]',
+      'icon-[logos--supabase-icon]',
+    ],
   },
   {
     name: 'Proshop',
@@ -29,7 +40,14 @@ const projects = [
     sourceCode: 'https://github.com/SHRJamal/proshop',
     img: ProshopImg,
     description: 'Proshop is an e-commerce platform built with MERN stack.',
-    techs: ['ts', 'react', 'nodejs', 'express', 'mongodb', 'bootstrap'],
+    techs: [
+      'icon-[logos--typescript-icon]',
+      'icon-[logos--react]',
+      'icon-[logos--nodejs]',
+      'icon-[logos--express-icon]',
+      'icon-[logos--mongodb-icon]',
+      'icon-[logos--bootstrap]',
+    ],
   },
   {
     name: 'Covider Tracker',
@@ -37,14 +55,24 @@ const projects = [
     sourceCode: 'https://github.com/SHRJamal/covid-tracker',
     img: CovidTrackerImg,
     description: 'Covid Tracker is a web app that tracks covid cases.',
-    techs: ['ts', 'react', 'mui', 'leaflet'],
+    techs: [
+      'icon-[logos--typescript-icon]',
+      'icon-[logos--react]',
+      'icon-[logos--material-ui]',
+      'icon-[logos--leaflet]',
+    ],
   },
   {
     name: 'Web3 Template',
     sourceCode: 'https://github.com/weweb3/web3_template',
     img: WeWeb3Img,
     description: 'Web3 Template is a template for web3 projects.',
-    techs: ['ts', 'react', 'nextjs', 'tailwindcss'],
+    techs: [
+      'icon-[logos--typescript-icon]',
+      'icon-[logos--tailwindcss-icon]',
+      'icon-[logos--react]',
+      'icon-[logos--nextjs]',
+    ],
   },
 ]
 ---
@@ -79,12 +107,13 @@ const projects = [
             >
               <div class="flex gap-2">
                 {p.techs.map((tech) => (
-                  <img
-                    class="h-5"
-                    src={`/logos/${tech}.svg`}
-                    alt={`${capitalize(tech)} logo`}
-                    title={`${capitalize(tech)}`}
-                  />
+                  // <img
+                  //   class="h-5"
+                  //   src={`/logos/${tech}.svg`}
+                  //   alt={`${capitalize(tech)} logo`}
+                  //   title={`${capitalize(tech)}`}
+                  // />
+                  <i class:list={['text-xl', tech]} />
                 ))}
               </div>
               <div class="min-w-[6rem] flex-1" />

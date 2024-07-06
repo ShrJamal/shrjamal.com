@@ -3,9 +3,13 @@ import BaseHead from './BaseHead.astro'
 
 export interface Props {
   class?: string
-  title?: string
-  description?: string
-  ogImg?: string
+  title: string
+  description: string
+  ogImg?: {
+    src: string
+    width: number
+    height: number
+  }
 }
 
 const className = Astro.props.class
@@ -19,14 +23,5 @@ const className = Astro.props.class
   </head>
   <body class:list={['flex min-h-svh flex-col items-center', className]}>
     <slot />
-
-    <div
-      class:list={[
-        'w-full h-full rounded-full',
-        'fixed z-[-1] -left-[20%] -bottom-[10%] blur-3xl',
-        'from-primary/30 bg-gradient-to-tr to-background ',
-      ]}
-    >
-    </div>
   </body>
 </html>

@@ -30,32 +30,17 @@
     }
   },
   "linter": {
+    "enabled": true,
     "ignore": ["*.d.ts"],
     "rules": {
       "recommended": true,
       "style": { "noNonNullAssertion": "off" },
-      "complexity": {
-        "noExtraBooleanCast": "error",
-        "noMultipleSpacesInRegularExpressionLiterals": "error",
-        "noUselessCatch": "error",
-        "noWith": "error"
-      },
       "correctness": {
-        "noUnusedImports": {
-          "level": "warn",
-          "fix": "unsafe"
-        },
-        "noUnusedVariables": "warn"
+        "noUnusedVariables": "warn",
+        "noUnusedImports": "warn"
       },
       "suspicious": {
         "noExplicitAny": "off"
-      },
-      "nursery": {
-        "useSortedClasses": {
-          "fix": "safe",
-          "level": "info",
-          "options": { "attributes": ["class", "class:list", "className"] }
-        }
       }
     }
   },

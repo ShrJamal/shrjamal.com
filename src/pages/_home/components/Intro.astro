@@ -24,14 +24,24 @@ import Contact from './Contact.astro'
   </div>
 
   <div class="shrink-0">
-    <Image
-      class="bg-glass aspect-square w-72 rounded-full mx-auto"
-      src={profile}
-      alt="Jamal Asahraoui | ShrJamal Porfolio Profile"
-      width="288"
-      height="288"
-      loading="eager"
-    />
+    <div class="relative">
+      <Image
+        class="bg-glass aspect-square w-72 rounded-full mx-auto"
+        src={profile}
+        alt="ShrJamal Porfolio Profile"
+        width="288"
+        height="288"
+        loading="eager"
+      />
+      <div
+        class:list={[
+          'w-full h-full rounded-full',
+          'fixed z-[-1] -top-[20%] -right-[20%] blur-[10rem]',
+          'from-primary/40 bg-gradient-to-tr to-background  ',
+        ]}
+      >
+      </div>
+    </div>
     <Contact class="md:hidden" />
   </div>
 </section>
