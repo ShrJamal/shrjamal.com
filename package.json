@@ -1,7 +1,7 @@
 {
-  "name": "cjamal.com",
-  "description": "My Personal website, https://cjamal.com",
-  "author": "Jamal .S | https://cjamal.com",
+  "name": "shrjamal.com",
+  "description": "My Personal website, https://shrjamal.com",
+  "author": "Jamal .S | https://shrjamal.com",
   "version": "0.0.1",
   "type": "module",
   "engines": {
@@ -12,8 +12,8 @@
     "dev": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro check && astro build && astro preview",
-    "format": "biome format --write .",
-    "lint": "biome lint ."
+    "format": "biome check .",
+    "prepare": "npx simple-git-hooks"
   },
   "devDependencies": {
     "@astrojs/check": "^0.7.0",
@@ -23,7 +23,12 @@
     "@iconify/tailwind": "^1.1.1",
     "astro": "^4.11.5",
     "astro-meta-tags": "^0.3.0",
+    "simple-git-hooks": "^2.11.1",
     "tailwindcss": "^3.4.4",
-    "typescript": "^5.5.3"
+    "typescript": "^5.5.3",
+    "vite-tsconfig-paths": "^4.3.2"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "biome check --write --staged"
   }
 }
