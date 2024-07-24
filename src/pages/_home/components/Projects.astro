@@ -1,103 +1,103 @@
 ---
-import { Image } from 'astro:assets'
-import _2048club from '~/assets/imgs/2048club.webp'
-import thumbnailGrabber from '~/assets/imgs/thumbnail-grabber.webp'
-import CovidTrackerImg from '~/assets/imgs/covid-tracker.webp'
-import FluterFireImg from '~/assets/imgs/flutter-social.webp'
-import LinkdapImg from '~/assets/imgs/linkdap.webp'
-import ProshopImg from '~/assets/imgs/proshop.webp'
-import WeWeb3Img from '~/assets/imgs/weweb3.webp'
+import { Image } from "astro:assets"
+import _2048club from "~/assets/imgs/2048club.webp"
+import CovidTrackerImg from "~/assets/imgs/covid-tracker.webp"
+import FluterFireImg from "~/assets/imgs/flutter-social.webp"
+import LinkdapImg from "~/assets/imgs/linkdap.webp"
+import ProshopImg from "~/assets/imgs/proshop.webp"
+import thumbnailGrabber from "~/assets/imgs/thumbnail-grabber.webp"
+import WeWeb3Img from "~/assets/imgs/weweb3.webp"
 
 const projects = [
   {
-    name: '2048 Club',
-    src: 'https://2048.club',
+    name: "2048 Club",
+    src: "https://2048.club",
     img: _2048club,
     description:
-      '2048 Club is a redesigned version of the 2048 game with a modern look and feel, built with Astro, Svelte, and Cloudflare.',
+      "2048 Club is a redesigned version of the 2048 game with a modern look and feel, built with Astro, Svelte, and Cloudflare.",
     techs: [
-      'icon-[logos--astro]',
-      'icon-[logos--svelte]',
-      'icon-[logos--cloudflare-icon]',
+      "icon-[logos--astro]",
+      "icon-[logos--svelte]",
+      "icon-[logos--cloudflare-icon]",
     ],
   },
   {
-    name: 'FlutterFire Social',
-    src: 'https://codecanyon.net/item/flutterfire-social-messenger/25605604',
+    name: "FlutterFire Social",
+    src: "https://codecanyon.net/item/flutterfire-social-messenger/25605604",
     img: FluterFireImg,
     description:
-      'Fully functional social media app, people can post text, images, and like, comment. It has a chat feature, and a notification system. ',
+      "Fully functional social media app, people can post text, images, and like, comment. It has a chat feature, and a notification system. ",
     techs: [
-      'icon-[logos--dart]',
-      'icon-[logos--flutter]',
-      'icon-[logos--firebase]',
-      'icon-[logos--android-icon]',
-      'icon-[logos--ios]',
+      "icon-[logos--dart]",
+      "icon-[logos--flutter]",
+      "icon-[logos--firebase]",
+      "icon-[logos--android-icon]",
+      "icon-[logos--ios]",
     ],
   },
   {
-    name: 'Thumbnail Downloader',
-    src: 'https://thumbnail-grabber.com',
+    name: "Thumbnail Downloader",
+    src: "https://thumbnail-grabber.com",
     img: thumbnailGrabber,
     description:
-      'Thumbnail Grabber is a web app that allows you to download thumbnails from YouTube videos.',
+      "Thumbnail Grabber is a web app that allows you to download thumbnails from YouTube videos.",
     techs: [
-      'icon-[logos--astro]',
-      'icon-[logos--svelte]',
-      'icon-[logos--cloudflare-icon]',
+      "icon-[logos--astro]",
+      "icon-[logos--svelte]",
+      "icon-[logos--cloudflare-icon]",
     ],
   },
   {
-    name: 'Linkdap.com',
-    src: 'https://linkdap.fly.dev',
+    name: "Linkdap.com",
+    src: "https://linkdap.fly.dev",
     img: LinkdapImg,
-    description: 'Linkdap is a social media platform for sharing links.',
+    description: "Linkdap is a social media platform for sharing links.",
     techs: [
-      'icon-[logos--typescript-icon]',
-      'icon-[logos--react]',
-      'icon-[logos--nextjs]',
-      'icon-[logos--tailwindcss-icon]',
-      'icon-[logos--supabase-icon]',
+      "icon-[logos--typescript-icon]",
+      "icon-[logos--react]",
+      "icon-[logos--nextjs]",
+      "icon-[logos--tailwindcss-icon]",
+      "icon-[logos--supabase-icon]",
     ],
   },
   {
-    name: 'Proshop',
-    src: 'https://shr-proshop.herokuapp.com/',
-    sourceCode: 'https://github.com/SHRJamal/proshop',
+    name: "Proshop",
+    src: "https://shr-proshop.herokuapp.com/",
+    sourceCode: "https://github.com/SHRJamal/proshop",
     img: ProshopImg,
-    description: 'Proshop is an e-commerce platform built with MERN stack.',
+    description: "Proshop is an e-commerce platform built with MERN stack.",
     techs: [
-      'icon-[logos--typescript-icon]',
-      'icon-[logos--react]',
-      'icon-[logos--nodejs]',
-      'icon-[logos--express-icon]',
-      'icon-[logos--mongodb-icon]',
-      'icon-[logos--bootstrap]',
+      "icon-[logos--typescript-icon]",
+      "icon-[logos--react]",
+      "icon-[logos--nodejs]",
+      "icon-[logos--express-icon]",
+      "icon-[logos--mongodb-icon]",
+      "icon-[logos--bootstrap]",
     ],
   },
   {
-    name: 'Covider Tracker',
-    src: 'https://covid-tracker.shrjamal.com',
-    sourceCode: 'https://github.com/SHRJamal/covid-tracker',
+    name: "Covider Tracker",
+    src: "https://covid-tracker.shrjamal.com",
+    sourceCode: "https://github.com/SHRJamal/covid-tracker",
     img: CovidTrackerImg,
-    description: 'Covid Tracker is a web app that tracks covid cases.',
+    description: "Covid Tracker is a web app that tracks covid cases.",
     techs: [
-      'icon-[logos--typescript-icon]',
-      'icon-[logos--react]',
-      'icon-[logos--material-ui]',
-      'icon-[logos--leaflet]',
+      "icon-[logos--typescript-icon]",
+      "icon-[logos--react]",
+      "icon-[logos--material-ui]",
+      "icon-[logos--leaflet]",
     ],
   },
   {
-    name: 'Web3 Template',
-    sourceCode: 'https://github.com/weweb3/web3_template',
+    name: "Web3 Template",
+    sourceCode: "https://github.com/weweb3/web3_template",
     img: WeWeb3Img,
-    description: 'Web3 Template is a template for web3 projects.',
+    description: "Web3 Template is a template for web3 projects.",
     techs: [
-      'icon-[logos--typescript-icon]',
-      'icon-[logos--tailwindcss-icon]',
-      'icon-[logos--react]',
-      'icon-[logos--nextjs]',
+      "icon-[logos--typescript-icon]",
+      "icon-[logos--tailwindcss-icon]",
+      "icon-[logos--react]",
+      "icon-[logos--nextjs]",
     ],
   },
 ]

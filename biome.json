@@ -22,7 +22,7 @@
   "javascript": {
     "formatter": {
       "trailingCommas": "all",
-      "quoteStyle": "single",
+      "quoteStyle": "double",
       "semicolons": "asNeeded",
       "quoteProperties": "asNeeded",
       "arrowParentheses": "always",

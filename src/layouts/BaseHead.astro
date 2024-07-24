@@ -1,5 +1,5 @@
 ---
-import '~/app.css'
+import "~/app.css"
 
 export interface Props {
   title: string
@@ -14,7 +14,7 @@ export interface Props {
 const title = Astro.props.title
 const description = Astro.props.description
 const ogImg = Astro.props.ogImg || {
-  src: '/og-image.jpg',
+  src: "/og-image.jpg",
   width: 657,
   height: 659,
 }

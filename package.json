@@ -11,21 +11,21 @@
     "astro": "astro",
     "dev": "astro dev",
     "build": "astro check && astro build",
-    "preview": "astro check && astro build && astro preview",
+    "preview": "astro preview",
     "format": "biome check .",
     "prepare": "npx simple-git-hooks"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.7.0",
+    "@astrojs/check": "^0.8.2",
     "@astrojs/tailwind": "^5.1.0",
     "@biomejs/biome": "1.8.3",
-    "@iconify/json": "^2.2.225",
+    "@iconify/json": "^2.2.230",
     "@iconify/tailwind": "^1.1.1",
-    "astro": "^4.11.5",
+    "astro": "^4.12.2",
     "astro-meta-tags": "^0.3.0",
     "simple-git-hooks": "^2.11.1",
-    "tailwindcss": "^3.4.4",
-    "typescript": "^5.5.3",
+    "tailwindcss": "^3.4.6",
+    "typescript": "^5.5.4",
     "vite-tsconfig-paths": "^4.3.2"
   },
   "simple-git-hooks": {
