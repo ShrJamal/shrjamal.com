@@ -5,14 +5,8 @@ export interface Props {
   class?: string
   title: string
   description: string
-  ogImg?: {
-    src: string
-    width: number
-    height: number
-  }
+  ogImg?: string
 }
-
-const className = Astro.props.class
 ---
 
 <!doctype html>
@@ -21,7 +15,9 @@ const className = Astro.props.class
     <BaseHead {...Astro.props} />
     <slot name="head" />
   </head>
-  <body class:list={['flex min-h-svh flex-col items-center', className]}>
+  <body
+    class:list={["flex min-h-svh flex-col items-center", Astro.props.class]}
+  >
     <slot />
   </body>
 </html>

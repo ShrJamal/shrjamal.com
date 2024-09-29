@@ -4,20 +4,12 @@ import "~/app.css"
 export interface Props {
   title: string
   description: string
-  ogImg?: {
-    src: string
-    width: number
-    height: number
-  }
+  ogImg?: string
 }
 
 const title = Astro.props.title
 const description = Astro.props.description
-const ogImg = Astro.props.ogImg || {
-  src: "/og-image.jpg",
-  width: 657,
-  height: 659,
-}
+const ogImg = Astro.props.ogImg || "/og-image.jpg"
 ---
 
 <meta charset="utf-8" />
@@ -35,9 +27,7 @@ const ogImg = Astro.props.ogImg || {
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={new URL(ogImg.src, Astro.url)} />
-<meta property="og:image:width" content={`${ogImg.width}`} />
-<meta property="og:image:height" content={`${ogImg.height}`} />
+<meta property="og:image" content={new URL(ogImg, Astro.url)} />
 <meta property="og:image:alt" content={title} />
 
 <!-- Twitter -->
@@ -45,25 +35,8 @@ const ogImg = Astro.props.ogImg || {
 <meta property="twitter:site" content={Astro.site} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(ogImg.src, Astro.url)} />
+<meta property="twitter:image" content={new URL(ogImg, Astro.url)} />
 <meta property="twitter:image:alt" content={title} />
 
 <!-- Icons -->
 <link rel="icon" type="image/svg" href="/favicon.svg" />
-
-<!-- Scripts -->
-{
-  import.meta.env.PROD ? (
-    <>
-      <script
-        is:inline
-        defer
-        async
-        src="https://um.shrjamal.com/script.js"
-        data-website-id="dc5d2bf3-962d-4442-9452-ba8adc88abbd"
-      />
-    </>
-  ) : (
-    <script is:inline>window['umami']=undefined</script>
-  )
-}

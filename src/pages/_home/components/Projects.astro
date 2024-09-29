@@ -70,7 +70,6 @@ const projects = [
       "icon-[logos--typescript-icon]",
       "icon-[logos--react]",
       "icon-[logos--nodejs]",
-      "icon-[logos--express-icon]",
       "icon-[logos--mongodb-icon]",
       "icon-[logos--bootstrap]",
     ],
@@ -105,14 +104,17 @@ const projects = [
 
 <section id="projects" class="flex flex-col gap-1">
   <h2 class="text-4xl font-bold">Featured Projects</h2>
-  <div class="flex flex-col gap-4">
+  <div
+    class="grid gap-4"
+    style="grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));"
+  >
     {
       projects.map((p) => (
         <div
           class:list={[
-            'flex rounded p-2 gap-3 bg-secondary/20',
-            'border-[1px] border-solid border-gray-400 shadow-lg relative',
-            'min-h-[10rem]',
+            "flex rounded p-2 gap-3 bg-secondary/20",
+            "border-[1px] border-solid border-gray-400 shadow-lg relative",
+            "min-h-[10rem]",
           ]}
         >
           <Image
@@ -128,7 +130,7 @@ const projects = [
 
             <div
               class:list={[
-                'min-w-full flex flex-wrap gap-2 items-center justify-between',
+                "min-w-full flex flex-wrap gap-2 items-center justify-between",
               ]}
             >
               <div class="flex gap-2">
@@ -139,7 +141,7 @@ const projects = [
                   //   alt={`${capitalize(tech)} logo`}
                   //   title={`${capitalize(tech)}`}
                   // />
-                  <i class:list={['text-xl', tech]} />
+                  <i class:list={["text-xl", tech]} />
                 ))}
               </div>
               <div class="min-w-[6rem] flex-1" />
