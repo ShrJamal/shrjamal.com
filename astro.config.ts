@@ -8,8 +8,9 @@ import { loadEnv } from "vite"
 const env = loadEnv(process.env.NODE_ENV, process.cwd(), "")
 export default defineConfig({
   site: env.SITE!,
+  output: "static",
   adapter: cloudflare({
-    imageService: "passthrough",
+    imageService: "compile",
   }),
   integrations: [
     metaTags(),

@@ -7,27 +7,27 @@ const contactInfo = [
   {
     name: "Github",
     url: "https://github.com/shrjamal",
-    icon: "icon-[mdi--github]",
+    icon: "i-[mdi--github]",
   },
   {
     name: "Twitter",
     url: "https://twitter.com/shrjamal",
-    icon: "icon-[mdi--twitter]",
+    icon: "i-[mdi--twitter]",
   },
   {
     name: "Linkdin",
     url: "https://www.linkedin.com/in/shrjamal",
-    icon: "icon-[mdi--linkedin]",
+    icon: "i-[mdi--linkedin]",
   },
   {
     name: "Telegram",
     url: "https://t.me/jamalshr",
-    icon: "icon-[mdi--telegram]",
+    icon: "i-[mdi--telegram]",
   },
 ]
 ---
 
-<section id="contact" class:list={[Astro.props.class, 'flex flex-col gap-1']}>
+<section id="contact" class:list={[Astro.props.class, "flex flex-col gap-1"]}>
   <h2 class="text-xl font-bold text-start">Find me on:</h2>
   <div class="flex items-center gap-2">
     {
@@ -39,7 +39,7 @@ const contactInfo = [
           target="_blank"
           rel="noreferrer"
         >
-          <span class:list={[it.icon, 'text-xl text-white']} />
+          <span class:list={[it.icon, "text-xl text-white"]} />
           <span>{it.name}</span>
         </a>
       ))

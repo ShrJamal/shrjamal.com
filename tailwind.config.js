@@ -1,12 +1,12 @@
-import { addDynamicIconSelectors } from "@iconify/tailwind"
+import { dynamicIconsPlugin, iconsPlugin } from "@egoist/tailwindcss-icons"
 import { fontFamily } from "tailwindcss/defaultTheme"
 
 /** @type {import('tailwindcss').Config} */
-const config = {
-  content: ["./src/**/*.{html,js,jsx,ts,tsx,astro,vue,svelte,mdx}"],
+export default {
   darkMode: ["class"],
+  content: ["./src/**/*.{html,js,jsx,ts,tsx,astro,vue,svelte,mdx}"],
   safelist: ["dark"],
-  plugins: [addDynamicIconSelectors()],
+  plugins: [iconsPlugin(), dynamicIconsPlugin()],
   theme: {
     extend: {
       fontFamily: {
@@ -54,5 +54,3 @@ const config = {
     },
   },
 }
-
-export default config
