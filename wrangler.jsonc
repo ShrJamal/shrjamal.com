@@ -1,0 +1,23 @@
+{
+  "$schema": "https://www.unpkg.com/wrangler/config-schema.json",
+  "name": "portfolio",
+  "main": "./dist/_worker.js/index.js",
+  "compatibility_date": "2024-11-21",
+  "routes": [
+    { "pattern": "cjamal.com", "custom_domain": true },
+    { "pattern": "shrjamal.com", "custom_domain": true }
+  ],
+  "observability": {
+    "enabled": true,
+    "logs": {
+      "enabled": true,
+      "invocation_logs": false
+    }
+  },
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "./dist",
+    "html_handling": "drop-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}
