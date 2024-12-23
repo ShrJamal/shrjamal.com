@@ -40,3 +40,18 @@ const ogImg = Astro.props.ogImg || "/og-image.jpg"
 
 <!-- Icons -->
 <link rel="icon" type="image/svg" href="/favicon.svg" />
+
+{
+  import.meta.env.PROD ? (
+    <>
+      <script
+        is:inline
+        defer
+        async
+        src={`https://an.${Astro.url.hostname}/script.js`}
+      />
+    </>
+  ) : (
+    <script is:inline>window.analytics={track: () => {}}</script>
+  )
+}
