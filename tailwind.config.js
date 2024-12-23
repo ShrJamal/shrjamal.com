@@ -1,12 +1,11 @@
-import { dynamicIconsPlugin, iconsPlugin } from "@egoist/tailwindcss-icons"
+import { addDynamicIconSelectors } from "@iconify/tailwind"
 import { fontFamily } from "tailwindcss/defaultTheme"
 
-/** @type {import('tailwindcss').Config} */
 export default {
-  darkMode: ["class"],
   content: ["./src/**/*.{html,js,jsx,ts,tsx,astro,vue,svelte,mdx}"],
+  darkMode: ["class"],
   safelist: ["dark"],
-  plugins: [iconsPlugin(), dynamicIconsPlugin()],
+  plugins: [addDynamicIconSelectors()],
   theme: {
     extend: {
       fontFamily: {
