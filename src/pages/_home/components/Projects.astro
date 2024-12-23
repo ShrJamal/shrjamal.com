@@ -9,6 +9,7 @@ import LinkdapImg from "~/assets/imgs/linkdap.webp"
 import ProshopImg from "~/assets/imgs/proshop.webp"
 import thumbnailGrabber from "~/assets/imgs/thumbnail-grabber.webp"
 import WeWeb3Img from "~/assets/imgs/weweb3.webp"
+import { techs } from "~/lib/consts"
 
 const projects = [
   {
@@ -17,11 +18,7 @@ const projects = [
     img: _2048club,
     description:
       "2048 Club is a redesigned version of the 2048 game with a modern look and feel, built with Astro, SolidJS, and Cloudflare.",
-    techs: [
-      "icon-[logos--astro]",
-      "icon-[logos--solidjs]",
-      "icon-[logos--cloudflare-icon]",
-    ],
+    techs: [techs.astro, techs.solidjs, techs.cloudflare],
   },
   {
     name: "FlutterFire Social",
@@ -30,11 +27,11 @@ const projects = [
     description:
       "Fully functional social media app, people can post text, images, and like, comment. It has a chat feature, and a notification system. ",
     techs: [
-      "icon-[logos--dart]",
-      "icon-[logos--flutter]",
-      "icon-[logos--firebase]",
-      "icon-[logos--android-icon]",
-      "icon-[logos--ios]",
+      techs.dart,
+      techs.flutter,
+      techs.firebase,
+      techs.android,
+      techs.ios,
     ],
   },
   {
@@ -43,11 +40,7 @@ const projects = [
     img: thumbnailGrabber,
     description:
       "Thumbnail Grabber is a web app that allows you to download thumbnails from YouTube videos.",
-    techs: [
-      "icon-[logos--astro]",
-      "icon-[logos--svelte]",
-      "icon-[logos--cloudflare-icon]",
-    ],
+    techs: [techs.astro, techs.svelte, techs.cloudflare],
   },
   {
     name: "KorgiBoard",
@@ -55,12 +48,7 @@ const projects = [
     img: KorgiImg,
     description:
       "Manage your projects, day, and life from one workspace, using your own Google WorkspaceTM and MS365TM apps and drives.",
-    techs: [
-      "icon-[logos--typescript-icon]",
-      "icon-[logos--react]",
-      "icon-[logos--nextjs]",
-      "icon-[logos--tailwindcss-icon]",
-    ],
+    techs: [techs.typescript, techs.react, techs.nextjs, techs.tailwindcss],
   },
   {
     name: "DEMS",
@@ -68,12 +56,7 @@ const projects = [
     img: DEMSImg,
     description:
       "DEMS helps voters quickly find, learn about and share information in support of Democrats and progressive policies in U.S. elections.",
-    techs: [
-      "icon-[logos--typescript-icon]",
-      "icon-[logos--react]",
-      "icon-[logos--nextjs]",
-      "icon-[logos--tailwindcss-icon]",
-    ],
+    techs: [techs.typescript, techs.react, techs.nextjs, techs.tailwindcss],
   },
   {
     name: "Linkdap",
@@ -81,11 +64,11 @@ const projects = [
     img: LinkdapImg,
     description: "Linkdap is a social media platform for sharing links.",
     techs: [
-      "icon-[logos--typescript-icon]",
-      "icon-[logos--react]",
-      "icon-[logos--nextjs]",
-      "icon-[logos--tailwindcss-icon]",
-      "icon-[logos--supabase-icon]",
+      techs.typescript,
+      techs.react,
+      techs.nextjs,
+      techs.tailwindcss,
+      techs.supabase,
     ],
   },
   {
@@ -95,11 +78,11 @@ const projects = [
     img: ProshopImg,
     description: "Proshop is an e-commerce platform built with MERN stack.",
     techs: [
-      "icon-[logos--typescript-icon]",
-      "icon-[logos--react]",
-      "icon-[logos--nodejs]",
-      "icon-[logos--mongodb-icon]",
-      "icon-[logos--bootstrap]",
+      techs.typescript,
+      techs.react,
+      techs.nodejs,
+      techs.mongodb,
+      techs.bootstrap,
     ],
   },
   {
@@ -108,24 +91,14 @@ const projects = [
     sourceCode: "https://github.com/SHRJamal/covid-tracker",
     img: CovidTrackerImg,
     description: "Covid Tracker is a web app that tracks covid cases.",
-    techs: [
-      "icon-[logos--typescript-icon]",
-      "icon-[logos--react]",
-      "icon-[logos--material-ui]",
-      "icon-[logos--leaflet]",
-    ],
+    techs: [techs.typescript, techs.react, techs.materialui, techs.leaflet],
   },
   {
     name: "Web3 Template",
     sourceCode: "https://github.com/weweb3/web3_template",
     img: WeWeb3Img,
     description: "Web3 Template is a template for web3 projects.",
-    techs: [
-      "icon-[logos--typescript-icon]",
-      "icon-[logos--tailwindcss-icon]",
-      "icon-[logos--react]",
-      "icon-[logos--nextjs]",
-    ],
+    techs: [techs.typescript, techs.tailwindcss, techs.react, techs.nextjs],
   },
 ]
 ---
@@ -161,17 +134,13 @@ const projects = [
                 "min-w-full flex flex-wrap gap-2 items-center justify-between",
               ]}
             >
-              <div class="flex gap-2">
-                {p.techs.map((tech) => (
-                  // <img
-                  //   class="h-5"
-                  //   src={`/logos/${tech}.svg`}
-                  //   alt={`${capitalize(tech)} logo`}
-                  //   title={`${capitalize(tech)}`}
-                  // />
-                  <i class:list={["text-xl", tech]} />
+              <ul class="flex gap-2">
+                {p.techs.map((t) => (
+                  <li>
+                    <i title={t.name} class:list={["text-xl", t.icon]} />
+                  </li>
                 ))}
-              </div>
+              </ul>
               <div class="min-w-[6rem] flex-1" />
               <div class="flex gap-2 justify-end flex-1">
                 {p.sourceCode && (
