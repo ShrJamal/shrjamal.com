@@ -18,7 +18,7 @@ const projects = [
     img: _2048club,
     description:
       "2048 Club is a redesigned version of the 2048 game with a modern look and feel, built with Astro, SolidJS, and Cloudflare.",
-    techs: [techs.astro, techs.solidjs, techs.cloudflare],
+    techs: [techs.astro, techs.solidjs, techs.tailwindcss, techs.cloudflare],
   },
   {
     name: "FlutterFire Social",
@@ -40,7 +40,7 @@ const projects = [
     img: thumbnailGrabber,
     description:
       "Thumbnail Grabber is a web app that allows you to download thumbnails from YouTube videos.",
-    techs: [techs.astro, techs.svelte, techs.cloudflare],
+    techs: [techs.astro, techs.solidjs, techs.tailwindcss, techs.cloudflare],
   },
   {
     name: "KorgiBoard",
@@ -103,19 +103,16 @@ const projects = [
 ]
 ---
 
-<section id="projects" class="flex flex-col gap-1">
+<section id="projects" class="flex flex-col gap-4">
   <h2 class="text-4xl font-bold">Featured Projects</h2>
-  <div
-    class="grid gap-4"
-    style="grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));"
-  >
+  <div class="grid gap-4 lg:grid-cols-2">
     {
       projects.map((p) => (
         <div
           class:list={[
             "flex rounded p-2 gap-3 bg-secondary/20",
             "border-[1px] border-solid border-gray-400 shadow-lg relative",
-            "min-h-[10rem]",
+            "min-h-[10rem] w-full",
           ]}
         >
           <Image
