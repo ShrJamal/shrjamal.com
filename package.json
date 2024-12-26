@@ -18,16 +18,17 @@
     "@astrojs/cloudflare": "12.1.0",
     "@astrojs/tailwind": "^5.1.4",
     "@biomejs/biome": "1.9.4",
-    "@iconify/json": "^2.2.288",
+    "@iconify/json": "^2.2.289",
     "@iconify/tailwind": "^1.2.0",
     "astro": "5.1.1",
     "astro-meta-tags": "^0.3.1",
     "simple-git-hooks": "^2.11.1",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.7.2",
-    "vite-tsconfig-paths": "^5.1.4"
+    "vite-tsconfig-paths": "^5.1.4",
+    "wrangler": "^3.99.0"
   },
   "simple-git-hooks": {
-    "pre-commit": "biome check --write --staged"
+    "pre-commit": "npx biome check --staged --no-errors-on-unmatched"
   }
 }

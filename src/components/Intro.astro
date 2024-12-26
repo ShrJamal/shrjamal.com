@@ -22,7 +22,7 @@ import Contact from "./Contact.astro"
     <Contact class="hidden md:flex" />
   </div>
 
-  <div class="shrink-0">
+  <div class="w-full md:w-auto gap-4">
     <div class="relative">
       <Image
         class="bg-glass aspect-square w-72 rounded-full mx-auto"
@@ -41,6 +41,6 @@ import Contact from "./Contact.astro"
       >
       </div>
     </div>
-    <Contact class="md:hidden" />
+    <Contact class="flex md:hidden w-full" />
   </div>
 </section>
