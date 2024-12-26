@@ -8,39 +8,39 @@ import Contact from "./Contact.astro"
   id="home"
   class="flex flex-col items-center justify-center gap-6 md:flex-row"
 >
-  <div class="flex-1 flex flex-col gap-6 text-center md:text-start">
+  <div class="flex-1 flex flex-col gap-6 md:text-start">
     <h1 class="text-3xl">
       Hi there, I'm <span class="font-bold">Jamal</span> 👋
     </h1>
 
-    <p class="text-xl leading-9">
+    <p class="text-xl leading-9 max-w-[40rem]">
       I am a Full-Stack developer from Morocco, with a strong passion for
       software development and a keen interest in continually expanding my
       knowledge of emerging technologies. I am currently working as a freelancer
       on Upwork while also developing my own independent projects.
     </p>
-    <Contact class="hidden md:flex" />
+    <div class="flex flex-col gap-2">
+      <span class="text-xl font-bold"> Contact me on: </span>
+      <Contact />
+    </div>
   </div>
 
-  <div class="w-full md:w-auto gap-4">
-    <div class="relative">
-      <Image
-        class="bg-glass aspect-square w-72 rounded-full mx-auto"
-        src={profile}
-        alt="ShrJamal Porfolio Profile"
-        width="288"
-        height="288"
-        loading="eager"
-      />
-      <div
-        class:list={[
-          "w-full h-full rounded-full",
-          "fixed z-[-1] -top-[20%] -right-[20%] blur-[10rem]",
-          "from-primary/40 bg-gradient-to-tr to-background  ",
-        ]}
-      >
-      </div>
+  <div class="relative">
+    <Image
+      class="bg-glass aspect-square w-72 rounded-full mx-auto"
+      src={profile}
+      alt="ShrJamal Porfolio Profile"
+      width="288"
+      height="288"
+      loading="eager"
+    />
+    <div
+      class:list={[
+        "w-full h-full rounded-full",
+        "fixed z-[-1] -top-[20%] -right-[20%] blur-[10rem]",
+        "from-primary/40 bg-gradient-to-tr to-background  ",
+      ]}
+    >
     </div>
-    <Contact class="flex md:hidden w-full" />
   </div>
 </section>

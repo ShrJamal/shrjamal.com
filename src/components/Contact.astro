@@ -1,48 +1,46 @@
 ---
-export interface Props {
-  class?: string
-}
-
 const contactInfo = [
   {
-    name: "Github",
+    name: "hi@shrjamal.com",
+    url: "mailto:hi@shrjamal.com",
+    icon: "icon-[mdi--email]",
+  },
+  {
+    name: "",
     url: "https://github.com/shrjamal",
     icon: "icon-[mdi--github]",
   },
   {
-    name: "Twitter",
-    url: "https://twitter.com/shrjamal",
-    icon: "icon-[mdi--twitter]",
-  },
-  {
-    name: "Linkdin",
-    url: "https://www.linkedin.com/in/shrjamal",
-    icon: "icon-[mdi--linkedin]",
-  },
-  {
-    name: "Telegram",
+    name: "",
     url: "https://t.me/jamalshr",
-    icon: "icon-[mdi--telegram]",
+    icon: "icon-[logos--telegram]",
+  },
+  {
+    name: "",
+    url: "https://twitter.com/shrjamal",
+    icon: "icon-[logos--x]",
+  },
+  {
+    name: "",
+    url: "https://www.upwork.com/freelancers/~01bd65bc8cd1a3096d",
+    icon: "icon-[logos--upwork]",
   },
 ]
 ---
 
-<section id="contact" class:list={[Astro.props.class, "flex flex-col gap-1"]}>
-  <h2 class="text-xl font-bold text-start">Find me on:</h2>
-  <div class="flex items-center gap-2">
-    {
-      contactInfo.map((it) => (
-        <a
-          class="bg-glass btn btn-outline btn-sm hover:bg-black"
-          href={it.url}
-          title={it.name}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <span class:list={[it.icon, "text-xl text-white"]} />
-          <span>{it.name}</span>
-        </a>
-      ))
-    }
-  </div>
-</section>
+<div class="flex gap-2">
+  {
+    contactInfo.map((it) => (
+      <a
+        class="bg-glass btn btn-outline hover:bg-white/40 !px-1"
+        href={it.url}
+        title={it.name}
+        target="_blank"
+        rel="noreferrer"
+      >
+        <span class:list={[it.icon, "text-xl xs:text-2xl"]} />
+        <span class="">{it.name}</span>
+      </a>
+    ))
+  }
+</div>
