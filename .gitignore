@@ -10,6 +10,7 @@ node_modules/
 functions
 .mf
 .wrangler
+.husky
 
 # logs
 npm-debug.log*

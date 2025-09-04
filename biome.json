@@ -1,11 +1,11 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.2/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.2.2/schema.json",
+  "root": true,
   "files": {
-    "ignoreUnknown": true
+    "ignoreUnknown": true,
+    "includes": ["**", "!**/*.d.ts", "!**/*.gen.ts", "!**/public/", "!**/*.js"]
   },
-  "organizeImports": {
-    "enabled": true
-  },
+  "assist": { "actions": { "source": { "organizeImports": "on" } } },
   "vcs": {
     "enabled": true,
     "clientKind": "git",
@@ -14,7 +14,7 @@
   },
   "formatter": {
     "useEditorconfig": true,
-    "formatWithErrors": true,
+    "formatWithErrors": false,
     "indentStyle": "space",
     "indentWidth": 2,
     "lineWidth": 80,
@@ -32,27 +32,53 @@
   },
   "linter": {
     "enabled": true,
-    "ignore": ["*.d.ts"],
+    "includes": ["**", "!**/*.d.ts"],
     "rules": {
       "recommended": true,
-      "style": { "noNonNullAssertion": "off", "noParameterAssign": "off" },
+      "style": {
+        "noNonNullAssertion": "off",
+        "noParameterAssign": "off",
+        "useAsConstAssertion": "error",
+        "useDefaultParameterLast": "error",
+        "useEnumInitializers": "error",
+        "useSelfClosingElements": "error",
+        "useSingleVarDeclarator": "error",
+        "noUnusedTemplateLiteral": "error",
+        "useNumberNamespace": "error",
+        "noInferrableTypes": "error",
+        "noUselessElse": "error",
+        "noDescendingSpecificity": "off"
+      },
       "correctness": {
         "noUnusedVariables": "warn",
+        "useExhaustiveDependencies": "off",
+        "noChildrenProp": "off",
+        "noUnknownProperty": "off",
+        "useUniqueElementIds": "off",
         "noUnusedImports": {
           "level": "warn",
-          "fix": "unsafe"
+          "fix": "unsafe",
+          "options": {}
         }
       },
       "suspicious": {
-        "noExplicitAny": "off"
+        "noExplicitAny": "off",
+        "noArrayIndexKey": "off",
+        "noUnknownAtRules": "off"
       },
       "complexity": {
         "noForEach": "off",
-        "noBannedTypes": "off"
+        "noBannedTypes": "off",
+        "noImportantStyles": "off"
       },
       "a11y": {
         "noSvgWithoutTitle": "off",
-        "noLabelWithoutControl": "off"
+        "noLabelWithoutControl": "off",
+        "useKeyWithClickEvents": "off",
+        "useSemanticElements": "off"
+      },
+      "performance": {
+        "noAccumulatingSpread": "off"
       },
       "nursery": {
         "useSortedClasses": {
@@ -68,7 +94,7 @@
   },
   "overrides": [
     {
-      "include": ["*.astro"],
+      "includes": ["*.astro"],
       "formatter": {
         "enabled": true
       },
@@ -82,7 +108,7 @@
       }
     },
     {
-      "include": ["*.svelte"],
+      "includes": ["*.svelte"],
       "formatter": {
         "enabled": false
       },

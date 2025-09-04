@@ -1,10 +1,10 @@
 import cloudflare from "@astrojs/cloudflare"
 import tailwind from "@astrojs/tailwind"
-import metaTags from "astro-meta-tags"
 import { defineConfig, envField } from "astro/config"
+import metaTags from "astro-meta-tags"
 import { loadEnv } from "vite"
 
-// @ts-ignore
+// @ts-expect-error
 const env = loadEnv(process.env.NODE_ENV, process.cwd(), "")
 export default defineConfig({
   site: env.SITE!,

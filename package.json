@@ -15,18 +15,18 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/cloudflare": "12.1.0",
-    "@astrojs/tailwind": "^5.1.4",
-    "@biomejs/biome": "1.9.4",
-    "@iconify/json": "^2.2.289",
+    "@astrojs/cloudflare": "12.6.7",
+    "@astrojs/tailwind": "^6.0.2",
+    "@biomejs/biome": "2.2.2",
+    "@iconify/json": "^2.2.381",
     "@iconify/tailwind": "^1.2.0",
-    "astro": "5.1.1",
-    "astro-meta-tags": "^0.3.1",
-    "simple-git-hooks": "^2.11.1",
+    "astro": "5.13.5",
+    "astro-meta-tags": "^0.4.0",
+    "simple-git-hooks": "^2.13.1",
     "tailwindcss": "^3.4.17",
-    "typescript": "^5.7.2",
+    "typescript": "^5.9.2",
     "vite-tsconfig-paths": "^5.1.4",
-    "wrangler": "^3.99.0"
+    "wrangler": "^4.34.0"
   },
   "simple-git-hooks": {
     "pre-commit": "npx biome check --staged --no-errors-on-unmatched"
