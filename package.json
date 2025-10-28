@@ -14,19 +14,19 @@
     "prepare": "npx simple-git-hooks"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.4",
-    "@astrojs/cloudflare": "12.6.7",
-    "@astrojs/tailwind": "^6.0.2",
-    "@biomejs/biome": "2.2.2",
-    "@iconify/json": "^2.2.381",
-    "@iconify/tailwind": "^1.2.0",
-    "astro": "5.13.5",
+    "@astrojs/check": "^0.9.5",
+    "@astrojs/cloudflare": "12.6.10",
+    "@biomejs/biome": "2.3.2",
+    "@iconify/json": "^2.2.401",
+    "@iconify/tailwind4": "^1.0.6",
+    "@tailwindcss/vite": "^4.1.16",
+    "astro": "^5.15.2",
     "astro-meta-tags": "^0.4.0",
     "simple-git-hooks": "^2.13.1",
-    "tailwindcss": "^3.4.17",
-    "typescript": "^5.9.2",
+    "tailwindcss": "^4.1.16",
+    "typescript": "^5.9.3",
     "vite-tsconfig-paths": "^5.1.4",
-    "wrangler": "^4.34.0"
+    "wrangler": "^4.45.1"
   },
   "simple-git-hooks": {
     "pre-commit": "npx biome check --staged --no-errors-on-unmatched"
