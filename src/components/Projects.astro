@@ -17,7 +17,7 @@ const projects = [
     src: "https://2048.club",
     img: _2048club,
     description:
-      "2048 Club is a redesigned version of the 2048 game with a modern look and feel, built with Astro, SolidJS, and Cloudflare.",
+      "A redesigned 2048 game with a modern look, built with Astro, SolidJS, and Cloudflare.",
     techs: [techs.astro, techs.solidjs, techs.tailwindcss, techs.cloudflare],
   },
   {
@@ -25,7 +25,7 @@ const projects = [
     src: "https://codecanyon.net/item/flutterfire-social-messenger/25605604",
     img: FluterFireImg,
     description:
-      "Fully functional social media app, people can post text, images, and like, comment. It has a chat feature, and a notification system. ",
+      "A complete social media app with posts, chat, and notifications.",
     techs: [
       techs.dart,
       techs.flutter,
@@ -39,7 +39,7 @@ const projects = [
     src: "https://thumbnail-grabber.com",
     img: thumbnailGrabber,
     description:
-      "Thumbnail Grabber is a web app that allows you to download thumbnails from YouTube videos.",
+      "A web app to download thumbnails from YouTube videos.",
     techs: [techs.astro, techs.solidjs, techs.tailwindcss, techs.cloudflare],
   },
   {
@@ -47,124 +47,66 @@ const projects = [
     src: "https://korgiboard.com",
     img: KorgiImg,
     description:
-      "Manage your projects, day, and life from one workspace, using your own Google WorkspaceTM and MS365TM apps and drives.",
+      "Project management workspace integrated with Google Workspace and MS365.",
     techs: [techs.typescript, techs.react, techs.nextjs, techs.tailwindcss],
-  },
-  {
-    name: "DEMS",
-    src: "https://demsvote.us/",
-    img: DEMSImg,
-    description:
-      "DEMS helps voters quickly find, learn about and share information in support of Democrats and progressive policies in U.S. elections.",
-    techs: [techs.dart, techs.flutter],
-  },
-  {
-    name: "Linkdap",
-    src: "https://linkdap.com",
-    img: LinkdapImg,
-    description: "Linkdap is a social media platform for sharing links.",
-    techs: [
-      techs.typescript,
-      techs.react,
-      techs.nextjs,
-      techs.tailwindcss,
-      techs.supabase,
-    ],
-  },
-  {
-    name: "Proshop",
-    src: "https://shr-proshop.herokuapp.com/",
-    sourceCode: "https://github.com/SHRJamal/proshop",
-    img: ProshopImg,
-    description: "Proshop is an e-commerce platform built with MERN stack.",
-    techs: [
-      techs.typescript,
-      techs.react,
-      techs.nodejs,
-      techs.mongodb,
-      techs.bootstrap,
-    ],
-  },
-  {
-    name: "Covider Tracker",
-    src: "https://covid-tracker.shrjamal.com",
-    sourceCode: "https://github.com/SHRJamal/covid-tracker",
-    img: CovidTrackerImg,
-    description: "Covid Tracker is a web app that tracks covid cases.",
-    techs: [techs.typescript, techs.react, techs.materialui, techs.leaflet],
-  },
-  {
-    name: "Web3 Template",
-    sourceCode: "https://github.com/weweb3/web3_template",
-    img: WeWeb3Img,
-    description: "Web3 Template is a template for web3 projects.",
-    techs: [techs.typescript, techs.tailwindcss, techs.react, techs.nextjs],
   },
 ]
 ---
 
-<section id="projects" class="flex flex-col gap-4">
-  <h2 class="text-4xl font-bold">Featured Projects</h2>
-  <div class="grid gap-4 lg:grid-cols-2">
+<section id="projects" class="flex flex-col gap-8 py-20">
+  <h2 class="text-5xl font-bold uppercase" style="font-family: 'Syne', sans-serif;">Featured Projects</h2>
+  <div class="grid gap-12 md:grid-cols-2">
     {
       projects.map((p) => (
         <div
-          class:list={[
-            "flex rounded p-2 gap-3 bg-secondary/20",
-            "border-[1px] border-solid border-gray-400 shadow-lg relative",
-            "min-h-[10rem] w-full",
-          ]}
+          class="bg-white border-4 border-black p-6 flex flex-col gap-4"
+          style="box-shadow: 8px 8px 0 #000;"
         >
           <Image
-            class="min-h-full w-[8rem] md:w-[12rem] rounded object-cover"
-            width={320}
-            height={480}
+            class="w-full border-2 border-black"
+            width={480}
+            height={270}
             src={p.img}
             alt={p.name}
           />
-          <div class="flex-1 text-base-content min-h-full flex flex-col gap-1 ">
-            <h3 class="text-xl font-bold">{p.name}</h3>
-            <p class="flex-1">{p.description}</p>
+          <div class="flex-1 flex flex-col gap-2">
+            <h3 class="text-3xl font-bold" style="font-family: 'Syne', sans-serif;">{p.name}</h3>
+            <p class="flex-1 font-mono">{p.description}</p>
 
-            <div
-              class:list={[
-                "min-w-full flex flex-wrap gap-2 items-center justify-between",
-              ]}
-            >
+            <div class="flex flex-wrap gap-2 items-center">
               <ul class="flex gap-2">
                 {p.techs.map((t) => (
                   <li>
-                    <i title={t.name} class:list={["text-xl", t.icon]} />
+                    <i title={t.name} class:list={["text-2xl", t.icon]} />
                   </li>
                 ))}
               </ul>
-              <div class="min-w-[6rem] flex-1" />
-              <div class="flex gap-2 justify-end flex-1">
-                {p.sourceCode && (
-                  <a
-                    class="btn border-2 btn-outline rounded gap-1 px-2"
-                    title={`View ${p.name} source code`}
-                    target="_blank"
-                    rel="alternate"
-                    href={p.sourceCode}
-                  >
-                    <span class="icon-[mdi--github] text-xl" />
-                    <p>Code</p>
-                  </a>
-                )}
-                {p.src && (
-                  <a
-                    class="btn bg-glass gap-1 px-2"
-                    title={`Visit ${p.name}`}
-                    href={p.src}
-                    target="_blank"
-                    rel="alternate"
-                  >
-                    <p>Visit</p>
-                    <span class="icon-[mdi--arrow-right] text-xl" />
-                  </a>
-                )}
-              </div>
+            </div>
+            <div class="flex gap-4 mt-4">
+              {p.sourceCode && (
+                <a
+                  class="btn btn-outline"
+                  title={`View ${p.name} source code`}
+                  target="_blank"
+                  rel="alternate"
+                  href={p.sourceCode}
+                >
+                  <span class="icon-[mdi--github] text-xl" />
+                  <span>Code</span>
+                </a>
+              )}
+              {p.src && (
+                <a
+                  class="btn btn-primary"
+                  title={`Visit ${p.name}`}
+                  href={p.src}
+                  target="_blank"
+                  rel="alternate"
+                >
+                  <span>Visit</span>
+                  <span class="icon-[mdi--arrow-right] text-xl" />
+                </a>
+              )}
             </div>
           </div>
         </div>

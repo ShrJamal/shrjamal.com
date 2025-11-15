@@ -6,41 +6,31 @@ import Contact from "./Contact.astro"
 
 <section
   id="home"
-  class="flex flex-col items-center justify-center gap-6 md:flex-row"
+  class="grid md:grid-cols-2 gap-16 items-center min-h-[calc(100vh-80px)] pt-20"
 >
-  <div class="flex-1 flex flex-col gap-6 md:text-start">
-    <h1 class="text-3xl">
-      Hi there, I'm <span class="font-bold">Jamal</span> 👋
+  <div class="flex flex-col gap-8">
+    <h1 class="text-6xl md:text-8xl font-extrabold uppercase" style="font-family: 'Syne', sans-serif;">
+      Crafting Digital <span class="text-primary">Experiences</span>
     </h1>
 
-    <p class="text-xl leading-9 max-w-[40rem]">
-      I am a Full-Stack developer from Morocco, with a strong passion for
-      software development and a keen interest in continually expanding my
-      knowledge of emerging technologies. I am currently working as a freelancer
-      on Upwork while also developing my own independent projects.
+    <p class="text-lg leading-relaxed">
+      I'm a Full-Stack developer from Morocco, building modern, responsive, and performant web applications. I'm passionate about clean code, open source, and pushing the boundaries of what's possible on the web.
     </p>
-    <div class="flex flex-col gap-2">
-      <span class="text-xl font-bold"> Contact me on: </span>
-      <Contact />
+    <div class="flex gap-4">
+      <a href="#projects" class="btn btn-primary">My Work</a>
+      <a href="#contact" class="btn btn-outline">Get in Touch</a>
     </div>
   </div>
 
-  <div class="relative">
+  <div class="relative w-full max-w-md mx-auto">
+    <div class="absolute top-4 left-4 w-full h-full bg-secondary"></div>
     <Image
-      class="bg-glass aspect-square w-72 rounded-full mx-auto"
+      class="relative w-full h-full border-4 border-black"
       src={profile}
       alt="ShrJamal Porfolio Profile"
-      width="288"
-      height="288"
+      width="400"
+      height="400"
       loading="eager"
     />
-    <div
-      class:list={[
-        "w-full h-full rounded-full",
-        "fixed z-[-1] -top-[20%] -right-[20%] blur-[10rem]",
-        "from-primary/40 bg-gradient-to-tr to-background  ",
-      ]}
-    >
-    </div>
   </div>
 </section>

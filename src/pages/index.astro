@@ -1,19 +1,24 @@
 ---
+import Contact from "~/components/Contact.astro"
+import Experience from "~/components/Experience.astro"
 import Intro from "~/components/Intro.astro"
 import Projects from "~/components/Projects.astro"
+import Techs from "~/components/Techs.astro"
 import Navbar from "~/components/TheNavbar.astro"
 import RootLayout from "~/layouts/RootLayout.astro"
 ---
 
 <RootLayout
-  class="mx-auto max-w-[80rem] p-2 sm:px-6 md:px-10"
-  title="Jamal Shr Personal Portfolio website"
-  description="I'm Jamal is a full-stack developer, designer, and content creator. He is passionate about building products and sharing his knowledge with the community."
+  class="mx-auto max-w-7xl p-2 sm:px-6 md:px-10"
+  title="ShrJamal"
+  description="ShrJamal - a neobrutalist portfolio"
 >
   <main class="flex flex-col gap-12">
     <Navbar />
     <Intro />
     <Projects />
-    <div class="h-10"></div>
+    <Experience />
+    <Techs />
+    <Contact />
   </main>
 </RootLayout>

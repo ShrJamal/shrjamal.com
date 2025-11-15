@@ -1,46 +1,61 @@
 ---
 const contactInfo = [
   {
-    name: "hi@shrjamal.com",
-    url: "mailto:hi@shrjamal.com",
-    icon: "icon-[mdi--email]",
-  },
-  {
-    name: "",
+    name: "GitHub",
     url: "https://github.com/shrjamal",
     icon: "icon-[mdi--github]",
   },
   {
-    name: "",
+    name: "Telegram",
     url: "https://t.me/jamalshr",
     icon: "icon-[logos--telegram]",
   },
   {
-    name: "",
+    name: "Twitter",
     url: "https://twitter.com/shrjamal",
     icon: "icon-[logos--x]",
   },
   {
-    name: "",
+    name: "Upwork",
     url: "https://www.upwork.com/freelancers/~01bd65bc8cd1a3096d",
     icon: "icon-[logos--upwork]",
   },
 ]
 ---
 
-<div class="flex gap-2">
-  {
-    contactInfo.map((it) => (
-      <a
-        class="bg-glass btn btn-outline hover:bg-white/40 !px-1"
-        href={it.url}
-        title={it.name}
-        target="_blank"
-        rel="noreferrer"
-      >
-        <span class:list={[it.icon, "text-xl xs:text-2xl"]} />
-        <span class="">{it.name}</span>
-      </a>
-    ))
-  }
-</div>
+<section id="contact" class="flex flex-col gap-8 py-20">
+  <h2 class="text-5xl font-bold uppercase" style="font-family: 'Syne', sans-serif;">Get in Touch</h2>
+  <div class="grid md:grid-cols-2 gap-16">
+    <div class="flex flex-col gap-4">
+        <p class="font-mono text-lg">
+            Have a project in mind? Want to collaborate? Or just want to say hi?
+            <br />
+            Fill out the form or send an email to <a href="mailto:hi@shrjamal.com" class="text-primary font-bold">hi@shrjamal.com</a>
+        </p>
+      <form class="flex flex-col gap-4">
+        <input type="text" placeholder="Name" class="p-4 bg-white border-2 border-black focus:outline-none focus:border-primary" />
+        <input type="email" placeholder="Email" class="p-4 bg-white border-2 border-black focus:outline-none focus:border-primary" />
+        <textarea placeholder="Message" rows="5" class="p-4 bg-white border-2 border-black focus:outline-none focus:border-primary"></textarea>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </div>
+    <div class="flex flex-col gap-4">
+        <h3 class="text-3xl font-bold" style="font-family: 'Syne', sans-serif;">Find me on</h3>
+        <div class="flex gap-4">
+            {
+                contactInfo.map((it) => (
+                    <a
+                        class="text-black hover:text-primary transition-colors"
+                        href={it.url}
+                        title={it.name}
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        <span class:list={[it.icon, "text-4xl"]} />
+                    </a>
+                ))
+            }
+        </div>
+    </div>
+  </div>
+</section>
