@@ -5,9 +5,8 @@
     "checkJs": true,
     "strictNullChecks": true,
     "types": ["@cloudflare/workers-types"],
-    "baseUrl": ".",
     "paths": {
-      "~/*": ["src/*"]
+      "~/*": ["./src/*"]
     }
   },
   "include": ["src", ".astro/types.d.ts", "*.config.{js,ts}"]
