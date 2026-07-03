@@ -1,11 +1,14 @@
 {
-  "$schema": "https://www.unpkg.com/wrangler/config-schema.json",
+  "$schema": "./node_modules/wrangler/config-schema.json",
   "account_id": "67f6dc906faf3cdf2b26c2b30ab5fa25",
-  "name": "portfolio",
-  "main": "@astrojs/cloudflare/entrypoints/server",
+  "name": "sajam",
+  "main": "src/worker.ts",
   "compatibility_date": "2026-07-01",
   "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "preview_urls": false,
   "routes": [
+    { "pattern": "sajam.dev", "custom_domain": true },
     { "pattern": "cjamal.com", "custom_domain": true },
     { "pattern": "shrjamal.com", "custom_domain": true },
   ],
