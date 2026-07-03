@@ -3,7 +3,6 @@ import tailwindcss from "@tailwindcss/vite"
 import { defineConfig, envField } from "astro/config"
 import metaTags from "astro-meta-tags"
 import { loadEnv } from "vite"
-import tsconfigPaths from "vite-tsconfig-paths"
 
 // @ts-expect-error
 const env = loadEnv(process.env.NODE_ENV, process.cwd(), "")
@@ -13,9 +12,15 @@ export default defineConfig({
   adapter: cloudflare({
     imageService: "compile",
   }),
+  server: {
+    port: 3000,
+  },
   integrations: [metaTags()],
   vite: {
-    plugins: [tsconfigPaths(), tailwindcss()],
+    resolve: {
+      tsconfigPaths: true,
+    },
+    plugins: [tailwindcss()],
   },
   devToolbar: {
     enabled: false,
