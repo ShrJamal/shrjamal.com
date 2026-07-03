@@ -1,60 +1,16 @@
 ---
 import { Image } from "astro:assets"
 import _2048club from "~/assets/imgs/2048club.webp"
-import CovidTrackerImg from "~/assets/imgs/covid-tracker.webp"
-import DEMSImg from "~/assets/imgs/dems.webp"
-import FluterFireImg from "~/assets/imgs/flutter-social.webp"
-import KorgiImg from "~/assets/imgs/korgi.webp"
-import LinkdapImg from "~/assets/imgs/linkdap.webp"
-import ProshopImg from "~/assets/imgs/proshop.webp"
-import thumbnailGrabber from "~/assets/imgs/thumbnail-grabber.webp"
-import WeWeb3Img from "~/assets/imgs/weweb3.webp"
-import { techs } from "~/lib/consts"
-
-const projects = [
-  {
-    name: "2048 Club",
-    src: "https://2048.club",
-    img: _2048club,
-    description:
-      "A redesigned 2048 game with a modern look, built with Astro, SolidJS, and Cloudflare.",
-    techs: [techs.astro, techs.solidjs, techs.tailwindcss, techs.cloudflare],
-  },
-  {
-    name: "FlutterFire Social",
-    src: "https://codecanyon.net/item/flutterfire-social-messenger/25605604",
-    img: FluterFireImg,
-    description:
-      "A complete social media app with posts, chat, and notifications.",
-    techs: [
-      techs.dart,
-      techs.flutter,
-      techs.firebase,
-      techs.android,
-      techs.ios,
-    ],
-  },
-  {
-    name: "Thumbnail Downloader",
-    src: "https://thumbnail-grabber.com",
-    img: thumbnailGrabber,
-    description:
-      "A web app to download thumbnails from YouTube videos.",
-    techs: [techs.astro, techs.solidjs, techs.tailwindcss, techs.cloudflare],
-  },
-  {
-    name: "KorgiBoard",
-    src: "https://korgiboard.com",
-    img: KorgiImg,
-    description:
-      "Project management workspace integrated with Google Workspace and MS365.",
-    techs: [techs.typescript, techs.react, techs.nextjs, techs.tailwindcss],
-  },
-]
+import { projects } from "~/lib/projects"
 ---
 
 <section id="projects" class="flex flex-col gap-8 py-20">
-  <h2 class="text-5xl font-bold uppercase" style="font-family: 'Syne', sans-serif;">Featured Projects</h2>
+  <h2
+    class="text-5xl font-bold uppercase"
+    style="font-family: 'Syne', sans-serif;"
+  >
+    Featured Projects
+  </h2>
   <div class="grid gap-12 md:grid-cols-2">
     {
       projects.map((p) => (
@@ -70,31 +26,16 @@ const projects = [
             alt={p.name}
           />
           <div class="flex-1 flex flex-col gap-2">
-            <h3 class="text-3xl font-bold" style="font-family: 'Syne', sans-serif;">{p.name}</h3>
+            <h3
+              class="text-3xl font-bold"
+              style="font-family: 'Syne', sans-serif;"
+            >
+              {p.name}
+            </h3>
             <p class="flex-1 font-mono">{p.description}</p>
 
-            <div class="flex flex-wrap gap-2 items-center">
-              <ul class="flex gap-2">
-                {p.techs.map((t) => (
-                  <li>
-                    <i title={t.name} class:list={["text-2xl", t.icon]} />
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <div class="flex flex-wrap gap-2 items-center"></div>
             <div class="flex gap-4 mt-4">
-              {p.sourceCode && (
-                <a
-                  class="btn btn-outline"
-                  title={`View ${p.name} source code`}
-                  target="_blank"
-                  rel="alternate"
-                  href={p.sourceCode}
-                >
-                  <span class="icon-[mdi--github] text-xl" />
-                  <span>Code</span>
-                </a>
-              )}
               {p.src && (
                 <a
                   class="btn btn-primary"
