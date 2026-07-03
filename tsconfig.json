@@ -4,7 +4,7 @@
     "allowJs": true,
     "checkJs": true,
     "strictNullChecks": true,
-    "types": ["vite/client", "./worker-configuration.d.ts"],
+    "types": ["vite-plus/client", "./worker-configuration.d.ts"],
     "paths": {
       "~/*": ["./src/*"]
     }

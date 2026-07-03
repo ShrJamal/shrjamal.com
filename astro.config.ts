@@ -1,8 +1,7 @@
 import cloudflare from "@astrojs/cloudflare"
 import tailwindcss from "@tailwindcss/vite"
 import { defineConfig, envField } from "astro/config"
-import metaTags from "astro-meta-tags"
-import { loadEnv } from "vite"
+import { loadEnv } from "vite-plus"
 
 // @ts-expect-error
 const env = loadEnv(process.env.NODE_ENV, process.cwd(), "")
@@ -15,7 +14,6 @@ export default defineConfig({
   server: {
     port: 3000,
   },
-  integrations: [metaTags()],
   vite: {
     resolve: {
       tsconfigPaths: true,
