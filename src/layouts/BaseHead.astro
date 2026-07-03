@@ -45,9 +45,21 @@ const ogImg = Astro.props.ogImg || "/og-image.jpg"
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
-  href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap"
+  href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
   rel="stylesheet"
 />
+
+<!-- Apply the saved theme before paint to avoid a flash of the wrong colors. -->
+<script is:inline>
+  const saved = localStorage.getItem("sajam-theme")
+  const theme =
+    saved === "light" || saved === "dark"
+      ? saved
+      : matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light"
+  document.documentElement.dataset.theme = theme
+</script>
 
 {
   import.meta.env.PROD ? (

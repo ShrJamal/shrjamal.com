@@ -1,155 +1,148 @@
 @import "tailwindcss";
 
-@plugin "@iconify/tailwind4";
+@theme {
+  --font-sans: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
 
-@custom-variant dark (&:is(.dark *));
+  --color-page: light-dark(#f6f8fc, #070c16);
+  --color-ink: light-dark(#0c1b33, #e8edf6);
+  --color-muted: light-dark(#4b5b78, #93a3c0);
+  --color-accent: light-dark(#0284c7, #38bdf8);
+  --color-card: light-dark(#ffffff, #0a1120);
+  --color-faint: light-dark(#8a99b5, #5a6c92);
+
+  --color-line: light-dark(rgba(12, 27, 51, 0.1), rgba(120, 160, 255, 0.12));
+  --color-card-line: light-dark(
+    rgba(12, 27, 51, 0.12),
+    rgba(120, 160, 255, 0.16)
+  );
+  --color-grid-line: light-dark(
+    rgba(12, 27, 51, 0.12),
+    rgba(120, 160, 255, 0.14)
+  );
+  --color-btn-line: light-dark(
+    rgba(12, 27, 51, 0.18),
+    rgba(120, 160, 255, 0.3)
+  );
+  --color-tag-line: light-dark(
+    rgba(2, 132, 199, 0.35),
+    rgba(56, 189, 248, 0.3)
+  );
+  --color-nav: light-dark(rgba(246, 248, 252, 0.85), rgba(7, 12, 22, 0.85));
+}
 
 html {
+  color-scheme: light dark;
   scroll-behavior: smooth;
 }
 
+/* The theme toggle sets data-theme; color-scheme drives all light-dark() tokens. */
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}
+
 body {
-  background-color: #f4f4f4;
-  color: #000000;
-  font-family: "Space Mono", monospace;
+  margin: 0;
+  background: var(--color-page);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
 }
 
-:root {
-  --radius: 0.5rem;
-
-  --primary: #3dff57;
-  --secondary: #ff007a;
-
-  --background: #f4f4f4;
-  --foreground: #000000;
-  --card: #f4f4f4;
-  --card-foreground: #000000;
-  --popover: #f4f4f4;
-  --popover-foreground: #000000;
-  --muted: #f4f4f4;
-  --muted-foreground: #7f7f7f;
-  --accent: #3dff57;
-  --accent-foreground: #000000;
-  --destructive: #ff0000;
-  --border: #000000;
-  --input: #f4f4f4;
-  --ring: #3dff57;
-  --sidebar: #f4f4f4;
-  --sidebar-foreground: #000000;
-  --sidebar-primary: #3dff57;
-  --sidebar-primary-foreground: #000000;
-  --sidebar-accent: #3dff57;
-  --sidebar-accent-foreground: #000000;
-  --sidebar-border: #000000;
-  --sidebar-ring: #3dff57;
+/* Gradient-filled text for the hero accent word. */
+.text-gradient {
+  background: linear-gradient(120deg, var(--color-accent), #2563eb);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
-@theme inline {
-  --color-page-bg: var(--page-bg);
-  --color-grid-bg: var(--grid-bg);
-  --color-grid-cell: var(--grid-cell);
-
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --animate-accordion-down: accordion-down 0.2s ease-out;
-  --animate-accordion-up: accordion-up 0.2s ease-out;
-
-  --breakpoint-2xs: 375px;
-  --breakpoint-xs: 480px;
-  --breakpoint-sm: 640px;
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 1024px;
-  --breakpoint-xl: 1280px;
-  --breakpoint-2xl: 1536px;
-  --breakpoint-3xl: 1600px;
-  --breakpoint-4xl: 1920px;
-  --breakpoint-5xl: 2560px;
-  --breakpoint-6xl: 3200px;
-  --breakpoint-7xl: 3840px;
-  --breakpoint-8xl: 4480px;
+/* Solid brand CTA — the blue→cyan gradient buttons. */
+.btn-cta {
+  background: linear-gradient(120deg, #38bdf8, #2563eb);
+  color: #fff;
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-    font-family: "Syne", sans-serif;
-  }
-
-  .gradient-text {
-    @apply from-primary to-secondary bg-linear-to-b bg-clip-text;
-    @apply text-6xl font-extrabold text-transparent;
-  }
+/* Animated sun/moon theme toggle (adapted from web.dev's sun-and-moon icon). */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  cursor: pointer;
+  border: 1px solid var(--color-btn-line);
+  border-radius: 0.5rem;
+  background: transparent;
+  color: var(--color-ink);
+  transition: color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.theme-toggle:hover {
+  color: var(--color-accent);
 }
 
-.btn {
-  @apply rounded-none px-4 py-2 shadow-md;
-  @apply flex items-center justify-center gap-1;
-  border: 2px solid #000;
-  box-shadow: 4px 4px 0 #000;
-  transition: all 0.2s ease-in-out;
+.sun-and-moon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.sun-and-moon > :is(.moon, .sun, .sun-beams) {
+  transform-origin: center;
+}
+.sun-and-moon > :is(.moon, .sun) {
+  fill: currentColor;
+}
+.sun-and-moon > .sun-beams {
+  stroke: currentColor;
+  stroke-width: 2px;
+  stroke-linecap: round;
 }
 
-.btn:hover {
-  transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0 #000;
+.sun-and-moon > .sun {
+  transition: transform 0.5s cubic-bezier(0.5, 1.25, 0.75, 1.25);
 }
-
-.btn-primary {
-  @apply bg-primary text-black;
-}
-.btn-outline {
-  @apply border-2 border-black;
-}
-
-section {
-  opacity: 0;
-  transform: translateY(20px);
+.sun-and-moon > .sun-beams {
   transition:
-    opacity 0.5s ease-out,
-    transform 0.5s ease-out;
+    transform 0.5s cubic-bezier(0.5, 1.5, 0.75, 1.25),
+    opacity 0.5s ease;
+}
+.sun-and-moon .moon > circle {
+  transition: transform 0.25s cubic-bezier(0, 0, 0, 1);
+}
+@supports (cx: 1) {
+  .sun-and-moon .moon > circle {
+    transition: cx 0.25s cubic-bezier(0, 0, 0, 1);
+  }
 }
 
-section.scrolled {
-  opacity: 1;
-  transform: translateY(0);
+:root[data-theme="dark"] .sun-and-moon > .sun {
+  transform: scale(1.75);
+  transition-timing-function: cubic-bezier(0.25, 0, 0.3, 1);
+  transition-duration: 0.25s;
+}
+:root[data-theme="dark"] .sun-and-moon > .sun-beams {
+  transform: rotatez(-25deg);
+  transition-duration: 0.15s;
+  opacity: 0;
+}
+:root[data-theme="dark"] .sun-and-moon > .moon > circle {
+  transform: translatex(-7px);
+  transition-duration: 0.5s;
+  transition-delay: 0.25s;
+}
+@supports (cx: 1) {
+  :root[data-theme="dark"] .sun-and-moon > .moon > circle {
+    cx: 17;
+    transform: translatex(0);
+  }
 }
 
-.bg-glass {
-  border: 2px solid #000;
-  box-shadow: 4px 4px 0 #000;
-  background: #f4f4f4;
+@media (prefers-reduced-motion: reduce) {
+  .sun-and-moon > :is(.moon, .sun, .sun-beams),
+  .sun-and-moon .moon > circle {
+    transition: none;
+  }
 }

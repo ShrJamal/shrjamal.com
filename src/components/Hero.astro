@@ -1,0 +1,52 @@
+---
+const email = "support@sajam.dev"
+---
+
+<header class="relative overflow-hidden px-6 pt-24 pb-[88px] md:px-14 md:pt-[100px]">
+  <div
+    class="absolute inset-0"
+    style="background:radial-gradient(800px 400px at 75% 10%,light-dark(rgba(37,99,235,.12),rgba(37,99,235,.28)),transparent 70%),radial-gradient(600px 300px at 15% 90%,light-dark(rgba(56,189,248,.08),rgba(56,189,248,.12)),transparent 70%)"
+  >
+  </div>
+
+  <div class="relative max-w-[860px]">
+    <div class="mb-[22px] font-mono text-[13px] text-accent">
+      $ sajam build --for your-business
+    </div>
+    <h1
+      class="mb-[22px] text-[40px] leading-[1.04] font-bold tracking-[-0.02em] sm:text-[52px] md:text-[64px]"
+    >
+      We build software.<br />Ours, and <span class="text-gradient">yours.</span>
+    </h1>
+    <p class="mb-[34px] max-w-[56ch] text-lg leading-[1.65] text-muted">
+      Software development and technology consulting for businesses and
+      entrepreneurs — from the team that ships and operates its own products,
+      platforms, and online services.
+    </p>
+    <div class="flex flex-wrap items-center gap-3.5">
+      <a
+        href="#contact"
+        class="btn-cta rounded-[9px] px-[30px] py-[15px] text-base font-semibold no-underline shadow-[0_8px_24px_-8px_rgba(37,99,235,0.5)]"
+      >
+        Start a project
+      </a>
+      <a
+        href="#products"
+        class="rounded-[9px] border border-btn-line px-[30px] py-[15px] text-base font-semibold text-inherit no-underline"
+      >
+        Explore products ↓
+      </a>
+    </div>
+  </div>
+
+  <div
+    class="relative mt-[60px] flex flex-wrap gap-9 border-t border-line pt-[22px] font-mono text-[13px] text-muted"
+  >
+    <span><span class="text-accent">8+</span> products live</span>
+    <span><span class="text-accent">web · mobile · cloud</span> stacks</span>
+    <span
+      ><a href={`mailto:${email}`} class="text-accent no-underline">{email}</a
+      ></span
+    >
+  </div>
+</header>

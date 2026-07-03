@@ -1,0 +1,77 @@
+---
+import { Image } from "astro:assets"
+import { featured, more } from "~/lib/projects"
+
+// Toggles the tech-tag row on the featured cards (design default: on).
+const showTechTags = true
+---
+
+<section id="products" class="border-t border-line px-6 py-20 md:px-14">
+  <div class="mb-3 font-mono text-[13px] text-accent">// products</div>
+  <div class="mb-10 flex flex-wrap items-end justify-between gap-6">
+    <h2 class="text-[30px] font-bold tracking-[-0.01em] md:text-[38px]">
+      Built, shipped, operated by us
+    </h2>
+    <p class="max-w-[40ch] text-[15px] leading-[1.55] text-muted">
+      We dogfood our own craft — these platforms run in production today.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 gap-[18px] md:grid-cols-2">
+    {
+      featured.map((p) => (
+        <a
+          href={p.src}
+          target="_blank"
+          rel="noopener"
+          class="flex gap-5 rounded-xl border border-card-line bg-card p-6 text-inherit no-underline transition-colors hover:border-accent"
+        >
+          <Image
+            src={p.img}
+            alt={p.name}
+            width={260}
+            height={192}
+            class="h-24 w-[130px] flex-none rounded-lg object-cover"
+          />
+          <div>
+            <div class="mb-1.5 flex flex-wrap items-baseline gap-2.5">
+              <h3 class="text-lg font-semibold">{p.name}</h3>
+              <span class="font-mono text-[11.5px] text-faint">{p.host}</span>
+            </div>
+            <p class="mb-2.5 text-[13.5px] leading-[1.55] text-muted">
+              {p.description}
+            </p>
+            {showTechTags && (
+              <div class="flex flex-wrap gap-1.5 font-mono text-[10.5px] text-accent">
+                {p.techs.map((t) => (
+                  <span class="rounded-[5px] border border-tag-line px-2 py-[3px]">
+                    {t}
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
+        </a>
+      ))
+    }
+  </div>
+
+  <div class="mt-[18px] grid grid-cols-2 gap-[18px] md:grid-cols-4">
+    {
+      more.map((p) => (
+        <a
+          href={p.src}
+          target="_blank"
+          rel="noopener"
+          class="rounded-xl border border-card-line bg-card p-5 text-inherit no-underline transition-colors hover:border-accent"
+        >
+          <h3 class="mb-2 text-base font-semibold">{p.name}</h3>
+          <p class="mb-2.5 text-[13px] leading-[1.55] text-muted">
+            {p.description}
+          </p>
+          <span class="font-mono text-[11px] text-accent">{p.host} ↗</span>
+        </a>
+      ))
+    }
+  </div>
+</section>

@@ -1,46 +1,125 @@
 ---
-import Logo from "./Logo.astro"
+const links = [
+  { href: "#services", label: "/services" },
+  { href: "#products", label: "/products" },
+  { href: "#about", label: "/about" },
+]
 ---
 
-<nav class="fixed top-0 left-0 w-full bg-black text-white p-4 flex items-center border-b-4 border-primary z-10">
-  <Logo />
-  <div class="flex-1"></div>
-  <div class="hidden md:flex items-center gap-8 font-bold uppercase">
-    <a href="#projects" class="hover:text-primary transition-colors">Projects</a>
-    <a href="#experience" class="hover:text-primary transition-colors">Experience</a>
-    <a href="#contact" class="hover:text-primary transition-colors">Contact</a>
-  </div>
-  <div class="md:hidden">
-    <button id="mobile-menu-button" class="text-white focus:outline-none">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+<nav
+  class="sticky top-0 z-10 flex items-center justify-between border-b border-line bg-nav px-6 py-5 backdrop-blur-md md:px-14"
+>
+  <a href="/" class="flex items-center gap-3">
+    <img
+      src="/logo.webp"
+      alt="SAJAM"
+      class="h-[34px] w-auto"
+    />
+    <span class="text-[19px] font-bold tracking-[0.04em]">SAJAM</span>
+  </a>
+
+  <div class="flex items-center gap-4 md:gap-[30px]">
+    <div
+      class="hidden items-center gap-[30px] font-mono text-sm text-muted md:flex"
+    >
+      {
+        links.map((l) => (
+          <a
+            href={l.href}
+            class="text-inherit no-underline transition-colors hover:text-accent"
+          >
+            {l.label}
+          </a>
+        ))
+      }
+    </div>
+
+    <button
+      id="theme-toggle"
+      type="button"
+      title="Toggle theme"
+      aria-label="Toggle theme"
+      class="theme-toggle"
+    >
+      <svg
+        class="sun-and-moon"
+        aria-hidden="true"
+        viewBox="0 0 24 24"
+        fill="none"
+      >
+        <mask
+          class="moon"
+          id="theme-toggle-moon"
+        >
+          <rect
+            x="0"
+            y="0"
+            width="100%"
+            height="100%"
+            fill="white"
+          />
+          <circle
+            cx="24"
+            cy="10"
+            r="6"
+            fill="black"
+          />
+        </mask>
+        <circle
+          class="sun"
+          cx="12"
+          cy="12"
+          r="6"
+          mask="url(#theme-toggle-moon)"
+          fill="currentColor"
+        />
+        <g
+          class="sun-beams"
+          stroke="currentColor"
+        >
+          <line x1="12" y1="1" x2="12" y2="3" />
+          <line x1="12" y1="21" x2="12" y2="23" />
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+          <line x1="1" y1="12" x2="3" y2="12" />
+          <line x1="21" y1="12" x2="23" y2="12" />
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+        </g>
+      </svg>
     </button>
+
+    <a
+      href="#contact"
+      class="btn-cta rounded-lg px-[22px] py-2.5 font-semibold no-underline"
+    >
+      Contact
+    </a>
   </div>
-  <a href="mailto:email@example.com" class="btn btn-primary ml-8 hidden md:flex">Hire Me</a>
 </nav>
-<div id="mobile-menu" class="hidden md:hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-90 z-20">
-    <div class="flex justify-end p-4">
-        <button id="mobile-menu-close-button" class="text-white focus:outline-none">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-        </button>
-    </div>
-    <div class="flex flex-col items-center justify-center h-full gap-8 font-bold uppercase text-2xl">
-        <a href="#projects" class="hover:text-primary transition-colors">Projects</a>
-        <a href="#experience" class="hover:text-primary transition-colors">Experience</a>
-        <a href="#contact" class="hover:text-primary transition-colors">Contact</a>
-        <a href="mailto:email@example.com" class="btn btn-primary mt-8">Hire Me</a>
-    </div>
-</div>
 
 <script>
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenuCloseButton = document.getElementById('mobile-menu-close-button');
-    const mobileMenu = document.getElementById('mobile-menu');
+  type Theme = "light" | "dark"
 
-    mobileMenuButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-    });
+  const btn = document.getElementById("theme-toggle")
 
-    mobileMenuCloseButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-    });
+  function currentTheme(): Theme {
+    return document.documentElement.dataset.theme === "dark" ? "dark" : "light"
+  }
+
+  function label(theme: Theme) {
+    return theme === "dark" ? "Switch to light theme" : "Switch to dark theme"
+  }
+
+  // Sync the accessible label with whatever the pre-paint script applied.
+  btn?.setAttribute("aria-label", label(currentTheme()))
+
+  btn?.addEventListener("click", () => {
+    const next: Theme = currentTheme() === "dark" ? "light" : "dark"
+    document.documentElement.dataset.theme = next
+    btn.setAttribute("aria-label", label(next))
+    try {
+      localStorage.setItem("sajam-theme", next)
+    } catch {}
+  })
 </script>

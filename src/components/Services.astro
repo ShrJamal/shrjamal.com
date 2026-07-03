@@ -1,0 +1,49 @@
+---
+const services = [
+  {
+    n: "01",
+    title: "Software development",
+    body: "Production systems, built end to end — from architecture to launch.",
+  },
+  {
+    n: "02",
+    title: "Tech consulting",
+    body: "Practical stack, process & product decisions that improve operations.",
+  },
+  {
+    n: "03",
+    title: "Website development",
+    body: "Fast, modern sites that represent your business and convert.",
+  },
+  {
+    n: "04",
+    title: "Mobile apps",
+    body: "iOS & Android with native-quality experiences.",
+  },
+  {
+    n: "05",
+    title: "Custom solutions",
+    body: "Purpose-built tools that streamline workflows.",
+  },
+]
+---
+
+<section id="services" class="border-t border-line px-6 py-20 md:px-14">
+  <div class="mb-3 font-mono text-[13px] text-accent">// services</div>
+  <h2 class="mb-10 text-[30px] font-bold tracking-[-0.01em] md:text-[38px]">
+    What we do
+  </h2>
+  <div
+    class="grid grid-cols-1 gap-px overflow-hidden rounded-xl border border-grid-line bg-grid-line sm:grid-cols-2 lg:grid-cols-5"
+  >
+    {
+      services.map((s) => (
+        <div class="bg-card px-[22px] py-7">
+          <div class="mb-3.5 font-mono text-xs text-accent">{s.n}</div>
+          <h3 class="mb-2 text-[16.5px] font-semibold">{s.title}</h3>
+          <p class="text-[13.5px] leading-[1.55] text-muted">{s.body}</p>
+        </div>
+      ))
+    }
+  </div>
+</section>

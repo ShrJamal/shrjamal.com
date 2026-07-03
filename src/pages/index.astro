@@ -1,24 +1,21 @@
 ---
-import Contact from "~/components/Contact.astro"
-import Experience from "~/components/Experience.astro"
-import Intro from "~/components/Intro.astro"
-import Projects from "~/components/Projects.astro"
-import Techs from "~/components/Techs.astro"
+import About from "~/components/About.astro"
+import Hero from "~/components/Hero.astro"
+import Products from "~/components/Products.astro"
+import Services from "~/components/Services.astro"
 import Navbar from "~/components/TheNavbar.astro"
 import RootLayout from "~/layouts/RootLayout.astro"
 ---
 
 <RootLayout
-  class="mx-auto max-w-7xl p-2 sm:px-6 md:px-10"
-  title="ShrJamal"
-  description="ShrJamal - a neobrutalist portfolio"
+  title="SAJAM — Software development & technology consulting"
+  description="SAJAM LLC builds software — ours, and yours. Software development and technology consulting for businesses and entrepreneurs."
 >
-  <main class="flex flex-col gap-12">
-    <Navbar />
-    <Intro />
-    <Projects />
-    <Experience />
-    <Techs />
-    <Contact />
+  <Navbar />
+  <main>
+    <Hero />
+    <Services />
+    <Products />
+    <About />
   </main>
 </RootLayout>

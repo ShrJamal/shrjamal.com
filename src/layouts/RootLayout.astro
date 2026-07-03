@@ -16,24 +16,8 @@ export interface Props {
     <BaseHead {...Astro.props} />
     <slot name="head" />
   </head>
-  <body
-    class:list={["flex min-h-svh flex-col items-center", Astro.props.class]}
-  >
+  <body class:list={["min-h-svh", Astro.props.class]}>
     <slot />
     <TheFooter />
-    <script>
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("scrolled");
-          }
-        });
-      });
-
-      const sections = document.querySelectorAll("section");
-      sections.forEach((section) => {
-        observer.observe(section);
-      });
-    </script>
   </body>
 </html>

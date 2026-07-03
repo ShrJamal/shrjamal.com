@@ -1,9 +1,10 @@
 ---
-
+const year = new Date().getFullYear()
 ---
 
-<footer class="w-full bg-black text-white p-4 border-t-4 border-primary">
-  <p class="text-center text-sm font-bold uppercase">
-    ShrJamal - &copy; {new Date().getFullYear()} All rights reserved.
-  </p>
+<footer
+  class="flex flex-wrap items-center justify-between gap-2 border-t border-line px-6 py-[22px] font-mono text-[12.5px] text-faint md:px-14"
+>
+  <span>© {year} SAJAM LLC</span>
+  <span>software · consulting · products</span>
 </footer>

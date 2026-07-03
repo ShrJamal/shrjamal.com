@@ -1,0 +1,38 @@
+---
+const email = "support@sajam.dev"
+---
+
+<section
+  id="about"
+  class="grid grid-cols-1 gap-14 border-t border-line px-6 py-20 md:grid-cols-2 md:px-14"
+>
+  <div>
+    <div class="mb-3 font-mono text-[13px] text-accent">// about</div>
+    <h2 class="mb-4 text-[28px] font-bold md:text-[34px]">
+      Operators, not just contractors
+    </h2>
+    <p class="text-[15.5px] leading-[1.7] text-muted">
+      SAJAM LLC runs its own products in production — billing, uptime, support,
+      the works. That experience makes our client software pragmatic: honest
+      architecture, honest timelines, and code that keeps working after launch.
+    </p>
+  </div>
+
+  <div
+    id="contact"
+    class="flex flex-col justify-center gap-3.5 rounded-xl border border-card-line p-[34px]"
+    style="background:radial-gradient(400px 200px at 80% 0%,light-dark(rgba(37,99,235,.1),rgba(37,99,235,.25)),transparent 70%),light-dark(#ffffff,#0a1120)"
+  >
+    <h2 class="text-[27px] font-bold">Let's build something</h2>
+    <p class="text-[14.5px] leading-[1.6] text-muted">
+      One email starts it. No forms, no funnels. We reply within one business
+      day.
+    </p>
+    <a
+      href={`mailto:${email}`}
+      class="btn-cta self-start rounded-[9px] px-7 py-3.5 font-mono text-[15.5px] font-semibold no-underline"
+    >
+      {email}
+    </a>
+  </div>
+</section>
