@@ -24,14 +24,14 @@ const showTechTags = true
           href={p.src}
           target="_blank"
           rel="noopener"
-          class="flex gap-5 rounded-xl border border-card-line bg-card p-6 text-inherit no-underline transition-colors hover:border-accent"
+          class="flex flex-col gap-5 rounded-xl border border-card-line bg-card p-6 text-inherit no-underline transition-colors hover:border-accent sm:flex-row"
         >
           <Image
             src={p.img}
-            alt={p.name}
-            width={260}
-            height={192}
-            class="h-24 w-[130px] flex-none rounded-lg object-cover"
+            alt={`${p.name} homepage`}
+            width={320}
+            height={180}
+            class="aspect-video w-full flex-none rounded-lg object-cover sm:h-[90px] sm:w-40"
           />
           <div>
             <div class="mb-1.5 flex flex-wrap items-baseline gap-2.5">

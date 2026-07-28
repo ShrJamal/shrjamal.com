@@ -1,11 +1,14 @@
 import _2048club from "~/assets/imgs/2048club.webp"
 import ChargeBellImg from "~/assets/imgs/chargebell.webp"
+import ConverturImg from "~/assets/imgs/convertur.jpg"
 import DEMSImg from "~/assets/imgs/dems.webp"
 import ElfilahaImg from "~/assets/imgs/elfilaha.webp"
 import FlutterFireImg from "~/assets/imgs/flutter-social.webp"
+import JsonKitImg from "~/assets/imgs/jsonkit.jpg"
 import KorgiImg from "~/assets/imgs/korgi.webp"
+import PDFToolzImg from "~/assets/imgs/pdftoolz.jpg"
 import ProshopImg from "~/assets/imgs/proshop.webp"
-import thumbnailGrabber from "~/assets/imgs/thumbnail-grabber.webp"
+import ThumbnailGrabberImg from "~/assets/imgs/thumbnail-grabber.jpg"
 import WeWeb3Img from "~/assets/imgs/weweb3.webp"
 
 export const products = [
@@ -28,12 +31,40 @@ export const products = [
     techs: ["astro", "solidjs"],
   },
   {
-    name: "Thumbnail Downloader",
+    name: "JsonKit",
+    src: "https://jsonkit.com",
+    host: "jsonkit.com",
+    img: JsonKitImg,
+    description:
+      "A privacy-first toolkit with 53 browser-based utilities for formatting, validating, and converting JSON, generating code, inspecting URLs and SQL, and working with QR codes. Everything runs client-side, so data never leaves the browser.",
+    techs: ["developer tools", "client-side", "privacy"],
+  },
+  {
+    name: "PDFToolz",
+    src: "https://pdftoolz.com",
+    host: "pdftoolz.com",
+    img: PDFToolzImg,
+    description:
+      "A complete browser-based PDF workspace for merging, splitting, compressing, converting, editing, signing, and protecting documents. Files are processed locally for a fast, private workflow with no uploads.",
+    techs: ["pdf", "client-side", "privacy"],
+  },
+  {
+    name: "Convertur",
+    src: "https://convertur.com",
+    host: "convertur.com",
+    img: ConverturImg,
+    description:
+      "A private, all-purpose file converter for images, PDFs, audio, video, documents, and structured data. It runs directly in the browser with smart format suggestions, no accounts, and no server upload limits.",
+    techs: ["file conversion", "client-side", "privacy"],
+  },
+  {
+    name: "Thumbnail Grabber",
     src: "https://thumbnail-grabber.com",
     host: "thumbnail-grabber.com",
-    img: thumbnailGrabber,
-    description: "A web app to download thumbnails from YouTube videos.",
-    techs: ["astro", "solidjs"],
+    img: ThumbnailGrabberImg,
+    description:
+      "A creator toolkit for grabbing every available thumbnail resolution from YouTube, TikTok, Vimeo, Twitch, Dailymotion, and Instagram Reels. It also includes feed previews, A/B comparison, quick editing, and bulk ZIP export.",
+    techs: ["creator tools", "media", "client-side"],
   },
   {
     name: "Elfilaha",
