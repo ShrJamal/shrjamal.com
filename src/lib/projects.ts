@@ -1,15 +1,15 @@
-import _2048club from "~/assets/imgs/2048club.webp"
-import ChargeBellImg from "~/assets/imgs/chargebell.webp"
+import _2048club from "~/assets/imgs/2048club.png"
+import ChargeBellImg from "~/assets/imgs/chargebell.png"
 import ConverturImg from "~/assets/imgs/convertur.jpg"
 import DEMSImg from "~/assets/imgs/dems.webp"
 import ElfilahaImg from "~/assets/imgs/elfilaha.webp"
 import FlutterFireImg from "~/assets/imgs/flutter-social.webp"
 import JsonKitImg from "~/assets/imgs/jsonkit.jpg"
 import KorgiImg from "~/assets/imgs/korgi.webp"
+import LinkDapImg from "~/assets/imgs/linkdap.jpg"
+import OrbDocImg from "~/assets/imgs/orbdoc.jpg"
 import PDFToolzImg from "~/assets/imgs/pdftoolz.jpg"
-import ProshopImg from "~/assets/imgs/proshop.webp"
 import ThumbnailGrabberImg from "~/assets/imgs/thumbnail-grabber.jpg"
-import WeWeb3Img from "~/assets/imgs/weweb3.webp"
 
 export const products = [
   {
@@ -18,7 +18,7 @@ export const products = [
     host: "chargebell.com",
     img: ChargeBellImg,
     description:
-      "A Slack message every time a customer pays, a card fails, or someone asks for a refund. If you can pick a Slack channel, you can set it up.",
+      "ChargeBell posts Stripe activity in Slack, including payments, payouts, failed cards, refunds, disputes, and subscription changes. Teams can choose which alerts go where, set minimum amounts, and keep noisy events out of the channel.",
     techs: ["slack", "saas"],
   },
   {
@@ -27,7 +27,7 @@ export const products = [
     host: "2048.club",
     img: _2048club,
     description:
-      "A redesigned 2048 game with a modern look, built with Astro and SolidJS.",
+      "A fresh take on 2048 with board sizes from 3x3 to 8x8, custom tile themes, multiplayer rooms, leaderboards, and several puzzle variants. The familiar game is still at the center. There is simply more to do with it.",
     techs: ["astro", "solidjs"],
   },
   {
@@ -36,7 +36,7 @@ export const products = [
     host: "jsonkit.com",
     img: JsonKitImg,
     description:
-      "A privacy-first toolkit with 53 browser-based utilities for formatting, validating, and converting JSON, generating code, inspecting URLs and SQL, and working with QR codes. Everything runs client-side, so data never leaves the browser.",
+      "JsonKit is a collection of 53 small developer tools for working with JSON, code, URLs, SQL, and QR codes. Everything runs in the browser, so you can paste real data without sending it to a server.",
     techs: ["developer tools", "client-side", "privacy"],
   },
   {
@@ -45,7 +45,7 @@ export const products = [
     host: "pdftoolz.com",
     img: PDFToolzImg,
     description:
-      "A complete browser-based PDF workspace for merging, splitting, compressing, converting, editing, signing, and protecting documents. Files are processed locally for a fast, private workflow with no uploads.",
+      "PDFToolz puts the common PDF jobs in one place: merge, split, compress, convert, edit, sign, and protect. Files stay on the device while you work, which keeps the tools quick and private.",
     techs: ["pdf", "client-side", "privacy"],
   },
   {
@@ -54,7 +54,7 @@ export const products = [
     host: "convertur.com",
     img: ConverturImg,
     description:
-      "A private, all-purpose file converter for images, PDFs, audio, video, documents, and structured data. It runs directly in the browser with smart format suggestions, no accounts, and no server upload limits.",
+      "Convertur handles images, PDFs, audio, video, documents, and data files without uploading them first. Drop in a file, pick an output, and the conversion runs in the browser.",
     techs: ["file conversion", "client-side", "privacy"],
   },
   {
@@ -63,8 +63,26 @@ export const products = [
     host: "thumbnail-grabber.com",
     img: ThumbnailGrabberImg,
     description:
-      "A creator toolkit for grabbing every available thumbnail resolution from YouTube, TikTok, Vimeo, Twitch, Dailymotion, and Instagram Reels. It also includes feed previews, A/B comparison, quick editing, and bulk ZIP export.",
+      "Paste a video link and Thumbnail Grabber finds every available image size. It works with YouTube, TikTok, Vimeo, Twitch, Dailymotion, and Instagram Reels, with tools for previews, comparisons, quick edits, and bulk downloads.",
     techs: ["creator tools", "media", "client-side"],
+  },
+  {
+    name: "LinkDap",
+    src: "https://linkdap.com/feed",
+    host: "linkdap.com",
+    img: LinkDapImg,
+    description:
+      "LinkDap is a community feed for people sharing ideas, questions, and opportunities. Posts, curated listings, topic spaces, bookmarks, replies, and discovery keep useful conversations from getting lost.",
+    techs: ["community", "social", "opportunities"],
+  },
+  {
+    name: "OrbDoc",
+    src: "https://orbdoc.com",
+    host: "orbdoc.com",
+    img: OrbDocImg,
+    description:
+      "OrbDoc's OrbVoice app listens during a patient visit and turns the conversation into a draft clinical note while the doctor is still in the room. The physician reviews it, makes any edits, and sends it to the EHR instead of typing everything afterward.",
+    techs: ["healthcare", "ai", "ios"],
   },
   {
     name: "Elfilaha",
@@ -72,7 +90,7 @@ export const products = [
     host: "elfilaha.com",
     img: ElfilahaImg,
     description:
-      "Elfilaha (الفِلاحة) is a modern, Arabic-first agricultural knowledge platform and content studio. It puts practical, trustworthy farming guidance — subsidies, crop care, irrigation, project ideas, and the laws that govern the land — into the hands of Morocco's farmers, agri-entrepreneurs, and students, completely free of charge.",
+      "Elfilaha publishes practical farming information in Arabic for people in Morocco. Its articles cover subsidies, crops, irrigation, farm projects, land rules, and the everyday questions farmers and students actually have.",
     techs: ["blog", "cms"],
   },
   {
@@ -81,7 +99,7 @@ export const products = [
     host: "korgiboard.com",
     img: KorgiImg,
     description:
-      "Project management workspace integrated with Google Workspace and MS365.",
+      "Korgi turns a short prompt into a working Kanban board, then lets the team pull in files and meetings from Google Workspace, Microsoft 365, and Zoom. It keeps the plan, the source material, and the finished work in one place.",
     techs: ["typescript", "react", "nextjs"],
   },
   {
@@ -90,7 +108,7 @@ export const products = [
     host: "codecanyon.net",
     img: FlutterFireImg,
     description:
-      "A complete social media app with posts, chat, and notifications.",
+      "A complete Flutter and Firebase starter for building a social app. It includes phone sign-in, posts, likes, comments, follows, search, private and group chat, moderation, push notifications, analytics, ads, and dark mode.",
     techs: ["flutter", "firebase", "ios/android"],
   },
   {
@@ -99,24 +117,8 @@ export const products = [
     host: "dems.dev",
     img: DEMSImg,
     description:
-      "A headless CMS for developers, built with Next.js and Tailwind CSS.",
+      "DEMS was a civic tech project with a simple goal: make election information easier to understand and democratic participation easier to navigate.",
     techs: ["typescript", "nextjs", "tailwind"],
-  },
-  {
-    name: "WeWeb3",
-    src: "https://weweb3.xyz",
-    host: "weweb3.xyz",
-    img: WeWeb3Img,
-    description: "A web3 social platform with wallet integration.",
-    techs: ["nextjs", "react"],
-  },
-  {
-    name: "Proshop",
-    src: "https://proshop-sajam.vercel.app",
-    host: "proshop-sajam.vercel.app",
-    img: ProshopImg,
-    description: "An e-commerce web app built with the MERN stack.",
-    techs: ["react", "nodejs", "mongodb"],
   },
 ] satisfies Product[]
 
