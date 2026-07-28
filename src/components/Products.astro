@@ -10,10 +10,11 @@ const showTechTags = true
   <div class="mb-3 font-mono text-[13px] text-accent">// products</div>
   <div class="mb-10 flex flex-wrap items-end justify-between gap-6">
     <h2 class="text-[30px] font-bold tracking-[-0.01em] md:text-[38px]">
-      Built, shipped, operated by us
+      Things we have built
     </h2>
     <p class="max-w-[40ch] text-[15px] leading-[1.55] text-muted">
-      We dogfood our own craft — these platforms run in production today.
+      We designed and shipped these products, then learned from running them
+      ourselves.
     </p>
   </div>
 
@@ -63,13 +64,22 @@ const showTechTags = true
           href={p.src}
           target="_blank"
           rel="noopener"
-          class="rounded-xl border border-card-line bg-card p-5 text-inherit no-underline transition-colors hover:border-accent"
+          class="overflow-hidden rounded-xl border border-card-line bg-card text-inherit no-underline transition-colors hover:border-accent"
         >
-          <h3 class="mb-2 text-base font-semibold">{p.name}</h3>
-          <p class="mb-2.5 text-[13px] leading-[1.55] text-muted">
-            {p.description}
-          </p>
-          <span class="font-mono text-[11px] text-accent">{p.host} ↗</span>
+          <Image
+            src={p.img}
+            alt={`${p.name} homepage`}
+            width={320}
+            height={180}
+            class="aspect-video w-full border-b border-card-line object-cover"
+          />
+          <div class="p-5">
+            <h3 class="mb-2 text-base font-semibold">{p.name}</h3>
+            <p class="mb-2.5 text-[13px] leading-[1.55] text-muted">
+              {p.description}
+            </p>
+            <span class="font-mono text-[11px] text-accent">{p.host} ↗</span>
+          </div>
         </a>
       ))
     }

@@ -59,7 +59,7 @@ body {
   color: transparent;
 }
 
-/* Solid brand CTA — the blue→cyan gradient buttons. */
+/* Solid brand CTA for the blue-to-cyan gradient buttons. */
 .btn-cta {
   background: linear-gradient(120deg, #38bdf8, #2563eb);
   color: #fff;
