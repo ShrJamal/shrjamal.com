@@ -14,15 +14,15 @@
     "prepare": "vp config"
   },
   "devDependencies": {
-    "@astrojs/check": "0.9.10",
-    "@astrojs/cloudflare": "14.1.5",
-    "@iconify/json": "^2.2.506",
+    "@astrojs/check": "0.9.12",
+    "@astrojs/cloudflare": "14.4.9",
+    "@iconify/json": "^2.2.560",
     "@iconify/tailwind4": "^1.2.3",
-    "@tailwindcss/vite": "^4.3.3",
-    "astro": "7.1.4",
-    "tailwindcss": "^4.3.3",
+    "@tailwindcss/vite": "^4.3.5",
+    "astro": "7.4.13",
+    "tailwindcss": "^4.3.5",
     "typescript": "^7.0.2",
-    "vite-plus": "0.2.6",
-    "wrangler": "^4.114.0"
+    "vite-plus": "1.7.0",
+    "wrangler": "^4.166.0"
   }
 }

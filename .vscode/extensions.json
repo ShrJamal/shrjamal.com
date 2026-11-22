@@ -1,7 +1,4 @@
 {
-  "recommendations": [
-    "astro-build.astro-vscode",
-    "VoidZero.vite-plus-extension-pack"
-  ],
+  "recommendations": ["astro-build.astro-vscode", "VoidZero.vite-plus-extension-pack"],
   "unwantedRecommendations": []
 }

@@ -12,22 +12,10 @@
   --color-faint: light-dark(#8a99b5, #5a6c92);
 
   --color-line: light-dark(rgba(12, 27, 51, 0.1), rgba(120, 160, 255, 0.12));
-  --color-card-line: light-dark(
-    rgba(12, 27, 51, 0.12),
-    rgba(120, 160, 255, 0.16)
-  );
-  --color-grid-line: light-dark(
-    rgba(12, 27, 51, 0.12),
-    rgba(120, 160, 255, 0.14)
-  );
-  --color-btn-line: light-dark(
-    rgba(12, 27, 51, 0.18),
-    rgba(120, 160, 255, 0.3)
-  );
-  --color-tag-line: light-dark(
-    rgba(2, 132, 199, 0.35),
-    rgba(56, 189, 248, 0.3)
-  );
+  --color-card-line: light-dark(rgba(12, 27, 51, 0.12), rgba(120, 160, 255, 0.16));
+  --color-grid-line: light-dark(rgba(12, 27, 51, 0.12), rgba(120, 160, 255, 0.14));
+  --color-btn-line: light-dark(rgba(12, 27, 51, 0.18), rgba(120, 160, 255, 0.3));
+  --color-tag-line: light-dark(rgba(2, 132, 199, 0.35), rgba(56, 189, 248, 0.3));
   --color-nav: light-dark(rgba(246, 248, 252, 0.85), rgba(7, 12, 22, 0.85));
 }
 

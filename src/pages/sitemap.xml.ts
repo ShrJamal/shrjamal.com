@@ -3,9 +3,7 @@ import type { APIRoute } from "astro"
 export const prerender = true
 
 export const GET: APIRoute = async () => {
-  const main = ["/"].map((path) =>
-    getXMLEntry({ path, lastmod: "27 March 2024" }),
-  )
+  const main = ["/"].map((path) => getXMLEntry({ path, lastmod: "27 March 2024" }))
 
   return new Response(genSitemap([...main]), {
     headers: {
@@ -28,8 +26,7 @@ function genSitemap(urls: string[]) {
 function getXMLEntry(e: { path: string; lastmod?: string }) {
   const arr = ["<url>"]
   arr.push(`<loc>${import.meta.env.SITE}${e.path}</loc>`)
-  if (e.lastmod)
-    arr.push(`<lastmod>${new Date(e.lastmod).toISOString()}</lastmod>`)
+  if (e.lastmod) arr.push(`<lastmod>${new Date(e.lastmod).toISOString()}</lastmod>`)
   arr.push("</url>")
   return arr.join("\n")
 }
