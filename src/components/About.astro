@@ -1,5 +1,9 @@
 ---
+import { Image } from "astro:assets"
+import profileImg from "~/assets/imgs/profile.webp"
+
 const email = "support@sajam.dev"
+const upworkUrl = "https://www.upwork.com/freelancers/shrjamal"
 ---
 
 <section
@@ -8,27 +12,59 @@ const email = "support@sajam.dev"
 >
   <div>
     <div class="mb-3 font-mono text-[13px] text-accent">// about</div>
-    <h2 class="mb-4 text-[28px] font-bold md:text-[34px]">
-      We know what happens after launch
-    </h2>
-    <p class="text-[15.5px] leading-[1.7] text-muted">
-      We run products of our own, so our work does not stop at a clean demo. We
-      deal with billing, uptime, support, bug reports, and all the small
-      decisions that keep software useful. That experience shapes how we build
-      for clients: fewer surprises, sensible tradeoffs, and code the next person
-      can understand.
-    </p>
+    <h2 class="mb-6 text-[28px] font-bold md:text-[34px]">Who you work with</h2>
+
+    <div class="mb-6 flex items-center gap-4">
+      <Image
+        src={profileImg}
+        alt="Jamal Shr"
+        width={128}
+        height={128}
+        class="size-16 flex-none rounded-full border border-card-line object-cover"
+      />
+      <div>
+        <div class="text-lg font-semibold">Jamal Shr</div>
+        <div class="font-mono text-[13px] text-muted">Founder · Software developer · Morocco</div>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-4 text-[15.5px] leading-[1.7] text-muted">
+      <p>
+        SAJAM is run by Jamal Shr, a software developer from Morocco. Most of the projects on this
+        page were built for clients through Upwork, from the first plan to launch, and the rest are
+        products we run ourselves.
+      </p>
+      <p>
+        Running our own products means the work does not stop at a clean demo. We deal with billing,
+        uptime, support, bug reports, and the small decisions that keep software useful. That shapes
+        how we build for clients: fewer surprises, sensible tradeoffs, and code the next person can
+        understand.
+      </p>
+      <p>
+        Several of these projects are being prepared as open source. Their repositories will be
+        linked from each case study as they are released.
+      </p>
+    </div>
+
+    <a
+      href={upworkUrl}
+      target="_blank"
+      rel="noopener"
+      class="mt-6 inline-block font-mono text-[14px] text-accent no-underline hover:underline"
+    >
+      Client reviews on Upwork ↗
+    </a>
   </div>
 
   <div
     id="contact"
-    class="flex flex-col justify-center gap-3.5 rounded-xl border border-card-line p-[34px]"
+    class="flex flex-col justify-center gap-3.5 self-center rounded-xl border border-card-line p-[34px]"
     style="background:radial-gradient(400px 200px at 80% 0%,light-dark(rgba(37,99,235,.1),rgba(37,99,235,.25)),transparent 70%),light-dark(#ffffff,#0a1120)"
   >
     <h2 class="text-[27px] font-bold">Have something in mind?</h2>
     <p class="text-[14.5px] leading-[1.6] text-muted">
-      Send us a plain email. Tell us what you are trying to build, fix, or
-      simplify. We will reply within one business day.
+      Send us a plain email. Tell us what you are trying to build, fix, or simplify. We will reply
+      within one business day.
     </p>
     <a
       href={`mailto:${email}`}
