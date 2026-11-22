@@ -18,6 +18,8 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+.playwright-mcp/
+
 # environment variables
 .env
 .env.production
