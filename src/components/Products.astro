@@ -13,8 +13,8 @@ const showTechTags = true
       Things we have built
     </h2>
     <p class="max-w-[40ch] text-[15px] leading-[1.55] text-muted">
-      Software we have worked on, from SaaS and developer tools to healthcare
-      AI, mobile apps, and content sites.
+      Every project here was built end to end, from the first plan to launch:
+      SaaS, healthcare AI, developer tools, mobile apps, and content sites.
     </p>
   </div>
 
@@ -22,14 +22,12 @@ const showTechTags = true
     {
       featured.map((p) => (
         <a
-          href={p.src}
-          target="_blank"
-          rel="noopener"
+          href={`/work/${p.slug}`}
           class="flex flex-col gap-5 rounded-xl border border-card-line bg-card p-6 text-inherit no-underline transition-colors hover:border-accent sm:flex-row"
         >
           <Image
             src={p.img}
-            alt={`${p.name} homepage`}
+            alt=""
             width={320}
             height={180}
             class="aspect-video w-full flex-none rounded-lg object-cover sm:h-[90px] sm:w-40"
@@ -37,7 +35,7 @@ const showTechTags = true
           <div>
             <div class="mb-1.5 flex flex-wrap items-baseline gap-2.5">
               <h3 class="text-lg font-semibold">{p.name}</h3>
-              <span class="font-mono text-[11.5px] text-faint">{p.host}</span>
+              <span class="font-mono text-[11.5px] text-muted">{p.category}</span>
             </div>
             <p class="mb-2.5 text-[13.5px] leading-[1.55] text-muted">
               {p.description}
@@ -61,14 +59,12 @@ const showTechTags = true
     {
       more.map((p) => (
         <a
-          href={p.src}
-          target="_blank"
-          rel="noopener"
+          href={`/work/${p.slug}`}
           class="overflow-hidden rounded-xl border border-card-line bg-card text-inherit no-underline transition-colors hover:border-accent"
         >
           <Image
             src={p.img}
-            alt={`${p.name} homepage`}
+            alt=""
             width={320}
             height={180}
             class="aspect-video w-full border-b border-card-line object-cover"
@@ -78,7 +74,7 @@ const showTechTags = true
             <p class="mb-2.5 text-[13px] leading-[1.55] text-muted">
               {p.description}
             </p>
-            <span class="font-mono text-[11px] text-accent">{p.host} ↗</span>
+            <span class="font-mono text-[11px] text-accent">Case study →</span>
           </div>
         </a>
       ))

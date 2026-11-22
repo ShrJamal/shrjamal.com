@@ -1,11 +1,15 @@
 import type { APIRoute } from "astro"
+import { products } from "~/lib/projects"
 
 export const prerender = true
 
 export const GET: APIRoute = async () => {
-  const main = ["/"].map((path) => getXMLEntry({ path, lastmod: "27 March 2024" }))
+  // The site is rebuilt on every deploy, so the build time is the last change.
+  const lastmod = new Date().toISOString()
+  const paths = ["/", ...products.map((p) => `/work/${p.slug}`)]
+  const entries = paths.map((path) => getXMLEntry({ path, lastmod }))
 
-  return new Response(genSitemap([...main]), {
+  return new Response(genSitemap(entries), {
     headers: {
       "content-type": "application/xml",
       "Cache-Control": "public, max-age=86400, must-revalidate", // 1 day
@@ -25,8 +29,8 @@ function genSitemap(urls: string[]) {
 
 function getXMLEntry(e: { path: string; lastmod?: string }) {
   const arr = ["<url>"]
-  arr.push(`<loc>${import.meta.env.SITE}${e.path}</loc>`)
-  if (e.lastmod) arr.push(`<lastmod>${new Date(e.lastmod).toISOString()}</lastmod>`)
+  arr.push(`<loc>${new URL(e.path, import.meta.env.SITE).href}</loc>`)
+  if (e.lastmod) arr.push(`<lastmod>${e.lastmod}</lastmod>`)
   arr.push("</url>")
   return arr.join("\n")
 }

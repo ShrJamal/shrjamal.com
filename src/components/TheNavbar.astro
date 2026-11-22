@@ -1,8 +1,9 @@
 ---
+// Root-relative anchors so the links also work from /work/* pages.
 const links = [
-  { href: "#services", label: "/services" },
-  { href: "#work", label: "/work" },
-  { href: "#about", label: "/about" },
+  { href: "/#services", label: "/services" },
+  { href: "/#work", label: "/work" },
+  { href: "/#about", label: "/about" },
 ]
 ---
 
@@ -90,7 +91,7 @@ const links = [
     </button>
 
     <a
-      href="#contact"
+      href="/#contact"
       class="btn-cta rounded-lg px-[22px] py-2.5 font-semibold no-underline"
     >
       Contact

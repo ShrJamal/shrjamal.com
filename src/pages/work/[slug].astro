@@ -1,0 +1,135 @@
+---
+import type { GetStaticPaths } from "astro"
+import { Image } from "astro:assets"
+import Navbar from "~/components/TheNavbar.astro"
+import RootLayout from "~/layouts/RootLayout.astro"
+import { type Product, products } from "~/lib/projects"
+
+// One case study page per project, generated at build time.
+export const getStaticPaths = (() =>
+  products.map((project, i) => ({
+    params: { slug: project.slug },
+    // Wraps around so the last project links back to the first.
+    props: { project, next: products[(i + 1) % products.length] },
+  }))) satisfies GetStaticPaths
+
+type Props = { project: Product; next: Product }
+
+const { project, next } = Astro.props
+const email = "support@sajam.dev"
+---
+
+<RootLayout
+  title={`${project.name}: ${project.category} case study | SAJAM`}
+  description={project.description}
+>
+  <Navbar />
+  <main class="px-6 py-14 md:px-14 md:py-20">
+    <article class="mx-auto max-w-[920px]">
+      <a
+        href="/#work"
+        class="font-mono text-[13px] text-muted no-underline hover:text-accent"
+      >
+        ← All work
+      </a>
+
+      <header class="mt-8 mb-10">
+        <div class="mb-3 font-mono text-[13px] text-accent">// {project.category}</div>
+        <h1 class="mb-4 text-[36px] leading-[1.08] font-bold tracking-[-0.02em] md:text-[52px]">
+          {project.name}
+        </h1>
+        <p class="mb-6 max-w-[60ch] text-lg leading-[1.65] text-muted">{project.description}</p>
+        {
+          project.src ? (
+            <a
+              href={project.src}
+              target="_blank"
+              rel="noopener"
+              class="btn-cta inline-block rounded-[9px] px-6 py-3 font-semibold no-underline"
+            >
+              Visit {project.host} ↗
+            </a>
+          ) : (
+            <span class="font-mono text-[13px] text-muted">{project.host} is no longer online</span>
+          )
+        }
+      </header>
+
+      <Image
+        src={project.img}
+        alt={`Screenshot of ${project.name}`}
+        width={1280}
+        class="mb-14 aspect-video w-full rounded-xl border border-card-line object-cover object-top"
+      />
+
+      <div class="grid grid-cols-1 gap-12 md:grid-cols-[1fr_240px]">
+        <div class="flex flex-col gap-10">
+          <section>
+            <h2 class="mb-3 text-[22px] font-bold">The problem</h2>
+            <p class="text-[15.5px] leading-[1.75] text-muted">{project.problem}</p>
+          </section>
+
+          <section>
+            <h2 class="mb-3 text-[22px] font-bold">What we built</h2>
+            <ul class="flex list-none flex-col gap-2.5 p-0">
+              {
+                project.built.map((item) => (
+                  <li class="flex gap-3 text-[15.5px] leading-[1.65] text-muted">
+                    <span class="font-mono text-accent">→</span>
+                    <span>{item}</span>
+                  </li>
+                ))
+              }
+            </ul>
+          </section>
+        </div>
+
+        <aside class="flex flex-col gap-6 self-start rounded-xl border border-card-line bg-card p-6">
+          <div>
+            <div class="mb-1.5 font-mono text-[11.5px] text-muted">Platform</div>
+            <div class="text-[14.5px]">{project.platform}</div>
+          </div>
+          {
+            project.proof && (
+              <div>
+                <div class="mb-1.5 font-mono text-[11.5px] text-muted">Traction</div>
+                <div class="text-[14.5px] leading-[1.5]">{project.proof}</div>
+              </div>
+            )
+          }
+          <div>
+            <div class="mb-2 font-mono text-[11.5px] text-muted">Tags</div>
+            <div class="flex flex-wrap gap-1.5 font-mono text-[10.5px] text-accent">
+              {
+                project.techs.map((t) => (
+                  <span class="rounded-[5px] border border-tag-line px-2 py-[3px]">{t}</span>
+                ))
+              }
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <footer
+        class="mt-16 grid grid-cols-1 gap-[18px] border-t border-line pt-10 md:grid-cols-2"
+      >
+        <a
+          href={`/work/${next.slug}`}
+          class="rounded-xl border border-card-line bg-card p-6 text-inherit no-underline transition-colors hover:border-accent"
+        >
+          <div class="mb-2 font-mono text-[12px] text-muted">Next project →</div>
+          <div class="text-lg font-semibold">{next.name}</div>
+          <div class="text-[13.5px] text-muted">{next.category}</div>
+        </a>
+        <a
+          href={`mailto:${email}`}
+          class="rounded-xl border border-card-line bg-card p-6 text-inherit no-underline transition-colors hover:border-accent"
+        >
+          <div class="mb-2 font-mono text-[12px] text-muted">Need something similar?</div>
+          <div class="text-lg font-semibold">Tell us what you need</div>
+          <div class="font-mono text-[13.5px] text-accent">{email}</div>
+        </a>
+      </footer>
+    </article>
+  </main>
+</RootLayout>
