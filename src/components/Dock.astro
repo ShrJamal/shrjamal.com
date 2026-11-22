@@ -1,0 +1,37 @@
+---
+// An app dock at the foot of the desktop: one tile per project, linking to its
+// case study. Hidden on phones, where the ~/work grid already does this job.
+import { products } from "~/lib/projects"
+
+// Tile colours, cycled in order. They are fixed rather than themed so each
+// tile keeps readable text in both light and dark mode.
+const swatches = [
+  "bg-brand text-white",
+  "bg-note text-navy",
+  "bg-[#7dd3fc] text-navy",
+  "bg-navy text-white",
+  "bg-white text-navy",
+  "bg-[#ffe1dc] text-navy",
+]
+---
+
+<nav
+  aria-label="Project shortcuts"
+  class="mt-2 hidden flex-wrap justify-center gap-3 self-center rounded-[22px] border-2 border-edge bg-card/70 px-4 py-3 shadow-[6px_6px_0_var(--color-edge)] sm:flex"
+>
+  {
+    products.map((p, i) => (
+      <a
+        href={`/work/${p.slug}`}
+        title={p.name}
+        aria-label={`${p.name} case study`}
+        class:list={[
+          "flex size-[52px] items-center justify-center rounded-[14px] border-2 border-edge font-mono text-[13px] font-semibold transition-transform hover:-translate-y-2 motion-reduce:transition-none",
+          swatches[i % swatches.length],
+        ]}
+      >
+        {p.name.slice(0, 2)}
+      </a>
+    ))
+  }
+</nav>

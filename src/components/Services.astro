@@ -1,4 +1,6 @@
 ---
+import Window from "~/components/Window.astro"
+
 // Each icon is the inner markup of a 24px stroke SVG. One shape per icon uses the
 // accent colour, echoing the dot in the logo.
 const services = [
@@ -35,35 +37,45 @@ const services = [
 ]
 ---
 
-<section id="services" class="border-t border-line px-6 py-20 md:px-14">
-  <div class="mb-3 font-mono text-[13px] text-accent">// services</div>
-  <h2 class="mb-10 text-[30px] font-bold tracking-[-0.01em] md:text-[38px]">
+<Window
+  id="services"
+  title="~/services"
+  meta={`${services.length} items`}
+  class="flex-[1.4_1_480px] -rotate-[0.4deg]"
+>
+  <h2
+    class="px-[18px] pt-[22px] pb-3.5 text-[clamp(26px,3vw,38px)] leading-none font-bold tracking-[-0.03em]"
+  >
     How we can help
   </h2>
-  <div
-    class="grid grid-cols-1 gap-px overflow-hidden rounded-xl border border-grid-line bg-grid-line sm:grid-cols-2 lg:grid-cols-5"
-  >
-    {
-      services.map((s) => (
-        <div class="bg-card px-[22px] py-7">
-          <div class="mb-4 flex items-start justify-between">
-            <svg
-              class="size-7"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.75"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-hidden="true"
-              set:html={s.icon}
-            />
-            <div class="font-mono text-xs text-accent">{s.n}</div>
-          </div>
-          <h3 class="mb-2 text-[16.5px] font-semibold">{s.title}</h3>
-          <p class="text-[13.5px] leading-[1.55] text-muted">{s.body}</p>
-        </div>
-      ))
-    }
-  </div>
-</section>
+  {
+    // Each row leads to the contact window; the whole row inverts on hover.
+    services.map((s) => (
+      <a
+        href="#contact"
+        class="group flex items-center gap-4 border-t border-edge/15 px-[18px] py-3.5 hover:bg-brand hover:text-white"
+      >
+        <span class="flex size-11 flex-none items-center justify-center rounded-[11px] border-2 border-edge bg-tile group-hover:bg-white group-hover:text-navy">
+          <svg
+            class="size-[26px]"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.75"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+            set:html={s.icon}
+          />
+        </span>
+        <span class="flex min-w-0 flex-col gap-[3px]">
+          <span class="text-lg font-semibold">{s.title}</span>
+          <span class="text-[14.5px] leading-[1.45] text-muted group-hover:text-white">
+            {s.body}
+          </span>
+        </span>
+        <span class="ml-auto font-mono text-xs text-muted group-hover:text-white">{s.n}</span>
+      </a>
+    ))
+  }
+</Window>

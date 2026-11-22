@@ -1,0 +1,32 @@
+---
+// A desktop-style window: a title bar with three decorative dots, then the
+// slotted body. `tone` picks the title bar and background colours (the .win-*
+// rules in app.css).
+export interface Props {
+  title: string
+  // Right-aligned note in the title bar, such as an item count.
+  meta?: string
+  tone?: "plain" | "note" | "compose" | "terminal"
+  as?: "section" | "article" | "div"
+  id?: string
+  class?: string
+  "aria-label"?: string
+}
+
+const { title, meta, tone = "plain", as: Tag = "section", class: className, ...attrs } = Astro.props
+---
+
+<Tag
+  class:list={["win", tone !== "plain" && `win-${tone}`, className]}
+  {...attrs}
+>
+  <div class="win-bar">
+    <span
+      class="win-dots"
+      aria-hidden="true"><i></i><i></i><i></i></span
+    >
+    <span class="truncate">{title}</span>
+    {meta && <span class="ml-auto flex-none opacity-70">{meta}</span>}
+  </div>
+  <slot />
+</Tag>

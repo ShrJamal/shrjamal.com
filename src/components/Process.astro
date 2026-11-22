@@ -1,4 +1,6 @@
 ---
+import Window from "~/components/Window.astro"
+
 // How an engagement runs, from first email to after launch.
 const steps = [
   {
@@ -24,20 +26,32 @@ const steps = [
 ]
 ---
 
-<section id="process" class="border-t border-line px-6 py-20 md:px-14">
-  <div class="mb-3 font-mono text-[13px] text-accent">// process</div>
-  <h2 class="mb-10 text-[30px] font-bold tracking-[-0.01em] md:text-[38px]">How we work</h2>
-  <ol
-    class="grid list-none grid-cols-1 gap-px overflow-hidden rounded-xl border border-grid-line bg-grid-line p-0 sm:grid-cols-2 lg:grid-cols-4"
+<Window
+  id="process"
+  tone="note"
+  title="how-we-work.md"
+  meta={`${steps.length} steps`}
+  class="mt-[clamp(0px,4vw,56px)] flex-[1_1_340px] rotate-[0.6deg]"
+>
+  <h2
+    class="px-[clamp(18px,2.4vw,28px)] pt-[22px] pb-3.5 text-[clamp(26px,3vw,38px)] leading-none font-bold tracking-[-0.03em]"
   >
+    <span
+      aria-hidden="true"
+      class="font-mono font-medium text-accent"># </span
+    >How we work
+  </h2>
+  <ol class="flex list-none flex-col p-0">
     {
       steps.map((s) => (
-        <li class="bg-card px-[22px] py-7">
-          <div class="mb-3.5 font-mono text-xs text-accent">{s.n}</div>
-          <h3 class="mb-2 text-[16.5px] font-semibold">{s.title}</h3>
-          <p class="text-[13.5px] leading-[1.55] text-muted">{s.body}</p>
+        <li class="flex gap-4 border-t border-edge/15 px-[clamp(18px,2.4vw,28px)] py-4">
+          <span class="pt-1 font-mono text-[13px] text-accent">{s.n}</span>
+          <div>
+            <h3 class="text-lg font-semibold">{s.title}</h3>
+            <p class="mt-1 text-[14.5px] leading-[1.5] text-muted">{s.body}</p>
+          </div>
         </li>
       ))
     }
   </ol>
-</section>
+</Window>

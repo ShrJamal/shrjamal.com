@@ -1,83 +1,53 @@
 ---
 import { Image } from "astro:assets"
-import { featured, more } from "~/lib/projects"
-
-// Toggles the tech-tag row on the featured cards (design default: on).
-const showTechTags = true
+import Window from "~/components/Window.astro"
+import { products } from "~/lib/projects"
 ---
 
-<section id="work" class="border-t border-line px-6 py-20 md:px-14">
-  <div class="mb-3 font-mono text-[13px] text-accent">// work</div>
-  <div class="mb-10 flex flex-wrap items-end justify-between gap-6">
-    <h2 class="text-[30px] font-bold tracking-[-0.01em] md:text-[38px]">
+<Window
+  id="work"
+  title="~/work"
+  meta={`${products.length} items`}
+>
+  <div
+    class="flex flex-wrap items-baseline justify-between gap-x-10 gap-y-2.5 px-[clamp(18px,2.4vw,30px)] pt-6 pb-2.5"
+  >
+    <h2 class="text-[clamp(28px,3.6vw,46px)] leading-none font-bold tracking-[-0.035em]">
       Things we have built
     </h2>
-    <p class="max-w-[40ch] text-[15px] leading-[1.55] text-muted">
-      Every project here was built end to end, from the first plan to launch:
-      SaaS, healthcare AI, developer tools, mobile apps, and content sites.
+    <p class="max-w-[46ch] text-[15.5px] leading-[1.55] text-muted">
+      Every project here was built end to end, from the first plan to launch: SaaS, healthcare AI,
+      developer tools, mobile apps, and content sites.
     </p>
   </div>
 
-  <div class="grid grid-cols-1 gap-[18px] md:grid-cols-2">
+  <!-- A file grid: two columns on phones, then as many 250px+ columns as fit. -->
+  <div
+    class="grid grid-cols-2 gap-2.5 px-[clamp(8px,1.6vw,20px)] pt-2.5 pb-[22px] sm:grid-cols-[repeat(auto-fill,minmax(250px,1fr))]"
+  >
     {
-      featured.map((p) => (
+      products.map((p) => (
         <a
           href={`/work/${p.slug}`}
-          class="flex flex-col gap-5 rounded-xl border border-card-line bg-card p-6 text-inherit no-underline transition-colors hover:border-accent sm:flex-row"
+          class="flex flex-col gap-2.5 rounded-xl border-2 border-transparent p-2.5 hover:border-edge hover:bg-tile"
         >
           <Image
             src={p.img}
             alt=""
-            width={320}
-            height={180}
-            class="aspect-video w-full flex-none rounded-lg object-cover sm:h-[90px] sm:w-40"
+            width={640}
+            height={400}
+            class="aspect-[16/10] w-full rounded-lg border-2 border-edge object-cover object-top"
           />
-          <div>
-            <div class="mb-1.5 flex flex-wrap items-baseline gap-2.5">
-              <h3 class="text-lg font-semibold">{p.name}</h3>
-              <span class="font-mono text-[11.5px] text-muted">{p.category}</span>
-            </div>
-            <p class="mb-2.5 text-[13.5px] leading-[1.55] text-muted">
+          <span class="flex flex-col gap-0.5">
+            <span class="text-[17px] font-semibold">{p.name}</span>
+            <span class="font-mono text-xs text-muted">{p.category}</span>
+            {/* Clamped to keep the grid even; the full text stays in the page for search engines. */}
+            <span class="mt-1 line-clamp-3 text-[13.5px] leading-[1.5] text-muted">
               {p.description}
-            </p>
-            {showTechTags && (
-              <div class="flex flex-wrap gap-1.5 font-mono text-[10.5px] text-accent">
-                {p.techs.map((t) => (
-                  <span class="rounded-[5px] border border-tag-line px-2 py-[3px]">
-                    {t}
-                  </span>
-                ))}
-              </div>
-            )}
-          </div>
+            </span>
+          </span>
         </a>
       ))
     }
   </div>
-
-  <div class="mt-[18px] grid grid-cols-2 gap-[18px] md:grid-cols-4">
-    {
-      more.map((p) => (
-        <a
-          href={`/work/${p.slug}`}
-          class="overflow-hidden rounded-xl border border-card-line bg-card text-inherit no-underline transition-colors hover:border-accent"
-        >
-          <Image
-            src={p.img}
-            alt=""
-            width={320}
-            height={180}
-            class="aspect-video w-full border-b border-card-line object-cover"
-          />
-          <div class="p-5">
-            <h3 class="mb-2 text-base font-semibold">{p.name}</h3>
-            <p class="mb-2.5 text-[13px] leading-[1.55] text-muted">
-              {p.description}
-            </p>
-            <span class="font-mono text-[11px] text-accent">Case study →</span>
-          </div>
-        </a>
-      ))
-    }
-  </div>
-</section>
+</Window>

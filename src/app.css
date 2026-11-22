@@ -4,19 +4,24 @@
   --font-sans: "Space Grotesk", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 
-  --color-page: light-dark(#f6f8fc, #070c16);
+  /* The page is a desktop: a dotted wallpaper with windows on top. */
+  --color-page: light-dark(#dfe6f6, #070c16);
+  --color-dot: light-dark(#aebbdc, #1d2b49);
   --color-ink: light-dark(#0c1b33, #e8edf6);
   --color-muted: light-dark(#4b5b78, #93a3c0);
-  --color-accent: light-dark(#0284c7, #38bdf8);
-  --color-card: light-dark(#ffffff, #0a1120);
-  --color-faint: light-dark(#8a99b5, #5a6c92);
-
-  --color-line: light-dark(rgba(12, 27, 51, 0.1), rgba(120, 160, 255, 0.12));
-  --color-card-line: light-dark(rgba(12, 27, 51, 0.12), rgba(120, 160, 255, 0.16));
-  --color-grid-line: light-dark(rgba(12, 27, 51, 0.12), rgba(120, 160, 255, 0.14));
-  --color-btn-line: light-dark(rgba(12, 27, 51, 0.18), rgba(120, 160, 255, 0.3));
-  --color-tag-line: light-dark(rgba(2, 132, 199, 0.35), rgba(56, 189, 248, 0.3));
-  --color-nav: light-dark(rgba(246, 248, 252, 0.85), rgba(7, 12, 22, 0.85));
+  /* accent is for text and small marks; brand is the solid fill under white text. */
+  --color-accent: light-dark(#2563eb, #38bdf8);
+  --color-brand: #2563eb;
+  /* Fixed dark text for surfaces that stay light in both themes, such as notes. */
+  --color-navy: #0c1b33;
+  --color-note: #ffd84d;
+  --color-card: light-dark(#ffffff, #0e1728);
+  --color-paper: light-dark(#fffbea, #0e1728);
+  --color-tile: light-dark(#eef2fb, #16233c);
+  /* Window outlines and their hard offset shadows. */
+  --color-edge: light-dark(#0c1b33, #8fa3c8);
+  --color-bar: light-dark(#0c1b33, #0b1426);
+  --color-term: light-dark(#0c1b33, #050a14);
 }
 
 html {
@@ -34,43 +39,172 @@ html {
 
 body {
   margin: 0;
-  background: var(--color-page);
+  background-color: var(--color-page);
+  /* Wallpaper dot grid: one 1.2px dot every 22px. */
+  background-image: radial-gradient(var(--color-dot) 1.2px, transparent 1.6px);
+  background-size: 22px 22px;
   color: var(--color-ink);
   font-family: var(--font-sans);
 }
 
-/* Gradient-filled text for the hero accent word. */
-.text-gradient {
-  background: linear-gradient(120deg, var(--color-accent), #2563eb);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+/* In the components layer so utilities on the same element can override them. */
+@layer components {
+  /* A desktop window: thick outline and a hard offset shadow that grows on hover.
+     Markup lives in components/Window.astro. */
+  .win {
+    min-width: 0;
+    overflow: hidden;
+    /* Keeps the title bar clear of the sticky menu bar when jumping to an anchor. */
+    scroll-margin-top: 4.5rem;
+    border: 2px solid var(--color-edge);
+    border-radius: 14px;
+    background: var(--color-card);
+    box-shadow: 7px 7px 0 var(--color-edge);
+    /* translate, not transform, so the lift combines with a rotate-* tilt. */
+    transition:
+      translate 0.18s,
+      box-shadow 0.18s;
+  }
+  .win:hover {
+    translate: -3px -3px;
+    box-shadow: 10px 10px 0 var(--color-edge);
+  }
+  .win-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    border-bottom: 2px solid var(--color-edge);
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    font-weight: 500;
+  }
+  .win-dots {
+    display: flex;
+    gap: 6px;
+  }
+  .win-dots i {
+    box-sizing: border-box;
+    width: 11px;
+    height: 11px;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+  }
+  .win-dots i:first-child {
+    background: var(--color-accent);
+  }
+
+  /* Window tones: note (yellow bar), compose (blue bar), terminal (always dark). */
+  .win-note {
+    background: var(--color-paper);
+  }
+  .win-note .win-bar {
+    background: var(--color-note);
+    color: var(--color-navy);
+  }
+  .win-note .win-dots i:first-child {
+    background: var(--color-brand);
+  }
+  .win-compose .win-bar {
+    background: var(--color-brand);
+    color: #fff;
+  }
+  .win-compose .win-dots i {
+    border-color: var(--color-navy);
+    background: #fff;
+  }
+  .win-compose .win-dots i:first-child {
+    background: var(--color-note);
+  }
+  .win-terminal {
+    background: var(--color-term);
+    color: #e8edf6;
+  }
+  .win-terminal .win-bar {
+    border-bottom-color: #2a3b5c;
+  }
+  .win-terminal .win-dots i {
+    border-color: #93a3c0;
+  }
+  .win-terminal .win-dots i:first-child {
+    background: #38bdf8;
+  }
+
+  /* Button with a hard shadow that presses in on hover. */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    min-height: 48px;
+    padding: 0 22px;
+    border: 2px solid var(--color-edge);
+    border-radius: 10px;
+    background: var(--color-card);
+    box-shadow: 4px 4px 0 var(--color-edge);
+    color: var(--color-ink);
+    font-weight: 600;
+    transition:
+      translate 0.12s,
+      box-shadow 0.12s;
+  }
+  .btn:hover {
+    translate: 2px 2px;
+    box-shadow: 2px 2px 0 var(--color-edge);
+  }
+  .btn-primary {
+    background: var(--color-brand);
+    color: #fff;
+  }
+
+  /* Blinking block cursor at the terminal prompt. */
+  .term-cursor {
+    display: inline-block;
+    width: 0.6em;
+    height: 1.1em;
+    background: #38bdf8;
+    vertical-align: text-bottom;
+    animation: term-blink 1.1s steps(1) infinite;
+  }
 }
 
-/* Solid brand CTA for the blue-to-cyan gradient buttons. */
-.btn-cta {
-  background: linear-gradient(120deg, #38bdf8, #2563eb);
-  color: #fff;
+@keyframes term-blink {
+  50% {
+    opacity: 0;
+  }
 }
 
-/* Animated sun/moon theme toggle (adapted from web.dev's sun-and-moon icon). */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .win,
+  .btn {
+    transition: none;
+  }
+  .term-cursor {
+    animation: none;
+  }
+}
+
+/* Animated sun/moon theme toggle (adapted from web.dev's sun-and-moon icon).
+   Coloured for the menu bar, which is dark in both themes. */
 .theme-toggle {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2.25rem;
-  height: 2.25rem;
+  /* 44px, the minimum comfortable tap target. */
+  width: 2.75rem;
+  height: 2.75rem;
   padding: 0;
   cursor: pointer;
-  border: 1px solid var(--color-btn-line);
+  border: 1px solid rgb(255 255 255 / 0.3);
   border-radius: 0.5rem;
   background: transparent;
-  color: var(--color-ink);
+  color: #fff;
   transition: color 0.2s ease;
   -webkit-tap-highlight-color: transparent;
 }
 .theme-toggle:hover {
-  color: var(--color-accent);
+  color: #7dd3fc;
 }
 
 .sun-and-moon {

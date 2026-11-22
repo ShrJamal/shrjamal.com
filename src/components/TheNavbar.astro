@@ -1,40 +1,48 @@
 ---
-// Root-relative anchors so the links also work from /work/* pages.
+// The desktop's menu bar. Root-relative anchors so the links also work from
+// /work/* pages.
 const links = [
-  { href: "/#services", label: "/services" },
-  { href: "/#work", label: "/work" },
-  { href: "/#about", label: "/about" },
+  { href: "/#services", label: "Services" },
+  { href: "/#work", label: "Work" },
+  { href: "/#about", label: "About" },
+  { href: "/#contact", label: "Contact" },
 ]
+const email = "support@sajam.dev"
 ---
 
+<!-- Dark in both themes, so text colours here are fixed rather than tokens. -->
 <nav
-  class="sticky top-0 z-10 flex items-center justify-between border-b border-line bg-nav px-6 py-5 backdrop-blur-md md:px-14"
+  class="sticky top-0 z-10 flex flex-wrap items-center justify-between gap-x-2 gap-y-1 border-b-2 border-edge bg-bar px-4 py-1.5 text-[13px] text-white sm:text-sm md:px-10"
 >
-  <!-- Wordmark logo set in live text so it follows the theme; public/logo.svg is the outlined copy. -->
-  <a
-    href="/"
-    aria-label="SAJAM home"
-    class="text-[28px] leading-none font-bold tracking-[-0.03em] no-underline"
-  >
-    sajam<span class="text-accent">.</span>
-  </a>
-
-  <div class="flex items-center gap-4 md:gap-[30px]">
-    <div
-      class="hidden items-center gap-[30px] font-mono text-sm text-muted md:flex"
+  <!-- Gaps tighten below 380px so everything still fits on one row at 360px. -->
+  <div class="flex flex-wrap items-center gap-x-2 min-[380px]:gap-x-3.5 sm:gap-x-6">
+    <!-- Wordmark logo set in live text; public/logo.svg is the outlined copy. -->
+    <a
+      href="/"
+      aria-label="SAJAM home"
+      class="py-3 text-xl leading-none font-bold tracking-[-0.03em]"
     >
-      {
-        links.map((l) => (
-          <a
-            href={l.href}
-            class="text-inherit no-underline transition-colors hover:text-accent"
-          >
-            {l.label}
-          </a>
-        ))
-      }
-    </div>
+      sajam<span class="text-[#38bdf8]">.</span>
+    </a>
+    {
+      links.map((l) => (
+        <a
+          href={l.href}
+          class="flex min-h-11 items-center transition-colors hover:text-[#7dd3fc]"
+        >
+          {l.label}
+        </a>
+      ))
+    }
+  </div>
 
+  <div class="flex items-center gap-5">
+    <a
+      href={`mailto:${email}`}
+      class="hidden min-h-11 items-center font-mono text-[12.5px] transition-colors hover:text-[#7dd3fc] md:flex"
+    >
+      {email}
+    </a>
     <button
       id="theme-toggle"
       type="button"
@@ -89,13 +97,6 @@ const links = [
         </g>
       </svg>
     </button>
-
-    <a
-      href="/#contact"
-      class="btn-cta rounded-lg px-[22px] py-2.5 font-semibold no-underline"
-    >
-      Contact
-    </a>
   </div>
 </nav>
 

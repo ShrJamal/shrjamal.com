@@ -1,55 +1,79 @@
 ---
+import Window from "~/components/Window.astro"
 import { products } from "~/lib/projects"
-
-const email = "support@sajam.dev"
 ---
 
-<header class="relative overflow-hidden px-6 pt-24 pb-[88px] md:px-14 md:pt-[100px]">
-  <div
-    class="absolute inset-0"
-    style="background:radial-gradient(800px 400px at 75% 10%,light-dark(rgba(37,99,235,.12),rgba(37,99,235,.28)),transparent 70%),radial-gradient(600px 300px at 15% 90%,light-dark(rgba(56,189,248,.08),rgba(56,189,248,.12)),transparent 70%)"
+<div class="flex flex-wrap items-start gap-[clamp(24px,3vw,40px)]">
+  <Window
+    id="welcome"
+    title="welcome.txt"
+    class="flex-[1.5_1_520px]"
   >
-  </div>
-
-  <div class="relative max-w-[860px]">
-    <div class="mb-[22px] font-mono text-[13px] text-accent">
-      $ sajam build --for real businesses
+    <div class="flex flex-col gap-[22px] p-[clamp(24px,4vw,52px)]">
+      <!-- One heading for search engines, set as a large line and a smaller one. -->
+      <h1 class="flex flex-col gap-[22px] font-bold">
+        <span class="text-[clamp(42px,6.4vw,92px)] leading-[0.95] tracking-[-0.045em]">
+          We build useful software<span class="text-accent">.</span>
+        </span>
+        <span class="text-[clamp(20px,2.2vw,28px)] leading-[1.2] font-semibold tracking-[-0.015em]">
+          {/* Explicit space: Astro drops the line break before an inline element. */}
+          Web products, mobile apps, and{" "}<span
+            class="rounded bg-note px-1.5 whitespace-nowrap text-navy">internal tools</span
+          >.
+        </span>
+      </h1>
+      <p class="max-w-[54ch] text-[17px] leading-[1.6] text-muted">
+        Because we run our own products too, we care about the unglamorous parts: reliability,
+        support, billing, and what happens after launch.
+      </p>
+      <div class="mt-1.5 flex flex-wrap gap-4">
+        <a
+          href="#contact"
+          class="btn btn-primary"
+        >
+          Tell us what you need
+        </a>
+        <a
+          href="#work"
+          class="btn"
+        >
+          See what we have built ↓
+        </a>
+      </div>
     </div>
-    <h1
-      class="mb-[22px] text-[40px] leading-[1.04] font-bold tracking-[-0.02em] sm:text-[52px] md:text-[64px]"
+  </Window>
+
+  <div
+    class="flex min-w-0 flex-[1_1_340px] flex-col gap-[clamp(20px,2.5vw,32px)] pt-[clamp(0px,3vw,44px)]"
+  >
+    <Window
+      tone="terminal"
+      title="terminal"
+      aria-label="Terminal"
+      class="rotate-[0.8deg]"
     >
-      We build useful software.<br />For ourselves, and for
-      <span class="text-gradient">clients.</span>
-    </h1>
-    <p class="mb-[34px] max-w-[56ch] text-lg leading-[1.65] text-muted">
-      We design and build web products, mobile apps, and internal tools. Because
-      we run our own products too, we care about the unglamorous parts:
-      reliability, support, billing, and what happens after launch.
+      <div class="px-[22px] pt-5 pb-6 font-mono text-sm leading-[1.9] wrap-anywhere">
+        <div><span class="text-[#38bdf8]">$</span> sajam build --for real businesses</div>
+        <div><span class="text-[#38bdf8]">[ok]</span> web products</div>
+        <div><span class="text-[#38bdf8]">[ok]</span> mobile apps</div>
+        <div><span class="text-[#38bdf8]">[ok]</span> internal tools</div>
+        <div class="mt-2.5"><span class="text-[#38bdf8]">$</span> sajam status</div>
+        <div class="text-[#b3c0d9]">{products.length} projects shipped</div>
+        <div class="text-[#b3c0d9]">stacks: web · mobile · cloud</div>
+        <div class="mt-2.5">
+          <span class="text-[#38bdf8]">$</span>
+          <span
+            class="term-cursor"
+            aria-hidden="true"></span>
+        </div>
+      </div>
+    </Window>
+
+    <!-- Sticky note pinned to the desktop. -->
+    <p
+      class="max-w-[250px] -rotate-[2.5deg] self-end border-2 border-edge bg-note px-5 py-[18px] text-[19px] leading-tight font-semibold tracking-[-0.01em] text-navy shadow-[5px_5px_0_var(--color-edge)]"
+    >
+      We reply within one business day.
     </p>
-    <div class="flex flex-wrap items-center gap-3.5">
-      <a
-        href="#contact"
-        class="btn-cta rounded-[9px] px-[30px] py-[15px] text-base font-semibold no-underline shadow-[0_8px_24px_-8px_rgba(37,99,235,0.5)]"
-      >
-        Tell us what you need
-      </a>
-      <a
-        href="#work"
-        class="rounded-[9px] border border-btn-line px-[30px] py-[15px] text-base font-semibold text-inherit no-underline"
-      >
-        See what we have built ↓
-      </a>
-    </div>
   </div>
-
-  <div
-    class="relative mt-[60px] flex flex-wrap gap-9 border-t border-line pt-[22px] font-mono text-[13px] text-muted"
-  >
-    <span><span class="text-accent">{products.length}</span> projects shipped</span>
-    <span><span class="text-accent">web · mobile · cloud</span> stacks</span>
-    <span
-      ><a href={`mailto:${email}`} class="text-accent no-underline">{email}</a
-      ></span
-    >
-  </div>
-</header>
+</div>

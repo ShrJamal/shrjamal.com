@@ -267,10 +267,6 @@ export const products = [
   },
 ] satisfies Product[]
 
-// First four render as large cards with a screenshot; the rest as compact tiles.
-export const featured = products.slice(0, 4)
-export const more = products.slice(4)
-
 export type Product = {
   slug: string
   name: string

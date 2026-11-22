@@ -1,26 +1,31 @@
 ---
 import { Image } from "astro:assets"
 import profileImg from "~/assets/imgs/profile.webp"
+import Window from "~/components/Window.astro"
 
-const email = "support@sajam.dev"
 const upworkUrl = "https://www.upwork.com/freelancers/shrjamal"
 ---
 
-<section
+<Window
   id="about"
-  class="grid grid-cols-1 gap-14 border-t border-line px-6 py-20 md:grid-cols-2 md:px-14"
+  title="about.md"
+  class="flex-[1_1_380px] rotate-[0.5deg]"
 >
-  <div>
-    <div class="mb-3 font-mono text-[13px] text-accent">// about</div>
-    <h2 class="mb-6 text-[28px] font-bold md:text-[34px]">Who you work with</h2>
+  <div class="flex flex-col gap-5 p-[clamp(22px,3vw,36px)]">
+    <h2 class="text-[clamp(28px,3.2vw,42px)] leading-[1.02] font-bold tracking-[-0.035em]">
+      <span
+        aria-hidden="true"
+        class="font-mono font-medium text-accent"># </span
+      >Who you work with
+    </h2>
 
-    <div class="mb-6 flex items-center gap-4">
+    <div class="flex items-center gap-4">
       <Image
         src={profileImg}
         alt="Jamal Shr"
         width={128}
         height={128}
-        class="size-16 flex-none rounded-full border border-card-line object-cover"
+        class="size-16 flex-none rounded-full border-2 border-edge object-cover"
       />
       <div>
         <div class="text-lg font-semibold">Jamal Shr</div>
@@ -28,7 +33,7 @@ const upworkUrl = "https://www.upwork.com/freelancers/shrjamal"
       </div>
     </div>
 
-    <div class="flex flex-col gap-4 text-[15.5px] leading-[1.7] text-muted">
+    <div class="flex flex-col gap-4 text-[16px] leading-[1.65]">
       <p>
         SAJAM is run by Jamal Shr, a software developer from Morocco. Most of the projects on this
         page were built for clients through Upwork, from the first plan to launch, and the rest are
@@ -50,27 +55,9 @@ const upworkUrl = "https://www.upwork.com/freelancers/shrjamal"
       href={upworkUrl}
       target="_blank"
       rel="noopener"
-      class="mt-6 inline-block font-mono text-[14px] text-accent no-underline hover:underline"
+      class="btn self-start font-mono text-sm"
     >
       Client reviews on Upwork ↗
     </a>
   </div>
-
-  <div
-    id="contact"
-    class="flex flex-col justify-center gap-3.5 self-center rounded-xl border border-card-line p-[34px]"
-    style="background:radial-gradient(400px 200px at 80% 0%,light-dark(rgba(37,99,235,.1),rgba(37,99,235,.25)),transparent 70%),light-dark(#ffffff,#0a1120)"
-  >
-    <h2 class="text-[27px] font-bold">Have something in mind?</h2>
-    <p class="text-[14.5px] leading-[1.6] text-muted">
-      Send us a plain email. Tell us what you are trying to build, fix, or simplify. We will reply
-      within one business day.
-    </p>
-    <a
-      href={`mailto:${email}`}
-      class="btn-cta self-start rounded-[9px] px-7 py-3.5 font-mono text-[15.5px] font-semibold no-underline"
-    >
-      {email}
-    </a>
-  </div>
-</section>
+</Window>

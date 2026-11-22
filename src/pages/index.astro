@@ -1,5 +1,7 @@
 ---
 import About from "~/components/About.astro"
+import Contact from "~/components/Contact.astro"
+import Dock from "~/components/Dock.astro"
 import Hero from "~/components/Hero.astro"
 import Process from "~/components/Process.astro"
 import Products from "~/components/Products.astro"
@@ -39,11 +41,20 @@ const organization = {
     set:html={JSON.stringify(organization)}
   />
   <Navbar />
-  <main>
+  <!-- The desktop: each section is a window, some sharing a row. -->
+  <main
+    class="mx-auto flex max-w-[1400px] flex-col gap-[clamp(28px,4vw,52px)] px-[clamp(16px,4vw,64px)] pt-[clamp(24px,4vw,56px)] pb-8"
+  >
     <Hero />
-    <Services />
+    <div class="flex flex-wrap items-start gap-[clamp(24px,3vw,40px)]">
+      <Services />
+      <Process />
+    </div>
     <Products />
-    <Process />
-    <About />
+    <div class="flex flex-wrap items-start gap-[clamp(24px,3vw,40px)]">
+      <About />
+      <Contact />
+    </div>
+    <Dock />
   </main>
 </RootLayout>

@@ -1,0 +1,101 @@
+---
+// The contact section, drawn as an email compose window. There is no backend:
+// "Send email" is a mailto link, prefilled from the two fields by the script
+// below. Without JavaScript it still opens a blank email to the same address.
+import Window from "~/components/Window.astro"
+
+const email = "support@sajam.dev"
+const rowClass = "flex min-h-12 items-center gap-3.5 border-b border-edge/15"
+const labelClass = "w-[68px] flex-none font-mono text-[13px] text-muted"
+const inputClass =
+  "min-h-11 w-full rounded bg-transparent outline-0 placeholder:text-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+---
+
+<Window
+  id="contact"
+  tone="compose"
+  title="New message"
+  class="mt-[clamp(0px,4vw,56px)] flex-[1.2_1_420px] -rotate-[0.5deg]"
+>
+  <div class="flex flex-col px-[clamp(18px,3vw,32px)] pt-2 pb-[clamp(22px,3vw,32px)]">
+    <h2 class="mt-4 mb-3 text-[clamp(28px,3.6vw,44px)] leading-none font-bold tracking-[-0.035em]">
+      Have something in mind?
+    </h2>
+    <div class={rowClass}>
+      <span class={labelClass}>To</span>
+      <a
+        href={`mailto:${email}`}
+        class="font-semibold hover:text-accent"
+      >
+        {email}
+      </a>
+    </div>
+    <div class={rowClass}>
+      <label
+        for="compose-subject"
+        class={labelClass}
+      >
+        Subject
+      </label>
+      <input
+        id="compose-subject"
+        type="text"
+        placeholder="Something we want to build"
+        class={inputClass}
+      />
+    </div>
+    <label
+      for="compose-body"
+      class="mt-3.5 font-mono text-[13px] text-muted"
+    >
+      Message
+    </label>
+    <textarea
+      id="compose-body"
+      rows="5"
+      placeholder="Tell us what you are trying to build, fix, or simplify."
+      class:list={[inputClass, "resize-y py-2 text-[17px] leading-[1.6]"]}></textarea>
+    <div class="mt-3.5 flex flex-wrap items-center justify-between gap-x-6 gap-y-3.5">
+      <span class="text-[15px] text-muted">
+        A plain email is all it takes. We will reply within one business day.
+      </span>
+      <a
+        id="compose-send"
+        href={`mailto:${email}`}
+        class="btn btn-primary"
+      >
+        Send email →
+      </a>
+    </div>
+  </div>
+</Window>
+
+<script>
+  const send = document.querySelector<HTMLAnchorElement>("#compose-send")
+  const subject = document.querySelector<HTMLInputElement>("#compose-subject")
+  const body = document.querySelector<HTMLTextAreaElement>("#compose-body")
+
+  if (send && subject && body) {
+    // The server-rendered href is the bare mailto address.
+    const address = send.href
+
+    // Rebuilds the link from whatever has been typed. encodeURIComponent, not
+    // URLSearchParams, because mail clients show a "+" literally instead of
+    // reading it as a space.
+    function sync() {
+      const query = [
+        subject!.value && `subject=${encodeURIComponent(subject!.value)}`,
+        body!.value && `body=${encodeURIComponent(body!.value)}`,
+      ].filter(Boolean)
+      send!.href = query.length ? `${address}?${query.join("&")}` : address
+    }
+
+    subject.addEventListener("input", sync)
+    body.addEventListener("input", sync)
+    // Autofill and restored form state can change a field without an input
+    // event, so rebuild once more right before the link is followed.
+    send.addEventListener("click", sync)
+    // Browsers may restore typed text after a reload or back navigation.
+    sync()
+  }
+</script>
