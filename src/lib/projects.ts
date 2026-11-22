@@ -117,7 +117,7 @@ export const products = [
     host: "dems.dev",
     img: DEMSImg,
     description:
-      "DEMS was a civic tech project with a simple goal: make election information easier to understand and democratic participation easier to navigate.",
+      "A civic tech platform we developed for a client, built to make election information easier to understand and democratic participation easier to navigate.",
     techs: ["typescript", "nextjs", "tailwind"],
   },
 ] satisfies Product[]
