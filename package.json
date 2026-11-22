@@ -9,19 +9,19 @@
     "build": "astro build",
     "preview": "astro preview",
     "deploy": "astro build && wrangler deploy",
-    "check": "astro check & vp check",
+    "check": "tsc -p tsconfig.astro.json --noEmit --runExternalCode && vp check",
     "check:fix": "vp check --fix",
     "prepare": "vp config"
   },
   "devDependencies": {
-    "@astrojs/check": "0.9.12",
     "@astrojs/cloudflare": "14.4.9",
+    "@astrojs/ts-content-mapper": "0.2.0",
     "@iconify/json": "^2.2.560",
     "@iconify/tailwind4": "^1.2.3",
     "@tailwindcss/vite": "^4.3.5",
     "astro": "7.4.13",
     "tailwindcss": "^4.3.5",
-    "typescript": "^7.0.2",
+    "typescript": "7.1.0-beta",
     "vite-plus": "1.7.0",
     "wrangler": "^4.166.0"
   }

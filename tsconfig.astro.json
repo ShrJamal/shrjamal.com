@@ -1,0 +1,7 @@
+// Type-checks .astro files with TypeScript 7.1+ via Astro's experimental
+// content mapper (run by `bun run check`). Kept out of tsconfig.json because
+// vp's type-aware lint rejects contentMappers without --runExternalCode.
+{
+  "extends": "./tsconfig.json",
+  "contentMappers": [{ "package": "@astrojs/ts-content-mapper", "extensions": [".astro"] }]
+}
