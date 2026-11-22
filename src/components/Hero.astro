@@ -1,4 +1,6 @@
 ---
+import { products } from "~/lib/projects"
+
 const email = "support@sajam.dev"
 ---
 
@@ -43,7 +45,7 @@ const email = "support@sajam.dev"
   <div
     class="relative mt-[60px] flex flex-wrap gap-9 border-t border-line pt-[22px] font-mono text-[13px] text-muted"
   >
-    <span><span class="text-accent">14</span> products shipped</span>
+    <span><span class="text-accent">{products.length}</span> products shipped</span>
     <span><span class="text-accent">web · mobile · cloud</span> stacks</span>
     <span
       ><a href={`mailto:${email}`} class="text-accent no-underline">{email}</a

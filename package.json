@@ -1,7 +1,7 @@
 {
-  "name": "shrjamal.com",
+  "name": "sajam.dev",
   "version": "0.0.1",
-  "description": "My Personal website, https://shrjamal.com",
+  "description": "SAJAM company website, https://sajam.dev",
   "type": "module",
   "scripts": {
     "astro": "astro",
