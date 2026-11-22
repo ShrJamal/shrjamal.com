@@ -6,12 +6,38 @@ import Products from "~/components/Products.astro"
 import Services from "~/components/Services.astro"
 import Navbar from "~/components/TheNavbar.astro"
 import RootLayout from "~/layouts/RootLayout.astro"
+
+// schema.org Organization data so search engines can show the business,
+// its founder, and contact details.
+const organization = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "SAJAM LLC",
+  alternateName: "SAJAM",
+  url: Astro.site?.href,
+  logo: new URL("/logo.svg", Astro.site).href,
+  email: "support@sajam.dev",
+  description:
+    "SAJAM designs and builds web products, mobile apps, and internal tools for businesses and entrepreneurs.",
+  founder: {
+    "@type": "Person",
+    name: "Jamal Shr",
+    jobTitle: "Software developer",
+    homeLocation: { "@type": "Country", name: "Morocco" },
+    sameAs: ["https://www.upwork.com/freelancers/shrjamal"],
+  },
+}
 ---
 
 <RootLayout
   title="SAJAM | Software development and technology consulting"
   description="SAJAM designs and builds web products, mobile apps, and internal tools for businesses and entrepreneurs."
 >
+  <script
+    slot="head"
+    type="application/ld+json"
+    set:html={JSON.stringify(organization)}
+  />
   <Navbar />
   <main>
     <Hero />
