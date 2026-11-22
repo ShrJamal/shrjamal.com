@@ -1,0 +1,43 @@
+---
+// How an engagement runs, from first email to after launch.
+const steps = [
+  {
+    n: "01",
+    title: "Scope",
+    body: "Tell us what you need. We ask the questions that matter, then agree on a written plan with scope, timeline, and price.",
+  },
+  {
+    n: "02",
+    title: "Build",
+    body: "You see working software early and often, not just status updates, so feedback lands while it is cheap to act on.",
+  },
+  {
+    n: "03",
+    title: "Launch",
+    body: "We deploy to production, hand over the code and accounts, and document how everything runs.",
+  },
+  {
+    n: "04",
+    title: "Support",
+    body: "After launch we stay available for fixes, improvements, and the next set of features.",
+  },
+]
+---
+
+<section id="process" class="border-t border-line px-6 py-20 md:px-14">
+  <div class="mb-3 font-mono text-[13px] text-accent">// process</div>
+  <h2 class="mb-10 text-[30px] font-bold tracking-[-0.01em] md:text-[38px]">How we work</h2>
+  <ol
+    class="grid list-none grid-cols-1 gap-px overflow-hidden rounded-xl border border-grid-line bg-grid-line p-0 sm:grid-cols-2 lg:grid-cols-4"
+  >
+    {
+      steps.map((s) => (
+        <li class="bg-card px-[22px] py-7">
+          <div class="mb-3.5 font-mono text-xs text-accent">{s.n}</div>
+          <h3 class="mb-2 text-[16.5px] font-semibold">{s.title}</h3>
+          <p class="text-[13.5px] leading-[1.55] text-muted">{s.body}</p>
+        </li>
+      ))
+    }
+  </ol>
+</section>
